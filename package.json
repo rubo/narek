@@ -1,0 +1,46 @@
+{
+  "name": "narek",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "books": "node scripts/build-books.js",
+    "books:check": "node scripts/build-books.js --check",
+    "dev": "vite --host",
+    "build": "vite build",
+    "lint": "oxlint",
+    "test": "node --test",
+    "preview": "vite preview",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "dependencies": {
+    "@heroui/react": "^3.2.2",
+    "@heroui/styles": "^3.2.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "mdast-util-to-string": "^4.0.0",
+    "oxfmt": "^0.61.0",
+    "oxlint": "^1.76.0",
+    "remark-directive": "^4.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-parse": "^11.0.0",
+    "tailwindcss": "^4.3.3",
+    "unified": "^11.0.5",
+    "vite": "^8.1.1",
+    "yaml": "^2.9.0"
+  },
+  "engines": {
+    "node": "^24.11.0"
+  }
+}

@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+@import '@heroui/styles';
+
+@theme {
+  --background: --white;
+  --font-sans: 'Google Sans', ui-sans-serif, sans-serif;
+  --font-serif: 'Arian Grqi', ui-serif, serif;
+}
+
+/* Reader-scalable type tokens for book content. */
+@theme inline {
+  --text-book-xs: calc(var(--text-xs) * var(--font-scale, 1));
+  --text-book-xs--line-height: var(--text-xs--line-height);
+  --text-book-base: calc(var(--text-base) * var(--font-scale, 1));
+  --text-book-base--line-height: var(--text-base--line-height);
+  --text-book-lg: calc(var(--text-lg) * var(--font-scale, 1));
+  --text-book-lg--line-height: var(--text-lg--line-height);
+  --text-book-2xl: calc(var(--text-2xl) * var(--font-scale, 1));
+  --text-book-2xl--line-height: var(--text-2xl--line-height);
+}
+
+@utility text-scale-sm {
+  --font-scale: 0.9;
+}
+
+@utility text-scale-base {
+  --font-scale: 1;
+}
+
+@utility text-scale-lg {
+  --font-scale: 1.15;
+}
+
+@font-face {
+  font-family: 'Arian Grqi';
+  src: url('/fonts/arian-grqi-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 20;
+}
