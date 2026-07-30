@@ -23,9 +23,9 @@ const sources = ['original', 'translation_mk'];
 
 const CHAPTER_FILE = /^chapter_(\d+)\.md$/;
 
-// Hand-written mappings: mapping_mk.json pairs original with translation_mk.
-const assetRoot = join(root, 'src', 'assets');
-const MAPPING_FILE = /^mapping_(.+)\.json$/u;
+// mapping_<edition> pairs original with translation_<edition>.
+const MAPPING_DIR = /^mapping_(.+)$/u;
+const MAPPING_CHAPTER = /^chapter_(\d+)\.json$/u;
 const MAPPING_MODES = new Set(['line', 'group']);
 
 const processor = unified().use(remarkParse).use(remarkFrontmatter, ['yaml']).use(remarkDirective);
@@ -305,33 +305,92 @@ function checkMapping(file, mapping, original, translation) {
   return problems;
 }
 
-async function checkMappings(outputs) {
-  const files = (await readdir(assetRoot)).sort();
+// Keep mappings aligned with the chapter arrays indexed by Chapter.
+async function readMapping(edition, original) {
+  const dir = join(sourceRoot, `mapping_${edition}`);
+  const byChapter = new Map();
   const problems = [];
 
-  for (const file of files) {
-    const match = MAPPING_FILE.exec(file);
+  for (const file of (await readdir(dir)).sort()) {
+    const match = MAPPING_CHAPTER.exec(file);
+
+    if (!match) {
+      problems.push(`mapping_${edition}/${file}: expected chapter_<n>.json`);
+      continue;
+    }
+
+    let entry;
+
+    try {
+      entry = JSON.parse(await readFile(join(dir, file), 'utf8'));
+    } catch (error) {
+      problems.push(`mapping_${edition}/${file}: ${error.message}`);
+      continue;
+    }
+
+    if (entry.chapter !== Number(match[1])) {
+      problems.push(
+        `mapping_${edition}/${file}: chapter ${entry.chapter} does not match the file name`,
+      );
+    }
+
+    const seen = byChapter.get(entry.chapter);
+
+    if (seen) {
+      problems.push(
+        `mapping_${edition}/${file}: chapter ${entry.chapter} already mapped by ${seen.file}`,
+      );
+      continue;
+    }
+
+    byChapter.set(entry.chapter, { entry, file });
+  }
+
+  const merged = original.map(({ chapter }) => byChapter.get(chapter)?.entry ?? null);
+
+  return { merged, chapters: [...byChapter.values()].map((seen) => seen.entry), problems };
+}
+
+async function emitMappings(outputs) {
+  const dirents = (await readdir(sourceRoot, { withFileTypes: true })).sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+  const original = outputs.get('original/chapters.json');
+  const problems = [];
+
+  for (const dirent of dirents) {
+    const match = dirent.isDirectory() ? MAPPING_DIR.exec(dirent.name) : null;
 
     if (!match) {
       continue;
     }
 
     const edition = match[1];
+    const label = `mapping_${edition}`;
     const translation = outputs.get(`translation_${edition}/chapters.json`);
 
     if (!translation) {
-      problems.push(`${file}: there is no book/translation_${edition} to map onto`);
+      problems.push(`${label}: there is no book/translation_${edition} to map onto`);
       continue;
     }
 
-    const mapping = JSON.parse(await readFile(join(assetRoot, file), 'utf8'));
+    const { merged, chapters, problems: readProblems } = await readMapping(edition, original);
 
-    problems.push(
-      ...checkMapping(file, mapping, outputs.get('original/chapters.json'), translation),
-    );
+    outputs.set(`${label}.json`, merged);
+    problems.push(...readProblems, ...checkMapping(label, chapters, original, translation));
   }
 
   return problems;
+}
+
+// Keep mapping ranges in compact [start, end] form.
+function serialize(name, value) {
+  const json = JSON.stringify(value, null, 2);
+  const text = name.startsWith('mapping_')
+    ? json.replace(/\[\s+(\d+),\s+(\d+)\s+\]/gu, '[$1, $2]')
+    : json;
+
+  return `${text}\n`;
 }
 
 // Latin marks close enough in shape to their Armenian counterparts that a wrong
@@ -526,10 +585,13 @@ export async function build({ check = false, log } = {}) {
     return { written: [], stale: [], problems: corrupt, assets: new Map() };
   }
 
+  // Mapping problems must not block regenerating changed text.
+  const problems = await emitMappings(outputs);
+
   const files = new Map();
 
   for (const [name, value] of outputs) {
-    files.set(join(outputRoot, name), `${JSON.stringify(value, null, 2)}\n`);
+    files.set(join(outputRoot, name), serialize(name, value));
   }
 
   const written = [];
@@ -553,10 +615,6 @@ export async function build({ check = false, log } = {}) {
     written.push(name);
     log?.(`wrote ${name}`);
   }
-
-  // After writing, so a corpus edit can be regenerated before the mapping is
-  // brought back in line.
-  const problems = await checkMappings(outputs);
 
   return { written, stale, problems, assets: renderSiteAssets(outputs) };
 }

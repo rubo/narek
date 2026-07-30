@@ -1,7 +1,7 @@
 import { build } from './build-books.js';
 
 // Watcher paths are relative to the root, so the leading separator is optional.
-const SOURCE = /(^|[\\/])(book[\\/].+\.md|mapping_[^\\/]+\.json)$/u;
+const SOURCE = /(^|[\\/])book[\\/].+\.(?:md|json)$/u;
 
 /**
  * Regenerates the JSON from book/, watches the corpus in dev, and fails the

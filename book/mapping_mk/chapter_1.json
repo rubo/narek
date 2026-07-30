@@ -1,0 +1,129 @@
+{
+  "chapter": 1,
+  "sections": [
+    [
+      {
+        "original": [0, 1],
+        "translation": [0, 1],
+        "mode": "line"
+      },
+      {
+        "original": [2, 4],
+        "translation": [2, 4],
+        "mode": "group"
+      },
+      {
+        "original": [5, 5],
+        "translation": [5, 5],
+        "mode": "line"
+      },
+      {
+        "original": [6, 7],
+        "translation": [6, 6],
+        "mode": "group"
+      },
+      {
+        "original": [8, 9],
+        "translation": [7, 8],
+        "mode": "line"
+      },
+      {
+        "original": [10, 14],
+        "translation": [9, 12],
+        "mode": "group"
+      },
+      {
+        "original": [15, 20],
+        "translation": [13, 18],
+        "mode": "group"
+      },
+      {
+        "original": [21, 25],
+        "translation": [19, 23],
+        "mode": "group"
+      }
+    ],
+    [
+      {
+        "original": [0, 2],
+        "translation": [0, 2],
+        "mode": "line"
+      },
+      {
+        "original": [3, 4],
+        "translation": [3, 4],
+        "mode": "group"
+      },
+      {
+        "original": [5, 5],
+        "translation": [5, 5],
+        "mode": "line"
+      },
+      {
+        "original": [6, 7],
+        "translation": [6, 7],
+        "mode": "group"
+      },
+      {
+        "original": [8, 9],
+        "translation": [8, 9],
+        "mode": "group"
+      },
+      {
+        "original": [10, 13],
+        "translation": [10, 13],
+        "mode": "line"
+      },
+      {
+        "original": [14, 15],
+        "translation": [14, 14],
+        "mode": "group"
+      },
+      {
+        "original": [16, 16],
+        "translation": [15, 15],
+        "mode": "line"
+      },
+      {
+        "original": [17, 18],
+        "translation": [16, 16],
+        "mode": "group"
+      },
+      {
+        "original": [19, 20],
+        "translation": [17, 17],
+        "mode": "group"
+      },
+      {
+        "original": [21, 22],
+        "translation": [18, 20],
+        "mode": "group"
+      },
+      {
+        "original": [23, 25],
+        "translation": [21, 22],
+        "mode": "group"
+      },
+      {
+        "original": [26, 28],
+        "translation": [23, 24],
+        "mode": "group"
+      },
+      {
+        "original": [29, 32],
+        "translation": [25, 28],
+        "mode": "line"
+      },
+      {
+        "original": [33, 34],
+        "translation": [29, 29],
+        "mode": "group"
+      },
+      {
+        "original": [35, 38],
+        "translation": [30, 32],
+        "mode": "group"
+      }
+    ]
+  ]
+}

@@ -1,7 +1,7 @@
 import { useOutletContext, useParams } from 'react-router';
+import mapping from '../assets/generated/mapping_mk.json';
 import originalChapters from '../assets/generated/original/chapters.json';
 import translationChapters from '../assets/generated/translation_mk/chapters.json';
-import mapping from '../assets/mapping_mk.json';
 import { toArmenian } from '../shared/utils';
 import { scaleClasses } from './scale';
 import Section from './Section';

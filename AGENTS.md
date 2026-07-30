@@ -44,16 +44,18 @@ hyphen     -  joins word material only (Ամէն-իւն, «Ամեն»-ի); never
 ## Repository layout
 
 ```
-book/<edition>/*.md          source of truth, hand-authored
-src/assets/mapping_*.json    hand-authored line-to-line mapping
-src/assets/generated/        GENERATED — never edit
-scripts/build-books.js       the generator + CLI
-scripts/vite-plugin-books.js Vite plugin wrapping it
+book/<edition>/*.md              source of truth, hand-authored
+book/mapping_<edition>/*.json    hand-authored mapping, one file per chapter
+src/assets/generated/            GENERATED — never edit
+scripts/build-books.js           the generator + CLI
+scripts/vite-plugin-books.js     Vite plugin wrapping it
 ```
 
 Output mirrors the source tree: `book/original/` → `src/assets/generated/original/`,
 with chapters merged into `chapters.json` and each standalone page keeping its
-own name. Adding an edition is one string in `sources`.
+own name. The per-chapter mappings likewise merge into a single
+`src/assets/generated/mapping_<edition>.json`, ordered to match the original
+chapters. Adding an edition is one string in `sources`.
 
 ## The corpus format
 
@@ -85,8 +87,10 @@ Line 2
 
 ## The mapping
 
-`src/assets/mapping_<edition>.json` pairs `original` line ranges with
-`translation` ranges. Validated on every build:
+`book/mapping_<edition>/chapter_<n>.json` pairs `original` line ranges with
+`translation` ranges, one file per chapter (`.chapter` must match the file
+name). The build merges them; the app imports the merged file. Validated on
+every build:
 
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no
