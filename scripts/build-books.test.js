@@ -17,7 +17,7 @@ const only = (outputs) => {
 };
 
 test('accepts the marks the corpus actually uses', () => {
-  const text = 'Աստուած, ողորմեա՛ ինձ. եւ քաւեա՜ զիս՝ ամենակալ ։ «բան» – (այս) ֊ …';
+  const text = 'Աստուած, ողորմեա՛ ինձ. եւ քաւեա՜ զիս՝ ամենակալ ։ «բան» — (այս) ֊ …';
   assert.deepEqual(checkPunctuation(chapter(text)), []);
 });
 
@@ -27,7 +27,7 @@ test('rejects each confusable with the mark it should have been', () => {
     ['`', 'բութ ՝ (U+055D)'],
     ['~', 'բացականչական ՜ (U+055C)'],
     ["'", 'շեշտ ՛ (U+055B)'],
-    ['—', 'the en dash – (U+2013)'],
+    ['–', 'the em dash — (U+2014)'],
   ];
 
   for (const [ch, correct] of expected) {
@@ -44,7 +44,7 @@ test('allows a hyphen only where it joins word material', () => {
 });
 
 test('rejects a hyphen doing the work of a dash', () => {
-  assert.match(only(chapter('Եսայեայ,-')), /on dash duty — dashes are – \(U\+2013\)/u);
+  assert.match(only(chapter('Եսայեայ,-')), /on dash duty — dashes are — \(U\+2014\)/u);
   assert.match(only(chapter('Եսայեայ -')), /on dash duty/u);
   assert.match(only(chapter('Եսայեայ - բան')), /on dash duty/u);
 });

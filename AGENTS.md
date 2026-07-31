@@ -37,7 +37,7 @@ section, line and column. Anything else, digits included, fails until added.
 ```
 letters    U+0531–U+0556, U+0561–U+0587 (through the ligature և)
 armenian   ՚ ՛ ՜ ՝ ՞ (U+055A–U+055E), ։ (U+0589), ֊ (U+058A)
-shared     space , .  « »  …  –  ( )
+shared     space , .  « »  …  —  ( )
 hyphen     -  joins word material only (Ամէն-իւն, «Ամեն»-ի); never a dash
 ```
 

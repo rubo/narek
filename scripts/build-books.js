@@ -400,11 +400,11 @@ const CONFUSABLE = new Map([
   ['`', 'բութ ՝ (U+055D)'],
   ['~', 'բացականչական ՜ (U+055C)'],
   ["'", 'շեշտ ՛ (U+055B)'],
-  ['—', 'the en dash – (U+2013)'],
+  ['–', 'the em dash — (U+2014)'],
 ]);
 
 // Shared punctuation. ASCII hyphen is validated contextually by joinsWords.
-const SHARED = new Set(' ,.«»…–()');
+const SHARED = new Set(' ,.«»…—()');
 
 function allowed(ch) {
   const cp = ch.codePointAt(0);
@@ -453,7 +453,7 @@ function checkText(label, where, text, problems) {
     if (ch === '-') {
       if (!joinsWords(chars, i)) {
         problems.push(
-          `${at}: '-' U+002D on dash duty — dashes are – (U+2013); a hyphen only joins word material\n  ${excerpt(text, i)}`,
+          `${at}: '-' U+002D on dash duty — dashes are — (U+2014); a hyphen only joins word material\n  ${excerpt(text, i)}`,
         );
       }
 
