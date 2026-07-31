@@ -11,6 +11,8 @@
 @theme inline {
   --text-book-xs: calc(var(--text-xs) * var(--font-scale, 1));
   --text-book-xs--line-height: var(--text-xs--line-height);
+  --text-book-sm: calc(var(--text-sm) * var(--font-scale, 1));
+  --text-book-sm--line-height: var(--text-sm--line-height);
   --text-book-base: calc(var(--text-base) * var(--font-scale, 1));
   --text-book-base--line-height: var(--text-base--line-height);
   --text-book-lg: calc(var(--text-lg) * var(--font-scale, 1));

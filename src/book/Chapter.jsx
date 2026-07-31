@@ -30,7 +30,7 @@ export default function Chapter() {
       <header className="flex flex-col items-center uppercase">
         <h1 className="text-book-2xl mb-6 text-center">Բան {toArmenian(chapter.chapter)}</h1>
         {chapter.heading && (
-          <h3 className="text-book-xs text-center">
+          <h3 className="text-book-sm text-center">
             {chapter.heading.map((heading, headingIndex) => (
               <p key={headingIndex}>{heading}</p>
             ))}
