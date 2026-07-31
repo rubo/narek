@@ -9,12 +9,12 @@ line-to-line mapping between the two.
 
 ## Structure
 
-| Path                        |                                                 |
-| --------------------------- | ----------------------------------------------- |
-| `book/<edition>/*.md`       | the texts — source of truth                     |
-| `src/assets/mapping_*.json` | line-to-line mapping, hand-written              |
-| `src/assets/generated/`     | built from `book/`, not committed               |
-| `scripts/`                  | the generator, and the Vite plugin that runs it |
+| Path                                    |                                                          |
+| --------------------------------------- | -------------------------------------------------------- |
+| `book/<edition>/*.md`                   | the texts — source of truth                              |
+| `book/mapping_<edition>/chapter_*.json` | line-to-line mapping, hand-written, one file per chapter |
+| `src/assets/generated/`                 | built from `book/`, not committed                        |
+| `scripts/`                              | the generator, and the Vite plugin that runs it          |
 
 Chapters are `chapter_<number>.md` with numbered `:::section` blocks; sections
 are separated by blank lines. `prologue.md` and `epilogue.md` are plain
@@ -29,7 +29,8 @@ npm run build
 ```
 
 `npm run books` regenerates by hand; `npm run books:check` validates the mapping
-against both texts. A broken mapping fails the build.
+against both texts and verifies the generated output is current. A broken mapping
+fails the build.
 
 Set `SITE_URL` when building for deployment to emit `sitemap.xml` and
 `robots.txt`.
