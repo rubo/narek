@@ -25,7 +25,7 @@ jobs:
           cache: npm
 
       - name: Download fonts
-        run: curl -fsSLOJ --create-dirs --output-dir ./public/fonts "${{ vars.FONTS_URL }}"
+        run: curl -fsSLOJ --output-dir ./public/fonts "${{ vars.FONTS_URL }}/arian-grqi-italic.woff2" --create-dirs
 
       - name: Install dependencies
         run: npm ci

@@ -3,7 +3,7 @@ import { range, toArmenian } from '../shared/utils';
 
 export default function SectionCombined({ number, translationLines, originalLines, mapping }) {
   return (
-    <section className="text-book-lg mt-6">
+    <section className="mt-6">
       <h4 className="text-center">{toArmenian(number)}</h4>
       {mapping?.map((block, blockIndex) => {
         if (block.mode === 'line') {

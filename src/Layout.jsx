@@ -24,6 +24,14 @@ const defaultDisplayMode = 'original';
 const fontScales = ['sm', 'base', 'lg'];
 const defaultFontScale = 'base';
 
+// Literal class names so Tailwind's scanner keeps these utilities; an
+// interpolated `text-scale-${fontScale}` would be purged.
+const scaleClasses = {
+  sm: 'text-scale-sm',
+  base: 'text-scale-base',
+  lg: 'text-scale-lg',
+};
+
 // Every path the drawer lists; anything else selects nothing.
 const paths = ['/', ...chapters.map(({ chapter }) => `/chapter/${chapter}`), '/epilogue'];
 
@@ -246,7 +254,9 @@ export default function Layout() {
           </Dropdown.Popover>
         </Dropdown>
       )}
-      <Outlet context={{ displayMode, fontScale }} />
+      <div className={`text-book-lg max-w-xl font-serif ${scaleClasses[fontScale]}`}>
+        <Outlet context={{ displayMode }} />
+      </div>
       {(previous || next) && (
         <ButtonGroup variant="tertiary" className="mt-12">
           {previous && (

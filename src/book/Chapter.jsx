@@ -3,14 +3,13 @@ import mapping from '../assets/generated/mapping_mk.json';
 import originalChapters from '../assets/generated/original/chapters.json';
 import translationChapters from '../assets/generated/translation_mk/chapters.json';
 import { toArmenian } from '../shared/utils';
-import { scaleClasses } from './scale';
 import Section from './Section';
 import SectionCombined from './SectionCombined';
 
 export default function Chapter() {
   const { number } = useParams();
-  /** @type {{ displayMode: string, fontScale: string }} */
-  const { displayMode, fontScale } = useOutletContext();
+  /** @type {{ displayMode: string }} */
+  const { displayMode } = useOutletContext();
 
   const chapterIndex = originalChapters.findIndex((entry) => entry.chapter === Number(number));
 
@@ -26,9 +25,9 @@ export default function Chapter() {
   const chapter = displayMode === 'original' ? original : translationChapters[chapterIndex];
 
   return (
-    <article className={`max-w-xl font-serif ${scaleClasses[fontScale]}`}>
+    <article>
       <header className="flex flex-col items-center uppercase">
-        <h1 className="text-book-2xl mb-6 text-center">Բան {toArmenian(chapter.chapter)}</h1>
+        <h1 className="chapter-heading">Բան {toArmenian(chapter.chapter)}</h1>
         {chapter.heading && (
           <h3 className="text-book-sm text-center">
             {chapter.heading.map((heading, headingIndex) => (
