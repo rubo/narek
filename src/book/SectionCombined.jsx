@@ -11,11 +11,11 @@ export default function SectionCombined({
   return (
     <section className="mt-6">
       {!hideNumber && <h4 className="text-center">{toArmenian(number)}</h4>}
-      {mapping?.map((block, blockIndex) => {
-        if (block.mode === 'line') {
+      {mapping?.map((pair, pairIndex) => {
+        if (pair.mode === 'line') {
           // TODO: handle unequal original and translation ranges
-          const origRange = range(block.original[0], block.original[1]);
-          const transRange = range(block.translation[0], block.translation[1]);
+          const origRange = range(pair.original[0], pair.original[1]);
+          const transRange = range(pair.translation[0], pair.translation[1]);
 
           return origRange.map((lineNumber, lineIndex) => (
             <Fragment key={lineNumber}>
@@ -25,17 +25,17 @@ export default function SectionCombined({
               </p>
             </Fragment>
           ));
-        } else if (block.mode === 'group') {
+        } else if (pair.mode === 'block') {
           return (
-            <Fragment key={blockIndex}>
+            <Fragment key={pairIndex}>
               <section className="mt-2">
-                {range(block.original[0], block.original[1]).map((lineNumber) => (
+                {range(pair.original[0], pair.original[1]).map((lineNumber) => (
                   <p key={lineNumber} className="indent-2">
                     {originalLines[lineNumber]}
                   </p>
                 ))}
               </section>
-              {range(block.translation[0], block.translation[1]).map((lineNumber) => (
+              {range(pair.translation[0], pair.translation[1]).map((lineNumber) => (
                 <p key={lineNumber} className="text-muted text-book-base indent-2">
                   {translationLines[lineNumber]}
                 </p>
@@ -44,7 +44,7 @@ export default function SectionCombined({
           );
         }
 
-        return <section key={blockIndex}>TODO: Թարգմանությունը բացակայում է</section>;
+        return <section key={pairIndex}>TODO: Թարգմանությունը բացակայում է</section>;
       })}
     </section>
   );

@@ -96,7 +96,7 @@ every build:
 - Every line of **both** texts must be covered **exactly once** — no gaps, no
   overlaps.
 - `mode: "line"` pairs ranges position by position, so both must be the **same
-  length**. `mode: "group"` presents them as blocks and may differ.
+  length**. `mode: "block"` presents them as blocks and may differ.
 - Editing a text shifts indices, so a corpus change usually means a mapping
   change. The build names the section that broke.
 

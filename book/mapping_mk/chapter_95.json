@@ -5,17 +5,17 @@
       {
         "original": [0, 2],
         "translation": [0, 1],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [3, 5],
         "translation": [2, 3],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [6, 7],
         "translation": [4, 5],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [8, 8],
@@ -30,7 +30,7 @@
       {
         "original": [10, 11],
         "translation": [8, 8],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [12, 12],
@@ -40,17 +40,17 @@
       {
         "original": [13, 14],
         "translation": [10, 10],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [15, 16],
         "translation": [11, 11],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [17, 19],
         "translation": [12, 13],
-        "mode": "group"
+        "mode": "block"
       }
     ],
     [
@@ -62,7 +62,7 @@
       {
         "original": [7, 9],
         "translation": [7, 8],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [10, 10],
@@ -74,37 +74,37 @@
       {
         "original": [0, 1],
         "translation": [0, 0],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [2, 4],
         "translation": [1, 2],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [5, 6],
         "translation": [3, 4],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [7, 12],
         "translation": [5, 8],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [13, 15],
         "translation": [9, 11],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [16, 18],
         "translation": [12, 13],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [19, 20],
         "translation": [14, 14],
-        "mode": "group"
+        "mode": "block"
       }
     ]
   ]

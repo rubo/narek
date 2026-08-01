@@ -26,7 +26,7 @@ const CHAPTER_FILE = /^chapter_(\d+)\.md$/;
 // mapping_<edition> pairs original with translation_<edition>.
 const MAPPING_DIR = /^mapping_(.+)$/u;
 const MAPPING_CHAPTER = /^chapter_(\d+)\.json$/u;
-const MAPPING_MODES = new Set(['line', 'group']);
+const MAPPING_MODES = new Set(['line', 'block']);
 
 const processor = unified().use(remarkParse).use(remarkFrontmatter, ['yaml']).use(remarkDirective);
 
@@ -102,7 +102,7 @@ function readFrontMatter(tree, file) {
   return { data, node };
 }
 
-// Every :::section block in the document, in order, as its own group.
+// Every :::section block in the document, in order, as its own array.
 function readDirectives(tree, file) {
   const directives = [];
 
@@ -205,11 +205,11 @@ const span = (range) =>
 
 // Every line must be covered exactly once, or the combined view drops or
 // repeats text.
-function checkCoverage(where, groups, key, count, problems) {
+function checkCoverage(where, pairs, key, count, problems) {
   const seen = new Array(count).fill(0);
 
-  for (const group of groups) {
-    const range = group[key];
+  for (const pair of pairs) {
+    const range = pair[key];
 
     if (span(range) === null || range[0] > range[1]) {
       problems.push(`${where}: malformed ${key} range ${JSON.stringify(range)}`);
@@ -272,20 +272,20 @@ function checkMapping(file, mapping, original, translation) {
       );
     }
 
-    entry.sections.forEach((groups, index) => {
+    entry.sections.forEach((pairs, index) => {
       const where = `${label} section ${index + 1}`;
 
-      for (const group of groups) {
-        if (!MAPPING_MODES.has(group.mode)) {
-          problems.push(`${where}: unknown mode ${JSON.stringify(group.mode)}`);
+      for (const pair of pairs) {
+        if (!MAPPING_MODES.has(pair.mode)) {
+          problems.push(`${where}: unknown mode ${JSON.stringify(pair.mode)}`);
           continue;
         }
 
         // `line` pairs the ranges position by position, so lengths must match.
-        const lines = span(group.original);
-        const translatedLines = span(group.translation);
+        const lines = span(pair.original);
+        const translatedLines = span(pair.translation);
 
-        if (group.mode === 'line' && lines !== null && lines !== translatedLines) {
+        if (pair.mode === 'line' && lines !== null && lines !== translatedLines) {
           problems.push(
             `${where}: line mode maps ${lines} original lines onto ${translatedLines} translation lines`,
           );
@@ -293,11 +293,11 @@ function checkMapping(file, mapping, original, translation) {
       }
 
       if (chapter.sections[index]) {
-        checkCoverage(where, groups, 'original', chapter.sections[index].length, problems);
+        checkCoverage(where, pairs, 'original', chapter.sections[index].length, problems);
       }
 
       if (translated.sections[index]) {
-        checkCoverage(where, groups, 'translation', translated.sections[index].length, problems);
+        checkCoverage(where, pairs, 'translation', translated.sections[index].length, problems);
       }
     });
   }

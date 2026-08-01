@@ -10,7 +10,7 @@
       {
         "original": [7, 9],
         "translation": [7, 9],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [10, 11],
@@ -20,12 +20,12 @@
       {
         "original": [12, 12],
         "translation": [12, 13],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [13, 13],
         "translation": [14, 14],
-        "mode": "group"
+        "mode": "block"
       }
     ],
     [
@@ -37,12 +37,12 @@
       {
         "original": [4, 4],
         "translation": [4, 5],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [5, 6],
         "translation": [6, 6],
-        "mode": "group"
+        "mode": "block"
       }
     ]
   ]

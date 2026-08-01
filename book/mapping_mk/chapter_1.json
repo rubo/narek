@@ -10,7 +10,7 @@
       {
         "original": [2, 4],
         "translation": [2, 4],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [5, 5],
@@ -20,7 +20,7 @@
       {
         "original": [6, 7],
         "translation": [6, 6],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [8, 9],
@@ -30,17 +30,17 @@
       {
         "original": [10, 14],
         "translation": [9, 12],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [15, 20],
         "translation": [13, 18],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [21, 25],
         "translation": [19, 23],
-        "mode": "group"
+        "mode": "block"
       }
     ],
     [
@@ -52,7 +52,7 @@
       {
         "original": [3, 4],
         "translation": [3, 4],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [5, 5],
@@ -62,12 +62,12 @@
       {
         "original": [6, 7],
         "translation": [6, 7],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [8, 9],
         "translation": [8, 9],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [10, 13],
@@ -77,7 +77,7 @@
       {
         "original": [14, 15],
         "translation": [14, 14],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [16, 16],
@@ -87,27 +87,27 @@
       {
         "original": [17, 18],
         "translation": [16, 16],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [19, 20],
         "translation": [17, 17],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [21, 22],
         "translation": [18, 20],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [23, 25],
         "translation": [21, 22],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [26, 28],
         "translation": [23, 24],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [29, 32],
@@ -117,12 +117,12 @@
       {
         "original": [33, 34],
         "translation": [29, 29],
-        "mode": "group"
+        "mode": "block"
       },
       {
         "original": [35, 38],
         "translation": [30, 32],
-        "mode": "group"
+        "mode": "block"
       }
     ]
   ]
