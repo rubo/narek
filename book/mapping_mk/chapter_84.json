@@ -1,0 +1,52 @@
+{
+  "chapter": 84,
+  "sections": [
+    [
+      {
+        "original": [0, 21],
+        "translation": [0, 21],
+        "mode": "line"
+      },
+      {
+        "original": [22, 23],
+        "translation": [22, 22],
+        "mode": "group"
+      },
+      {
+        "original": [24, 30],
+        "translation": [23, 29],
+        "mode": "line"
+      },
+      {
+        "original": [31, 32],
+        "translation": [30, 30],
+        "mode": "group"
+      },
+      {
+        "original": [33, 33],
+        "translation": [31, 31],
+        "mode": "line"
+      },
+      {
+        "original": [34, 35],
+        "translation": [32, 32],
+        "mode": "group"
+      },
+      {
+        "original": [36, 38],
+        "translation": [33, 35],
+        "mode": "line"
+      },
+      {
+        "original": [39, 40],
+        "translation": [36, 36],
+        "mode": "group"
+      },
+      {
+        "original": [41, 42],
+        "translation": [37, 37],
+        "mode": "group"
+      }
+    ]
+  ]
+}
