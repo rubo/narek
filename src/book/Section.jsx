@@ -1,9 +1,9 @@
 import { toArmenian } from '../shared/utils';
 
-export default function Section({ number, lines }) {
+export default function Section({ number, lines, hideNumber }) {
   return (
     <section className="mt-6">
-      <h4 className="mb-2 text-center">{toArmenian(number)}</h4>
+      {!hideNumber && <h4 className="mb-2 text-center">{toArmenian(number)}</h4>}
       {lines.map((line, index) => (
         <p key={index} className="indent-2">
           {line}

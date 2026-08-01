@@ -23,6 +23,7 @@ export default function Chapter() {
 
   const original = originalChapters[chapterIndex];
   const chapter = displayMode === 'original' ? original : translationChapters[chapterIndex];
+  const hideNumber = chapter.sections?.length === 1;
 
   return (
     <article>
@@ -44,10 +45,16 @@ export default function Chapter() {
               translationLines={section}
               originalLines={original.sections[sectionIndex]}
               mapping={mapping[chapterIndex].sections[sectionIndex]}
+              hideNumber={hideNumber}
             />
           ))
         : chapter.sections?.map((section, sectionIndex) => (
-            <Section key={sectionIndex} number={sectionIndex + 1} lines={section} />
+            <Section
+              key={sectionIndex}
+              number={sectionIndex + 1}
+              lines={section}
+              hideNumber={hideNumber}
+            />
           ))}
     </article>
   );
