@@ -129,9 +129,8 @@ All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 ## Known open items
 
 - Over 90 chapters yet to come; the whole corpus is imported statically, so bundle
-  size will need code splitting or prerendering.
+  size may need code splitting or prerendering.
 - Static prerendering is the planned solution for metadata, social previews, and
   crawlability.
 - `sitemap.xml` / `robots.txt` are emitted into the bundle only when `SITE_URL`
   is set. No host, no files — never a placeholder.
-- Planning font scaling for the book content
