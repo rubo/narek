@@ -14,7 +14,29 @@
     <title>Մատեան ողբերգութեան</title>
   </head>
   <body class="bg-background text-foreground px-4 py-8">
-    <div id="root" class="flex flex-col items-center"></div>
+    <div id="root" class="flex flex-col items-center">
+      <style>
+        body {
+          font-family: 'Google Sans', ui-sans-serif, sans-serif;
+          margin: 0;
+        }
+        noscript {
+          padding: 2rem 2rem;
+          max-width: 40rem;
+        }
+        .splash {
+          align-items: center;
+          display: flex;
+          flex-flow: column;
+          height: 100vh;
+          justify-content: center;
+        }
+      </style>
+      <div class="splash">
+        <img alt="Loading" height="64" src="/spinner.svg" />
+        <noscript>JavaScript-ն անջատված է։ Միացրեք այն կամ փորձեք այլ բրաուզեր։ </noscript>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
