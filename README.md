@@ -9,12 +9,13 @@ line-to-line mapping between the two.
 
 ## Structure
 
-| Path                                    |                                                          |
-| --------------------------------------- | -------------------------------------------------------- |
-| `book/<edition>/*.md`                   | the texts — source of truth                              |
-| `book/mapping_<edition>/chapter_*.json` | line-to-line mapping, hand-written, one file per chapter |
-| `src/assets/generated/`                 | built from `book/`, not committed                        |
-| `scripts/`                              | the generator, and the Vite plugin that runs it          |
+| Path                                      |                                                          |
+| ----------------------------------------- | -------------------------------------------------------- |
+| `book/<edition>/*.md`                     | the texts — source of truth                              |
+| `book/mapping_<edition>/chapter_*.json`   | line-to-line mapping, hand-written, one file per chapter |
+| `book/revisions/translation_<edition>.md` | revisions made to a translation edition                  |
+| `src/assets/generated/`                   | built from `book/`, not committed                        |
+| `scripts/`                                | the generator, and the Vite plugin that runs it          |
 
 Chapters are `chapter_<number>.md` with numbered `:::section` blocks; sections
 are separated by blank lines. `prologue.md` and `epilogue.md` are plain
