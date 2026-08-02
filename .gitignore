@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 # Project files
+/mapping/*
 src/assets/generated/*
 *.woff2
