@@ -138,9 +138,9 @@ export default function Layout() {
     <>
       <Drawer state={drawerState}>
         <Button
-          variant="ghost"
+          variant="tertiary"
           isIconOnly
-          className="fixed top-4 left-4 backdrop-blur-sm"
+          className="fixed top-4 left-4 shadow-lg"
           aria-label="Բովանդակություն"
         >
           <span className="material-symbols-outlined">menu</span>
@@ -215,9 +215,9 @@ export default function Layout() {
       {currentChapter >= 0 && (
         <Dropdown>
           <Button
-            variant="ghost"
+            variant="tertiary"
             isIconOnly
-            className="fixed top-4 right-4 backdrop-blur-sm"
+            className="fixed top-4 right-4 shadow-lg"
             aria-label="Թարգմանություն"
           >
             <span className="material-symbols-outlined">translate</span>
