@@ -1,4 +1,4 @@
-# Translation revisions
+# Revisions
 
 ## Section realignment
 
