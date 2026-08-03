@@ -33,9 +33,19 @@
         "mode": "block"
       },
       {
-        "original": [15, 20],
-        "translation": [13, 18],
+        "original": [15, 15],
+        "translation": [13, 13],
+        "mode": "line"
+      },
+      {
+        "original": [16, 19],
+        "translation": [14, 17],
         "mode": "block"
+      },
+      {
+        "original": [20, 20],
+        "translation": [18, 18],
+        "mode": "line"
       },
       {
         "original": [21, 25],
