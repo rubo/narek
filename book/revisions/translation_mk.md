@@ -16,6 +16,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Խաղաղության հրեշտակդ թո՛ղ քազցրությամբ հանդիպի ինձ`
 - Revised: [`Խաղաղության հրեշտակդ թո՛ղ քաղցրությամբ հանդիպի ինձ`](../translation_mk/chapter_2.md?plain=1#L228)
 
+## Chapter 5
+
+#### Typographical correction
+
+- Previous: `Հանճարով հզորացիր ինձ`
+- Revised: [`Հանճարով հզորացրիր ինձ`](../translation_mk/chapter_5.md?plain=1#L40)
+
 ## Chapter 42
 
 #### Typographical correction
