@@ -8,13 +8,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `Շինողի ձեռքով լրիվ քանդըված`
-- Revised: [`Շինողի ձեռքով լրիվ քանդված`](../translation_mk/chapter_2.md?plain=1#L72)
+- Previous: `քանդըված`
+- Revised: [`քանդված`](../translation_mk/chapter_2.md?plain=1#L72)
 
 #### Typographical correction
 
-- Previous: `Խաղաղության հրեշտակդ թո՛ղ քազցրությամբ հանդիպի ինձ`
-- Revised: [`Խաղաղության հրեշտակդ թո՛ղ քաղցրությամբ հանդիպի ինձ`](../translation_mk/chapter_2.md?plain=1#L228)
+- Previous: `քազցրությամբ`
+- Revised: [`քաղցրությամբ`](../translation_mk/chapter_2.md?plain=1#L228)
 
 ## Chapter 5
 
@@ -27,8 +27,8 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `սասափելի այն խոսքն ահավոր`
-- Revised: [`սարսափելի այն խոսքն ահավոր`](../translation_mk/chapter_7.md?plain=1#L156)
+- Previous: `սասափելի`
+- Revised: [`սարսափելի`](../translation_mk/chapter_7.md?plain=1#L156)
 
 ## Chapter 9
 
@@ -55,15 +55,15 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `Փրկի՛ր կործանումից և բաձրացրո՛ւ`
-- Revised: [`Փրկի՛ր կործանումից և բարձրացրո՛ւ`](../translation_mk/chapter_42.md?plain=1#L50)
+- Previous: `բաձրացրո՛ւ`
+- Revised: [`բարձրացրո՛ւ`](../translation_mk/chapter_42.md?plain=1#L50)
 
 ## Chapter 43
 
 #### Typographical correction
 
-- Previous: `ինչպես մագարեն է ասում`
-- Revised: [`ինչպես մարգարեն է ասում`](../translation_mk/chapter_43.md?plain=1#L14)
+- Previous: `մագարեն`
+- Revised: [`մարգարեն`](../translation_mk/chapter_43.md?plain=1#L14)
 
 #### Corrected reading
 
