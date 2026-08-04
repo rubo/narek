@@ -4,13 +4,13 @@
 
 #### Typographical correction
 
-- Previous: `աներկեւան տեսութւին`
-- Revised: [`աներկեւան տեսութիւն`](../original/chapter_3.md?plain=1#L24)
+- Previous: `տեսութւին`
+- Revised: [`տեսութիւն`](../original/chapter_3.md?plain=1#L24)
 
 #### Typographical correction
 
-- Previous: `Անզջղական տուր`
-- Revised: [`Անզղջական տուր`](../original/chapter_3.md?plain=1#L62)
+- Previous: `Անզջղական`
+- Revised: [`Անզղջական`](../original/chapter_3.md?plain=1#L62)
 
 #### Typographical correction
 
