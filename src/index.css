@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Arian Grqi';
-  src: url('/fonts/arian-grqi-italic.woff2') format('woff2');
+  src: url('./assets/fonts/arian-grqi-italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
