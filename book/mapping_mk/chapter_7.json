@@ -1,0 +1,38 @@
+{
+  "chapter": 7,
+  "sections": [
+    [
+      { "original": [0, 1], "translation": [0, 1], "mode": "line" },
+      { "original": [2, 4], "translation": [2, 3], "mode": "block" },
+      { "original": [5, 7], "translation": [4, 5], "mode": "block" },
+      { "original": [8, 10], "translation": [6, 8], "mode": "line" },
+      { "original": [11, 15], "translation": [9, 13], "mode": "block" },
+      { "original": [16, 20], "translation": [14, 18], "mode": "line" }
+    ],
+    [
+      { "original": [0, 2], "translation": [0, 1], "mode": "block" },
+      { "original": [3, 3], "translation": [2, 2], "mode": "line" },
+      { "original": [4, 5], "translation": [3, 5], "mode": "block" },
+      { "original": [6, 7], "translation": [6, 6], "mode": "block" },
+      { "original": [8, 9], "translation": [7, 7], "mode": "block" },
+      { "original": [10, 11], "translation": [8, 8], "mode": "block" },
+      { "original": [12, 14], "translation": [9, 11], "mode": "line" },
+      { "original": [15, 16], "translation": [12, 12], "mode": "block" },
+      { "original": [17, 18], "translation": [13, 14], "mode": "line" },
+      { "original": [19, 20], "translation": [15, 15], "mode": "block" },
+      { "original": [21, 22], "translation": [16, 16], "mode": "block" },
+      { "original": [23, 31], "translation": [17, 25], "mode": "line" }
+    ],
+    [
+      { "original": [0, 1], "translation": [0, 0], "mode": "block" },
+      { "original": [2, 3], "translation": [1, 1], "mode": "block" },
+      { "original": [4, 11], "translation": [2, 9], "mode": "line" },
+      { "original": [12, 13], "translation": [10, 10], "mode": "block" },
+      { "original": [14, 15], "translation": [11, 12], "mode": "line" },
+      { "original": [16, 17], "translation": [13, 13], "mode": "block" },
+      { "original": [18, 27], "translation": [14, 23], "mode": "line" },
+      { "original": [28, 30], "translation": [24, 25], "mode": "block" },
+      { "original": [31, 31], "translation": [26, 26], "mode": "line" }
+    ]
+  ]
+}

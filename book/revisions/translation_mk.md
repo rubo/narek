@@ -23,6 +23,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Հանճարով հզորացիր ինձ`
 - Revised: [`Հանճարով հզորացրիր ինձ`](../translation_mk/chapter_5.md?plain=1#L40)
 
+## Chapter 7
+
+#### Typographical correction
+
+- Previous: `սասափելի այն խոսքն ահավոր`
+- Revised: [`սարսափելի այն խոսքն ահավոր`](../translation_mk/chapter_7.md?plain=1#L156)
+
 ## Chapter 42
 
 #### Typographical correction
