@@ -10,10 +10,9 @@ export default function SectionCombined({
 }) {
   return (
     <section className="mt-6">
-      {!hideNumber && <h4 className="text-center">{toArmenian(number)}</h4>}
+      {!hideNumber && <h3 className="text-center">{toArmenian(number)}</h3>}
       {mapping?.map((pair, pairIndex) => {
         if (pair.mode === 'line') {
-          // TODO: handle unequal original and translation ranges
           const origRange = range(pair.original[0], pair.original[1]);
           const transRange = range(pair.translation[0], pair.translation[1]);
 
@@ -44,7 +43,8 @@ export default function SectionCombined({
           );
         }
 
-        return <section key={pairIndex}>TODO: Թարգմանությունը բացակայում է</section>;
+        // Unreachable: only validated mappings are emitted.
+        throw new Error(`unexpected mapping mode: ${pair.mode}`);
       })}
     </section>
   );

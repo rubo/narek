@@ -238,7 +238,36 @@ function checkCoverage(where, pairs, key, count, problems) {
   }
 }
 
-function checkMapping(file, mapping, original, translation) {
+// Each pair list must cover both texts exactly once.
+function checkPairs(where, pairs, originalCount, translationCount, problems) {
+  for (const pair of pairs) {
+    if (!MAPPING_MODES.has(pair.mode)) {
+      problems.push(`${where}: unknown mode ${JSON.stringify(pair.mode)}`);
+      continue;
+    }
+
+    // `line` pairs the ranges position by position, so lengths must match.
+    const lines = span(pair.original);
+    const translatedLines = span(pair.translation);
+
+    if (pair.mode === 'line' && lines !== null && lines !== translatedLines) {
+      problems.push(
+        `${where}: line mode maps ${lines} original lines onto ${translatedLines} translation lines`,
+      );
+    }
+  }
+
+  if (originalCount !== undefined) {
+    checkCoverage(where, pairs, 'original', originalCount, problems);
+  }
+
+  if (translationCount !== undefined) {
+    checkCoverage(where, pairs, 'translation', translationCount, problems);
+  }
+}
+
+// Exported to test rejection paths that a valid corpus cannot exercise.
+export function checkMapping(file, mapping, original, translation) {
   const problems = [];
   const byChapter = (chapters) => new Map(chapters.map((entry) => [entry.chapter, entry]));
   const originalChapters = byChapter(original);
@@ -260,6 +289,18 @@ function checkMapping(file, mapping, original, translation) {
       continue;
     }
 
+    if (Array.isArray(entry.heading)) {
+      checkPairs(
+        `${label} heading`,
+        entry.heading,
+        chapter.heading.length,
+        translated.heading.length,
+        problems,
+      );
+    } else {
+      problems.push(`${label}: missing heading mapping`);
+    }
+
     if (chapter.sections.length !== translated.sections.length) {
       problems.push(
         `${label}: ${chapter.sections.length} sections in the original, ${translated.sections.length} in the translation`,
@@ -273,32 +314,13 @@ function checkMapping(file, mapping, original, translation) {
     }
 
     entry.sections.forEach((pairs, index) => {
-      const where = `${label} section ${index + 1}`;
-
-      for (const pair of pairs) {
-        if (!MAPPING_MODES.has(pair.mode)) {
-          problems.push(`${where}: unknown mode ${JSON.stringify(pair.mode)}`);
-          continue;
-        }
-
-        // `line` pairs the ranges position by position, so lengths must match.
-        const lines = span(pair.original);
-        const translatedLines = span(pair.translation);
-
-        if (pair.mode === 'line' && lines !== null && lines !== translatedLines) {
-          problems.push(
-            `${where}: line mode maps ${lines} original lines onto ${translatedLines} translation lines`,
-          );
-        }
-      }
-
-      if (chapter.sections[index]) {
-        checkCoverage(where, pairs, 'original', chapter.sections[index].length, problems);
-      }
-
-      if (translated.sections[index]) {
-        checkCoverage(where, pairs, 'translation', translated.sections[index].length, problems);
-      }
+      checkPairs(
+        `${label} section ${index + 1}`,
+        pairs,
+        chapter.sections[index]?.length,
+        translated.sections[index]?.length,
+        problems,
+      );
     });
   }
 
@@ -375,9 +397,17 @@ async function emitMappings(outputs) {
     }
 
     const { merged, chapters, problems: readProblems } = await readMapping(edition, original);
+    const editionProblems = [
+      ...readProblems,
+      ...checkMapping(label, chapters, original, translation),
+    ];
 
-    outputs.set(`${label}.json`, merged);
-    problems.push(...readProblems, ...checkMapping(label, chapters, original, translation));
+    problems.push(...editionProblems);
+
+    // Keep invalid mappings out of the app; dev serves the last valid output.
+    if (editionProblems.length === 0) {
+      outputs.set(`${label}.json`, merged);
+    }
   }
 
   return problems;

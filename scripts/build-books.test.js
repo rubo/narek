@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { checkPunctuation, parse, readSections } from './build-books.js';
+import { checkMapping, checkPunctuation, parse, readSections } from './build-books.js';
 
 const chapter = (...lines) =>
   new Map([['original/chapters.json', [{ chapter: 42, heading: ['Գլուխ'], sections: [lines] }]]]);
@@ -91,4 +91,34 @@ test('a colon before a space survives parsing and is caught as text', () => {
 
 test('reports every bad character in a line, not just the first', () => {
   assert.equal(checkPunctuation(chapter('Աստ`ուած~ողորմեա')).length, 2);
+});
+
+const mapped = (heading) => {
+  const original = [{ chapter: 42, heading: ['Ա', 'Բ'], sections: [['ա', 'բ']] }];
+  const translation = [{ chapter: 42, heading: ['Գ'], sections: [['գ', 'դ']] }];
+  const entry = {
+    chapter: 42,
+    heading,
+    sections: [[{ original: [0, 1], translation: [0, 1], mode: 'line' }]],
+  };
+
+  return checkMapping('mapping_mk', [entry], original, translation);
+};
+
+test('accepts a heading that covers both sides once', () => {
+  assert.deepEqual(mapped([{ original: [0, 1], translation: [0, 0], mode: 'block' }]), []);
+});
+
+test('rejects a heading that leaves an original line uncovered', () => {
+  const problems = mapped([{ original: [0, 0], translation: [0, 0], mode: 'line' }]);
+  assert.deepEqual(problems, ['mapping_mk: chapter 42 heading: original lines never mapped: 1']);
+});
+
+test('rejects a line-mode heading whose sides differ in length', () => {
+  const problems = mapped([{ original: [0, 1], translation: [0, 0], mode: 'line' }]);
+  assert.match(problems[0], /heading: line mode maps 2 original lines onto 1 translation lines/u);
+});
+
+test('rejects a mapping with no heading at all', () => {
+  assert.deepEqual(mapped(undefined), ['mapping_mk: chapter 42: missing heading mapping']);
 });

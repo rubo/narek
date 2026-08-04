@@ -3,6 +3,7 @@ import mapping from '../assets/generated/mapping_mk.json';
 import originalChapters from '../assets/generated/original/chapters.json';
 import translationChapters from '../assets/generated/translation_mk/chapters.json';
 import { toArmenian } from '../shared/utils';
+import HeadingCombined from './HeadingCombined';
 import Section from './Section';
 import SectionCombined from './SectionCombined';
 
@@ -22,19 +23,30 @@ export default function Chapter() {
   }
 
   const original = originalChapters[chapterIndex];
-  const chapter = displayMode === 'original' ? original : translationChapters[chapterIndex];
+  const translation = translationChapters[chapterIndex];
+  const chapter = displayMode === 'original' ? original : translation;
   const hideNumber = chapter.sections?.length === 1;
 
   return (
     <article>
       <header className="flex flex-col items-center uppercase">
         <h1 className="chapter-heading">Բան {toArmenian(chapter.chapter)}</h1>
-        {chapter.heading && (
-          <h3 className="text-book-sm text-center">
-            {chapter.heading.map((heading, headingIndex) => (
-              <p key={headingIndex}>{heading}</p>
-            ))}
-          </h3>
+        {displayMode === 'combined' ? (
+          <HeadingCombined
+            originalLines={original.heading}
+            translationLines={translation.heading}
+            mapping={mapping[chapterIndex].heading}
+          />
+        ) : (
+          chapter.heading && (
+            <h2 className="text-book-sm text-center">
+              {chapter.heading.map((heading, headingIndex) => (
+                <span key={headingIndex} className="block">
+                  {heading}
+                </span>
+              ))}
+            </h2>
+          )
         )}
       </header>
       {displayMode === 'combined'

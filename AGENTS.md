@@ -89,16 +89,20 @@ Line 2
 
 `book/mapping_<edition>/chapter_<n>.json` pairs `original` line ranges with
 `translation` ranges, one file per chapter (`.chapter` must match the file
-name). The build merges them; the app imports the merged file. Validated on
-every build:
+name). Each file carries a `heading` mapping and a `sections` array; the build
+merges them and the app imports the merged file. Validated on every build:
 
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no
   overlaps.
 - `mode: "line"` pairs ranges position by position, so both must be the **same
   length**. `mode: "block"` presents them as blocks and may differ.
+- `heading` maps the chapter's `heading` lines the same way a section does, but
+  as one list of pairs — the front-matter headings, indexed from 0. The two
+  sides need not be the same length (the original title is often two lines, the
+  translation one), so a heading is usually a single `block` pair.
 - Editing a text shifts indices, so a corpus change usually means a mapping
-  change. The build names the section that broke.
+  change. The build names the heading or section that broke.
 
 ## Commands
 

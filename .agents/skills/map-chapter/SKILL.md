@@ -83,6 +83,7 @@ Line 2
 ```json
 {
   "chapter": <n>,
+  "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
   "sections": [
     [
       { "original": [0, 1], "translation": [0, 1], "mode": "line" },
@@ -93,6 +94,9 @@ Line 2
 ```
 
 - `chapter` must equal `<n>` and the file name.
+- Map `heading` with the same zero-based pair format as a section. Usually pair
+  the original's two lines with the translation's one using a single `block`:
+  `[0, 1] → [0, 0]`.
 - Both sources must have the **same number of sections**, and section _i_ of the
   original pairs with section _i_ of the translation. If the counts differ (a
   blank line missing or extra in one `.txt`), stop and flag it — do not force a
