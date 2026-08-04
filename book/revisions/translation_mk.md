@@ -30,6 +30,27 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `սասափելի այն խոսքն ահավոր`
 - Revised: [`սարսափելի այն խոսքն ահավոր`](../translation_mk/chapter_7.md?plain=1#L156)
 
+## Chapter 9
+
+#### Corrected reading
+
+- Previous: `և չորացնում մատով`
+- Revised: [`և զորացնում մատով`](../translation_mk/chapter_9.md?plain=1#L134)
+- Evidence: [`Եւ մատամբ քո՝ զաւրեղութիւն`](../original/chapter_9.md?plain=1#L170)
+
+## Chapter 10
+
+#### Typographical correction
+
+- Previous: `օտար եմ միմյանց`
+- Revised: [`օտար են միմյանց`](../translation_mk/chapter_10.md?plain=1#L12)
+
+#### Corrected reading
+
+- Previous: `Նա անկեղծության գրավականը ժառանգեց այստեղ`
+- Revised: [`Նա անեղծության գրավականը ժառանգեց այստեղ`](../translation_mk/chapter_10.md?plain=1#L58)
+- Evidence: [`Զգրաւականն անեղծութեան աստէն ժառանգեաց`](../original/chapter_10.md?plain=1#L68)
+
 ## Chapter 42
 
 #### Typographical correction

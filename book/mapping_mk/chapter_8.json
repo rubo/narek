@@ -1,0 +1,12 @@
+{
+  "chapter": 8,
+  "sections": [
+    [{ "original": [0, 21], "translation": [0, 21], "mode": "line" }],
+    [
+      { "original": [0, 0], "translation": [0, 1], "mode": "block" },
+      { "original": [1, 24], "translation": [2, 25], "mode": "line" },
+      { "original": [25, 26], "translation": [26, 26], "mode": "block" },
+      { "original": [27, 27], "translation": [27, 27], "mode": "line" }
+    ]
+  ]
+}
