@@ -51,6 +51,20 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Նա անեղծության գրավականը ժառանգեց այստեղ`](../translation_mk/chapter_10.md?plain=1#L58)
 - Evidence: [`Զգրաւականն անեղծութեան աստէն ժառանգեաց`](../original/chapter_10.md?plain=1#L68)
 
+## Chapter 11
+
+#### Corrected reading
+
+- Previous: `միտքը գտած`
+- Revised: [`միտքը զտած`](../translation_mk/chapter_11.md?plain=1#L50)
+- Evidence: [`Եւ ի մթութենէ երկեւանութեան խաւարի զտեալ`](../original/chapter_11.md?plain=1#L52)
+
+#### Corrected reading
+
+- Previous: `անողոք և անծածկույթ`
+- Revised: [`անքող և անծածկույթ`](../translation_mk/chapter_11.md?plain=1#L202)
+- Evidence: [`Անքաւղ եւ անվերարկու`](../original/chapter_11.md?plain=1#L198)
+
 ## Chapter 42
 
 #### Typographical correction
