@@ -254,7 +254,7 @@ export default function Layout() {
           </Dropdown.Popover>
         </Dropdown>
       )}
-      <div className={`text-book-lg max-w-xl font-serif ${scaleClasses[fontScale]}`}>
+      <div className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]}`}>
         <Outlet context={{ displayMode }} />
       </div>
       {(previous || next) && (

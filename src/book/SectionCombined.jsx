@@ -19,7 +19,7 @@ export default function SectionCombined({
           return origRange.map((lineNumber, lineIndex) => (
             <Fragment key={lineNumber}>
               <p className="mt-2 indent-2">{originalLines[lineNumber]}</p>
-              <p className="text-muted text-book-base indent-2">
+              <p className="text-muted text-book-sm indent-2">
                 {translationLines[transRange[lineIndex]]}
               </p>
             </Fragment>
@@ -35,7 +35,7 @@ export default function SectionCombined({
                 ))}
               </section>
               {range(pair.translation[0], pair.translation[1]).map((lineNumber) => (
-                <p key={lineNumber} className="text-muted text-book-base indent-2">
+                <p key={lineNumber} className="text-muted text-book-sm indent-2">
                   {translationLines[lineNumber]}
                 </p>
               ))}

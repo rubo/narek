@@ -2,16 +2,16 @@
 @import '@heroui/styles';
 
 @font-face {
-  font-family: 'Arian Grqi';
-  src: url('./assets/fonts/arian-grqi-italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
+  font-family: 'ArTarumian Grqi Nor';
+  src: url('./assets/fonts/artarumian-grqi-nor-regular.v3.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
 
 @theme {
   --font-sans: 'Google Sans', ui-sans-serif, sans-serif;
-  --font-serif: 'Arian Grqi', ui-serif, serif;
+  --font-serif: 'ArTarumian Grqi Nor', ui-serif, serif;
 }
 
 /* Reader-scalable type tokens for book content. */

@@ -29,7 +29,7 @@ export default function Chapter() {
 
   return (
     <article>
-      <header className="flex flex-col items-center uppercase">
+      <header className="flex flex-col items-center">
         <h1 className="chapter-heading">Բան {toArmenian(chapter.chapter)}</h1>
         {displayMode === 'combined' ? (
           <HeadingCombined
