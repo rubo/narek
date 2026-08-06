@@ -108,10 +108,11 @@ Line 2
 - Every line of **both** texts must be covered **exactly once** — no gaps, no
   overlaps.
 - `mode: "line"` pairs the two ranges position-by-position, so they must be the
-  **same length**. Use it when the lines correspond one-to-one.
+  **same length**. Use it whenever the lines correspond one-to-one.
 - `mode: "block"` presents the two ranges as blocks and they may differ in
   length. Use it when the correspondence is many-to-one, one-to-many, or
   reordered — anything that is not a clean line-for-line match.
+- Merge adjacent `line` pairs when both ranges are contiguous.
 
 ## Proofreading pass — report, do not fix
 
@@ -121,7 +122,7 @@ While mapping, watch both texts and **collect** (never silently change):
 - Mismatches between original and translation (a line in one with no counterpart
   in the other, obviously divergent sense, etc.).
 - Any form of these words **in the original** that is **capitalized while not at the start of its
-  line**: `աստուած`, `տէր`, `տեառ`, `արարիչ`, `բարձրեալ`.
+  line**: `աստուած`, `տէր`, `տեառն`, `արարիչ`, `բարձրեալ`.
 
 **Display every finding at the end**, grouped and located by section and line.
 If anything is uncertain, **ask** — never assume and never alter text under the
