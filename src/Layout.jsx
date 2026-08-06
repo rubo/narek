@@ -158,17 +158,21 @@ export default function Layout() {
                   onSelectionChange={handleChapterChange}
                   aria-label="Բովանդակություն"
                 >
-                  <ListBox.Item id="/">
+                  <ListBox.Item id="/" textValue={prologue.heading}>
                     <Label>{prologue.heading}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
                   {chapters.map(({ chapter }) => (
-                    <ListBox.Item key={chapter} id={`/chapter/${chapter}`}>
+                    <ListBox.Item
+                      key={chapter}
+                      id={`/chapter/${chapter}`}
+                      textValue={`Բան ${toArmenian(chapter)}`}
+                    >
                       <Label>Բան {toArmenian(chapter)}</Label>
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                   ))}
-                  <ListBox.Item id="/epilogue">
+                  <ListBox.Item id="/epilogue" textValue={epilogue.heading}>
                     <Label>{epilogue.heading}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
