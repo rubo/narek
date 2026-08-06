@@ -2,12 +2,12 @@
   <defs>
     <style>
       @media (prefers-color-scheme: light) {
-        .bg { fill: #000; }
-        .fg { fill: #fff; }
+        .bg { fill: oklch(96.5% 0.018 90); }
+        .fg { fill: oklch(27% 0.03 55); }
       }
       @media (prefers-color-scheme: dark) {
-        .bg { fill: #fff; }
-        .fg { fill: #000; }
+        .bg { fill: oklch(15% 0.024 66); }
+        .fg { fill: oklch(86% 0.03 84); }
       }
     </style>
   </defs>
