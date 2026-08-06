@@ -65,6 +65,49 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անքող և անծածկույթ`](../translation_mk/chapter_11.md?plain=1#L202)
 - Evidence: [`Անքաւղ եւ անվերարկու`](../original/chapter_11.md?plain=1#L198)
 
+## Chapter 14
+
+#### Corrected reading
+
+- Previous: `անապատում`
+- Revised: [`անպատում`](../translation_mk/chapter_14.md?plain=1#L10)
+- Evidence: [`Արքայ երկնաւոր, գովեալ անպատում`](../original/chapter_14.md?plain=1#L12)
+
+#### Typographical correction
+
+- Previous: `այժըմ`
+- Revised: [`այժմ`](../translation_mk/chapter_14.md?plain=1#L12)
+
+## Chapter 16
+
+#### Typographical correction
+
+- Previous: `բշկությունն`
+- Revised: [`բժշկությունն`](../translation_mk/chapter_16.md?plain=1#L12)
+
+#### Typographical correction
+
+- Previous: `այժըմ`
+- Revised: [`այժմ`](../translation_mk/chapter_16.md?plain=1#L54)
+
+#### Corrected reading
+
+- Previous: `անապատում`
+- Revised: [`անպատում`](../translation_mk/chapter_16.md?plain=1#L68)
+- Evidence: [`Զաւրաւոր, անպատում, անքնին, անճառ`](../original/chapter_16.md?plain=1#L76)
+
+## Chapter 17
+
+#### Typographical correction
+
+- Previous: `ամաչեցնի`
+- Revised: [`ամաչեցնիր`](../translation_mk/chapter_17.md?plain=1#L18)
+
+#### Typographical correction
+
+- Previous: `կուրացնի`
+- Revised: [`կուրացնիր`](../translation_mk/chapter_17.md?plain=1#L28)
+
 ## Chapter 42
 
 #### Typographical correction
