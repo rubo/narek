@@ -135,6 +135,8 @@ export default function Layout() {
       // Switching the view is not a navigation step.
       { replace: true },
     );
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
