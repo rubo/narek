@@ -108,6 +108,32 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `կուրացնի`
 - Revised: [`կուրացնիր`](../translation_mk/chapter_17.md?plain=1#L28)
 
+## Chapter 20
+
+#### Typographical correction
+
+- Previous: `աննորգելի`
+- Revised: [`աննորոգելի`](../translation_mk/chapter_20.md?plain=1#L166)
+
+#### Corrected reading
+
+- Previous: `մանրված`
+- Revised: [`մատնված`](../translation_mk/chapter_20.md?plain=1#L196)
+- Evidence: [`Որպէս զանբժշկելի մատնեցեալ`](../original/chapter_20.md?plain=1#L226)
+
+## Chapter 23
+
+#### Corrected reading
+
+- Previous: `խնդությամբ`
+- Revised: [`բնությամբ`](../translation_mk/chapter_23.md?plain=1#L92)
+- Evidence: [`Եւ լոյսն բնութեամբ՝ զանգուածոյ հողոյս զայրացեալ`](../original/chapter_23.md?plain=1#L96)
+
+#### Typographical correction
+
+- Previous: `եկրագործեցի`
+- Revised: [`երկրագործեցի`](../translation_mk/chapter_23.md?plain=1#L198)
+
 ## Chapter 42
 
 #### Typographical correction
