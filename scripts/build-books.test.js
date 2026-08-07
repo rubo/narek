@@ -8,7 +8,8 @@ import { checkMapping, checkPunctuation, parse, readSections } from './build-boo
 const chapter = (...lines) =>
   new Map([['original/chapters.json', [{ chapter: 42, heading: ['Գլուխ'], sections: [lines] }]]]);
 
-const page = (heading, ...content) => new Map([['original/prologue.json', { heading, content }]]);
+const page = (heading, ...content) =>
+  new Map([['original/superscription.json', { heading, content }]]);
 
 const only = (outputs) => {
   const problems = checkPunctuation(outputs);

@@ -157,7 +157,7 @@ function buildChapter(tree, file, number) {
   return { chapter: number, heading, sections: readDirectives(tree, file) };
 }
 
-// A standalone page such as the prologue: paragraphs under one heading.
+// A standalone page such as the superscription: paragraphs under one heading.
 function buildPage(tree, file) {
   const { data, node } = readFrontMatter(tree, file);
 
@@ -190,7 +190,7 @@ async function buildSource(source, outputs) {
       continue;
     }
 
-    // Not a chapter: prologue.md becomes prologue.json.
+    // Not a chapter: superscription.md becomes superscription.json.
     outputs.set(`${source}/${file.replace(/\.md$/u, '.json')}`, buildPage(tree, label));
   }
 
@@ -552,7 +552,7 @@ function renderSitemap(outputs) {
   for (const name of outputs.keys()) {
     const page = /^original\/(.+)\.json$/u.exec(name)?.[1];
 
-    if (page && page !== 'chapters' && page !== 'prologue') {
+    if (page && page !== 'chapters' && page !== 'superscription') {
       routes.push(`/${page}`);
     }
   }

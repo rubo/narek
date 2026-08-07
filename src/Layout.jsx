@@ -13,8 +13,8 @@ import { useOverlayState } from '@heroui/react';
 import { useState } from 'react';
 import { Outlet, useLocation, useNavigate, useSearchParams } from 'react-router';
 import chapters from './assets/generated/original/chapters.json';
-import epilogue from './assets/generated/original/epilogue.json';
-import prologue from './assets/generated/original/prologue.json';
+import colophon from './assets/generated/original/colophon.json';
+import superscription from './assets/generated/original/superscription.json';
 import { toArmenian } from './shared/utils';
 
 // From the URL, so untrusted.
@@ -33,7 +33,7 @@ const scaleClasses = {
 };
 
 // Every path the drawer lists; anything else selects nothing.
-const paths = ['/', ...chapters.map(({ chapter }) => `/chapter/${chapter}`), '/epilogue'];
+const paths = ['/', ...chapters.map(({ chapter }) => `/chapter/${chapter}`), '/colophon'];
 
 // HeroUI's ItemIndicator checkmark, reused so the font-scale buttons show the
 // same mark as the drawer's list selection (an icon-font glyph would not match).
@@ -91,12 +91,12 @@ export default function Layout() {
       ? chapters[currentChapter + 1]
       : null;
 
-  // The prologue and epilogue lead into the chapters, not back out.
+  // The superscription and colophon lead into the chapters, not back out.
   if (location.pathname === '/') {
     next = chapters[0];
   }
 
-  if (location.pathname === '/epilogue') {
+  if (location.pathname === '/colophon') {
     previous = chapters.at(-1);
   }
 
@@ -158,8 +158,8 @@ export default function Layout() {
                   onSelectionChange={handleChapterChange}
                   aria-label="Բովանդակություն"
                 >
-                  <ListBox.Item id="/" textValue={prologue.heading}>
-                    <Label>{prologue.heading}</Label>
+                  <ListBox.Item id="/" textValue={superscription.heading}>
+                    <Label>{superscription.heading}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
                   {chapters.map(({ chapter }) => (
@@ -172,8 +172,8 @@ export default function Layout() {
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                   ))}
-                  <ListBox.Item id="/epilogue" textValue={epilogue.heading}>
-                    <Label>{epilogue.heading}</Label>
+                  <ListBox.Item id="/colophon" textValue={colophon.heading}>
+                    <Label>{colophon.heading}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
                 </ListBox>

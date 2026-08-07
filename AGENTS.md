@@ -79,7 +79,7 @@ Line 2
 - `number` must match the file name; sections numbered from 1, no gaps.
 - **Blank lines separate sections.** Line breaks inside a paragraph are not
   meaningful, so text may be rewrapped freely. This is deliberate.
-- Standalone pages (`prologue.md`, `epilogue.md`) have no `:::section` blocks —
+- Standalone pages (`superscription.md`, `colophon.md`) have no `:::section` blocks —
   a `heading`, then blank-line-separated paragraphs.
 - Parsing goes through remark (`remark-parse`, `remark-frontmatter`,
   `remark-directive`) and reads the **mdast object graph**. Do not hand-parse

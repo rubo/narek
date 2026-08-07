@@ -18,7 +18,7 @@ line-to-line mapping between the two.
 | `scripts/`                              | the generator, and the Vite plugin that runs it |
 
 Chapters are `chapter_<number>.md` with numbered `:::section` blocks; sections
-are separated by blank lines. `prologue.md` and `epilogue.md` are plain
+are separated by blank lines. `superscription.md` and `colophon.md` are plain
 paragraphs under a heading.
 
 ## Development
