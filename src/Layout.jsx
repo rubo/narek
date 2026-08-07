@@ -156,6 +156,7 @@ export default function Layout() {
               </Drawer.Header>
               <Drawer.Body>
                 <ListBox
+                  autoFocus
                   selectionMode="single"
                   selectedKeys={selectedKeys}
                   onSelectionChange={handleChapterChange}
