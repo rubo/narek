@@ -19,7 +19,7 @@
 
 ## Chapter 22
 
-#### Corrected reading
+#### Typographical correction
 
 - Previous: `անխնամական են անկանգնական`
 - Revised: [`անխնամական եւ անկանգնական`](../original/chapter_22.md?plain=1#L44)
