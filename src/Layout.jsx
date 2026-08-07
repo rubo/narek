@@ -78,7 +78,10 @@ export default function Layout() {
   const selectedKeys = paths.includes(location.pathname) ? [location.pathname] : [];
 
   // Keep the display mode when moving between pages.
-  const goTo = (pathname) => navigate({ pathname, search: location.search });
+  const goTo = (pathname) => {
+    navigate({ pathname, search: location.search });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Keyed by path, so the route drives the selection.
   const currentChapter = chapters.findIndex(
@@ -104,8 +107,8 @@ export default function Layout() {
     const value = keys.values().next().value;
 
     if (value) {
-      goTo(String(value));
       drawerState.close();
+      goTo(String(value));
     }
   };
 
@@ -258,9 +261,9 @@ export default function Layout() {
           </Dropdown.Popover>
         </Dropdown>
       )}
-      <div className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]}`}>
+      <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]}`}>
         <Outlet context={{ displayMode }} />
-      </div>
+      </main>
       {(previous || next) && (
         <ButtonGroup variant="tertiary" className="mt-12">
           {previous && (
