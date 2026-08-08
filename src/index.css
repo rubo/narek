@@ -58,6 +58,11 @@ html {
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
+::selection {
+  background-color: var(--selection);
+  color: var(--selection-foreground);
+}
+
 /* @see https://heroui.com/docs/react/getting-started/theming */
 
 :root,
@@ -88,6 +93,8 @@ html {
   --scrollbar: oklch(82% 0.03 78);
   --segment: oklch(99% 0.01 90);
   --segment-foreground: oklch(27% 0.03 55);
+  --selection: oklch(76% 0.13 80); /* gold gilding */
+  --selection-foreground: oklch(27% 0.03 55);
   --separator: oklch(89% 0.022 82);
   --success: oklch(52% 0.11 148); /* malachite green */
   --success-foreground: oklch(98% 0.01 90);
@@ -131,6 +138,8 @@ html {
   --scrollbar: oklch(44% 0.034 66);
   --segment: oklch(36% 0.033 66);
   --segment-foreground: oklch(86% 0.03 84);
+  --selection: oklch(80% 0.13 82); /* gold gilding */
+  --selection-foreground: oklch(20% 0.03 60);
   --separator: oklch(25% 0.028 66);
   --success: oklch(70% 0.15 148); /* malachite green */
   --success-foreground: oklch(20% 0.03 60);

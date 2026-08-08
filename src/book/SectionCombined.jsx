@@ -10,7 +10,7 @@ export default function SectionCombined({
 }) {
   return (
     <section className="mt-6">
-      {!hideNumber && <h3 className="text-center">{toArmenian(number)}</h3>}
+      {!hideNumber && <h3 className="mb-3 text-center">{toArmenian(number)}</h3>}
       {mapping?.map((pair, pairIndex) => {
         if (pair.mode === 'line') {
           const origRange = range(pair.original[0], pair.original[1]);
