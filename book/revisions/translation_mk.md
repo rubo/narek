@@ -134,6 +134,27 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `եկրագործեցի`
 - Revised: [`երկրագործեցի`](../translation_mk/chapter_23.md?plain=1#L198)
 
+## Chapter 26
+
+#### Typographical correction
+
+- Previous: `սողսոսնյան`
+- Revised: [`սողոմոնյան`](../translation_mk/chapter_26.md?plain=1#L182)
+
+## Chapter 27
+
+#### Corrected reading
+
+- Previous: `պատկեր`
+- Revised: [`պատվեր`](../translation_mk/chapter_27.md?plain=1#L60)
+- Evidence: [`Սոյն սա պատուելի աւանդ, անմոռաց պատուէր`](../original/chapter_27.md?plain=1#L64)
+
+#### Corrected reading
+
+- Previous: `քաջություն`
+- Revised: [`քավություն`](../translation_mk/chapter_27.md?plain=1#L214)
+- Evidence: [`Յարութիւն, նորոգութիւն, քաւութիւն`](../original/chapter_27.md?plain=1#L252)
+
 ## Chapter 42
 
 #### Typographical correction
