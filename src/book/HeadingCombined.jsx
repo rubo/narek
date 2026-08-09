@@ -1,36 +1,39 @@
-import { Fragment } from 'react';
 import { range } from '../shared/utils';
 
 export default function HeadingCombined({ originalLines, translationLines, mapping }) {
   return (
-    <h2 className="text-book-sm text-center">
+    <h2 className="text-book-sm px-4 text-center">
       {mapping.map((pair, pairIndex) => {
         if (pair.mode === 'line') {
           const origRange = range(pair.original[0], pair.original[1]);
           const transRange = range(pair.translation[0], pair.translation[1]);
 
           return origRange.map((lineNumber, lineIndex) => (
-            <Fragment key={lineNumber}>
+            <span key={lineNumber} className="mt-4 block first:mt-0">
               <span className="block">{originalLines[lineNumber]}</span>
-              <span className="text-muted block">{translationLines[transRange[lineIndex]]}</span>
-            </Fragment>
+              <span className="text-book-xs text-muted block">
+                {translationLines[transRange[lineIndex]]}
+              </span>
+            </span>
           ));
         }
 
         if (pair.mode === 'block') {
           return (
-            <Fragment key={pairIndex}>
+            <span key={pairIndex} className="mt-4 block first:mt-0">
               {range(pair.original[0], pair.original[1]).map((lineNumber) => (
-                <span key={lineNumber} className="block">
+                <span key={lineNumber} className="mt-2 block first:mt-0">
                   {originalLines[lineNumber]}
                 </span>
               ))}
-              {range(pair.translation[0], pair.translation[1]).map((lineNumber) => (
-                <span key={lineNumber} className="text-muted block">
-                  {translationLines[lineNumber]}
-                </span>
-              ))}
-            </Fragment>
+              <span className="text-muted block">
+                {range(pair.translation[0], pair.translation[1]).map((lineNumber) => (
+                  <span key={lineNumber} className="text-book-xs mt-2 block first:mt-0">
+                    {translationLines[lineNumber]}
+                  </span>
+                ))}
+              </span>
+            </span>
           );
         }
 

@@ -39,9 +39,9 @@ export default function Chapter() {
           />
         ) : (
           chapter.heading && (
-            <h2 className="text-book-sm text-center">
+            <h2 className="text-book-sm px-4 text-center">
               {chapter.heading.map((heading, headingIndex) => (
-                <span key={headingIndex} className="block">
+                <span key={headingIndex} className="mt-2 block first:mt-0">
                   {heading}
                 </span>
               ))}
