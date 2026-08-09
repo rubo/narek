@@ -155,6 +155,14 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`քավություն`](../translation_mk/chapter_27.md?plain=1#L214)
 - Evidence: [`Յարութիւն, նորոգութիւն, քաւութիւն`](../original/chapter_27.md?plain=1#L252)
 
+## Chapter 29
+
+#### Corrected reading
+
+- Previous: `Ամբարտավան միտք և անհպարտ սիրտ`
+- Revised: [`Անամբարտավան միտք և անհպարտ սիրտ`](../translation_mk/chapter_29.md?plain=1#L206)
+- Evidence: [`Անամբարտաւան միտ, անհպարտ սիրտ, անխնդրող պարգեւի թշուառ`](../original/chapter_29.md?plain=1#L220)
+
 ## Chapter 42
 
 #### Typographical correction
