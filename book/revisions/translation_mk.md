@@ -163,6 +163,41 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Անամբարտավան միտք և անհպարտ սիրտ`](../translation_mk/chapter_29.md?plain=1#L206)
 - Evidence: [`Անամբարտաւան միտ, անհպարտ սիրտ, անխնդրող պարգեւի թշուառ`](../original/chapter_29.md?plain=1#L220)
 
+## Chapter 30
+
+#### Typographical correction
+
+- Previous: `բաձրացնում`
+- Revised: [`բարձրացնում`](../translation_mk/chapter_30.md?plain=1#L138)
+
+#### Corrected reading
+
+- Previous: `Վնասակարիս խստության դիմաց՝ քո հեզությունը`
+- Revised: [`Վնասակարիս խակության դիմաց՝ քո հեզությունը`](../translation_mk/chapter_30.md?plain=1#L172)
+- Evidence: [`Առ խակութիւն վնասակարիս՝ հեզութիւն քո`](../original/chapter_30.md?plain=1#L230)
+
+## Chapter 31
+
+#### Typographical correction
+
+- Previous: `Դո՛ւ ստեղծեցիր, բոլորին, և քո՛նն են բոլորը`
+- Revised: [`Դո՛ւ ստեղծեցիր բոլորին, և քո՛նն են բոլորը`](../translation_mk/chapter_31.md?plain=1#L166)
+
+## Chapter 32
+
+#### Typographical correction
+
+- Previous: `ապասում`
+- Revised: [`սպասում`](../translation_mk/chapter_32.md?plain=1#L238)
+
+## Chapter 33
+
+#### Corrected reading
+
+- Previous: `Պարզեցիր խորհուրդը գավազանի`
+- Revised: [`Պարզեցիր խորհուրդը ավազանի`](../translation_mk/chapter_33.md?plain=1#L250)
+- Evidence: [`Գթասիրեալ ի ծնունդս նորոգս, զաւազանին խորհուրդ ծանուցեր`](../original/chapter_33.md?plain=1#L266)
+
 ## Chapter 42
 
 #### Typographical correction
