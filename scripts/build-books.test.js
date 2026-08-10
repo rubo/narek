@@ -90,6 +90,11 @@ test('a colon before a space survives parsing and is caught as text', () => {
   assert.match(only(chapter('Աստուած: ողորմեա')), /must be վերջակետ/u);
 });
 
+test('accepts brackets around an interpolated word', () => {
+  assert.deepEqual(readSections(parse('բան [բառ] բան'), 'x.md'), ['բան [բառ] բան']);
+  assert.deepEqual(checkPunctuation(chapter('բան [բառ] բան')), []);
+});
+
 test('reports every bad character in a line, not just the first', () => {
   assert.equal(checkPunctuation(chapter('Աստ`ուած~ողորմեա')).length, 2);
 });

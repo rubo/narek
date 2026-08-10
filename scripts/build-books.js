@@ -434,7 +434,7 @@ const CONFUSABLE = new Map([
 ]);
 
 // Shared punctuation. ASCII hyphen is validated contextually by joinsWords.
-const SHARED = new Set(' ,.«»…—()');
+const SHARED = new Set(' ,.«»…—()[]');
 
 function allowed(ch) {
   const cp = ch.codePointAt(0);
