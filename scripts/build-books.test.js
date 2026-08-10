@@ -18,7 +18,7 @@ const only = (outputs) => {
 };
 
 test('accepts the marks the corpus actually uses', () => {
-  const text = 'Աստուած, ողորմեա՛ ինձ. եւ քաւեա՜ զիս՝ ամենակալ ։ «բան» — (այս) ֊ …';
+  const text = 'Բառ, կարդա՛ հիմա. եւ գրեա՜ տող՝ դարձեալ ։ «գիրք» — (այս) ֊ …';
   assert.deepEqual(checkPunctuation(chapter(text)), []);
 });
 
@@ -32,27 +32,27 @@ test('rejects each confusable with the mark it should have been', () => {
   ];
 
   for (const [ch, correct] of expected) {
-    const problem = only(chapter(`Աստուած${ch} ողորմեա`));
-    assert.match(problem, /§1 line 1, col 8:/u);
+    const problem = only(chapter(`բառ${ch} տող`));
+    assert.match(problem, /§1 line 1, col 4:/u);
     assert.ok(problem.includes(`must be ${correct}`), problem);
   }
 });
 
 test('allows a hyphen only where it joins word material', () => {
-  assert.deepEqual(checkPunctuation(chapter('երդմնականաւ Ամէն-իւն')), []);
+  assert.deepEqual(checkPunctuation(chapter('երկու-երեք բառ')), []);
   // A quoted stem can take a suffix.
-  assert.deepEqual(checkPunctuation(chapter('խոստումով «Ամեն»-ի երդմամբ')), []);
+  assert.deepEqual(checkPunctuation(chapter('գրքում «բառ»-ի օրինակ')), []);
 });
 
 test('rejects a hyphen doing the work of a dash', () => {
-  assert.match(only(chapter('Եսայեայ,-')), /on dash duty — dashes are — \(U\+2014\)/u);
-  assert.match(only(chapter('Եսայեայ -')), /on dash duty/u);
-  assert.match(only(chapter('Եսայեայ - բան')), /on dash duty/u);
+  assert.match(only(chapter('բառ,-')), /on dash duty — dashes are — \(U\+2014\)/u);
+  assert.match(only(chapter('բառ -')), /on dash duty/u);
+  assert.match(only(chapter('բառ - տող')), /on dash duty/u);
 });
 
 test('rejects a code point nobody listed as a mistake', () => {
   // A Latin o inside an Armenian word: the allowlist is what catches this.
-  assert.match(only(chapter('Աստուoած')), /unexpected U\+006F/u);
+  assert.match(only(chapter('բառoբառ')), /unexpected U\+006F/u);
 });
 
 test('reports a supplementary-plane character once, not as two surrogates', () => {
@@ -63,31 +63,31 @@ test('reports a supplementary-plane character once, not as two surrogates', () =
 
 test('checks chapter headings, not only sections', () => {
   const outputs = new Map([
-    ['original/chapters.json', [{ chapter: 42, heading: ['Գլուխ:'], sections: [['Աստուած']] }]],
+    ['original/chapters.json', [{ chapter: 42, heading: ['Գլուխ:'], sections: [['բառ']] }]],
   ]);
 
   assert.match(only(outputs), /heading 1, col 6: ':'/u);
 });
 
 test('checks standalone pages, both heading and content', () => {
-  assert.match(only(page('Յառաջաբան:', 'Աստուած')), /heading, col 10:/u);
-  assert.match(only(page('Յառաջաբան', 'Աստուա`ծ')), /line 1, col 7:/u);
+  assert.match(only(page('Յառաջաբան:', 'բառ')), /heading, col 10:/u);
+  assert.match(only(page('Յառաջաբան', 'բա`ռ')), /line 1, col 3:/u);
 });
 
 test('rejects a colon touching a letter, which parse would otherwise swallow', () => {
-  assert.throws(() => readSections(parse('Աստուած:ողորմեա'), 'x.md'), /stray ':' before/u);
+  assert.throws(() => readSections(parse('բառ:տող'), 'x.md'), /stray ':' before/u);
 });
 
 test('a swallowed word is why that guard exists', () => {
   // Without the guard the colon and the word after it vanish from the output,
   // leaving nothing for checkPunctuation to find.
-  const [paragraph] = parse('Աստուած:ողորմեա').children;
+  const [paragraph] = parse('բառ:տող').children;
   assert.ok(paragraph.children.some((child) => child.type === 'textDirective'));
 });
 
 test('a colon before a space survives parsing and is caught as text', () => {
-  assert.deepEqual(readSections(parse('Աստուած: ողորմեա'), 'x.md'), ['Աստուած: ողորմեա']);
-  assert.match(only(chapter('Աստուած: ողորմեա')), /must be վերջակետ/u);
+  assert.deepEqual(readSections(parse('բառ: տող'), 'x.md'), ['բառ: տող']);
+  assert.match(only(chapter('բառ: տող')), /must be վերջակետ/u);
 });
 
 test('accepts brackets around an interpolated word', () => {
@@ -96,7 +96,7 @@ test('accepts brackets around an interpolated word', () => {
 });
 
 test('reports every bad character in a line, not just the first', () => {
-  assert.equal(checkPunctuation(chapter('Աստ`ուած~ողորմեա')).length, 2);
+  assert.equal(checkPunctuation(chapter('բա`ռ~տող')).length, 2);
 });
 
 const mapped = (heading) => {
