@@ -198,6 +198,47 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Պարզեցիր խորհուրդը ավազանի`](../translation_mk/chapter_33.md?plain=1#L250)
 - Evidence: [`Գթասիրեալ ի ծնունդս նորոգս, զաւազանին խորհուրդ ծանուցեր`](../original/chapter_33.md?plain=1#L266)
 
+## Chapter 35
+
+#### Typographical correction
+
+- Previous: `մեծութուն`
+- Revised: [`մեծություն`](../translation_mk/chapter_35.md?plain=1#L8)
+
+#### Corrected reading
+
+- Previous: `երկրայիններին`
+- Revised: [`երկնայիններին`](../translation_mk/chapter_35.md?plain=1#L28)
+- Evidence: [`Զերկնայինս լուսակերպիցն կոչեցեր զնոսին`](../original/chapter_35.md?plain=1#L38)
+
+#### Corrected reading
+
+- Previous: `քո լոյսից`
+- Revised: [`քո հույսից`](../translation_mk/chapter_35.md?plain=1#L110)
+- Evidence: [`Մի՛ յանդգնաբար խաւսելով իբր զնախնին՝ լքայց ի յուսոյդ`](../original/chapter_35.md?plain=1#L128)
+
+## Chapter 36
+
+#### Typographical correction
+
+- Previous: `Դու, որ արուսյակը մթնացրիր—`
+- Revised: [`Դու, որ արուսյակը մթնացրիր,—`](../translation_mk/chapter_36.md?plain=1#L40)
+
+#### Typographical correction
+
+- Previous: `Որպեսզի քեզ գովելու համար անհամարձակ լեզուս զորացնես`
+- Revised: [`Որպեսզի քեզ գովելու համար անհամարձակ լեզուս զորացնես։`](../translation_mk/chapter_36.md?plain=1#L48)
+- Evidence: [`Զի զանհամարձակ լեզուս ի գովեստ քեզ զաւրացուսցես։`](../original/chapter_36.md?plain=1#L54)
+
+## Chapter 37
+
+#### Corrected reading
+
+- Previous: `ձեռնունայն և ապշահար`
+- Revised: [`ձեռնունայն և անպաշար`](../translation_mk/chapter_37.md?plain=1#L106)
+- Evidence: [`Յանդիման եղեալ ապաձեռն անթոշակութեամբ`](../original/chapter_37.md?plain=1#L134)
+- External evidence: [`ձեռնունայն եւ անպաշար`](https://arar.sci.am/Content/256024/2009%286%29.pdf)
+
 ## Chapter 42
 
 #### Typographical correction
