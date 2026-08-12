@@ -239,6 +239,21 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Evidence: [`Յանդիման եղեալ ապաձեռն անթոշակութեամբ`](../original/chapter_37.md?plain=1#L134)
 - External evidence: [`ձեռնունայն եւ անպաշար`](https://arar.sci.am/Content/256024/2009%286%29.pdf)
 
+## Chapter 38
+
+#### Typographical correction
+
+- Previous: `Եվ ինձ որ`
+- Revised: [`Եվ ինձ, որ`](../translation_mk/chapter_38.md?plain=1#L156)
+
+## Chapter 39
+
+#### Corrected reading
+
+- Previous: `Բայց դու խնայեցիր ինձ`
+- Revised: [`Բայց դու խնայի՛ր ինձ`](../translation_mk/chapter_39.md?plain=1#L120)
+- Evidence: [`Այլ խնայեա՛ յիս`](../original/chapter_39.md?plain=1#L130)
+
 ## Chapter 42
 
 #### Typographical correction
