@@ -1,0 +1,40 @@
+{
+  "chapter": 46,
+  "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
+  "sections": [
+    [
+      { "original": [0, 0], "translation": [0, 0], "mode": "line" },
+      { "original": [1, 2], "translation": [1, 1], "mode": "block" },
+      { "original": [3, 4], "translation": [2, 3], "mode": "block" },
+      { "original": [5, 5], "translation": [4, 4], "mode": "line" },
+      { "original": [6, 6], "translation": [5, 6], "mode": "block" },
+      { "original": [7, 8], "translation": [7, 8], "mode": "line" }
+    ],
+    [
+      { "original": [0, 1], "translation": [0, 0], "mode": "block" },
+      { "original": [2, 2], "translation": [1, 1], "mode": "line" },
+      { "original": [3, 4], "translation": [2, 3], "mode": "block" },
+      { "original": [5, 7], "translation": [4, 6], "mode": "line" },
+      { "original": [8, 9], "translation": [7, 8], "mode": "block" },
+      { "original": [10, 12], "translation": [9, 11], "mode": "line" },
+      { "original": [13, 14], "translation": [12, 13], "mode": "block" },
+      { "original": [15, 20], "translation": [14, 18], "mode": "block" },
+      { "original": [21, 29], "translation": [19, 27], "mode": "line" },
+      { "original": [30, 31], "translation": [28, 28], "mode": "block" },
+      { "original": [32, 33], "translation": [29, 30], "mode": "line" }
+    ],
+    [
+      { "original": [0, 5], "translation": [0, 5], "mode": "line" },
+      { "original": [6, 7], "translation": [6, 6], "mode": "block" },
+      { "original": [8, 15], "translation": [7, 14], "mode": "line" }
+    ],
+    [
+      { "original": [0, 1], "translation": [0, 1], "mode": "line" },
+      { "original": [2, 2], "translation": [2, 3], "mode": "block" },
+      { "original": [3, 14], "translation": [4, 15], "mode": "line" },
+      { "original": [15, 16], "translation": [16, 16], "mode": "block" },
+      { "original": [17, 17], "translation": [17, 17], "mode": "line" },
+      { "original": [18, 19], "translation": [18, 18], "mode": "block" }
+    ]
+  ]
+}

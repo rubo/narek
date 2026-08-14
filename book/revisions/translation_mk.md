@@ -282,6 +282,41 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Զի բարձրյալ Տիրոջ և՛ բարերարելն է անճառելի`](../translation_mk/chapter_44.md?plain=1#L100)
 - Evidence: [`Քանզի անբովանդակելոյն եւ բարերարելն է անճառելի`](../original/chapter_44.md?plain=1#L110)
 
+## Chapter 46
+
+#### Corrected reading
+
+- Previous: `Մատնելով հարմարապես ճյուղավորված ճարտար քո ձեռքերով`
+- Revised: [`Մատներով հարմարապես ճյուղավորված ճարտար քո ձեռքերով`](../translation_mk/chapter_46.md?plain=1#L58)
+- Evidence: [`Ձեռինդ հաստմամբ յարմարոստեան մատանցդ շառաւիղաւք`](../original/chapter_46.md?plain=1#L72)
+
+#### Corrected reading
+
+- Previous: `Որով և ահա՜, պատկերն ընտանի կենթարկվի անարգ մի փոփոխության`
+- Revised: [`Որով և ահա՜, պատկերն ընտանի կենթարկվի անկարգ մի փոփոխության`](../translation_mk/chapter_46.md?plain=1#L112)
+- Evidence: [`Եւ շրջեալ է ընտանութիւն պատկերին յանկարգ փոփոխութիւն`](../original/chapter_46.md?plain=1#L122)
+
+#### Corrected reading
+
+- Previous: `Ինչպես կորցրեց նախաստեղծն երբեմն վիճակն երկնավոր՝ Ադեն դրախտում։`
+- Revised: [`Ինչպես կորցրեց նախաստեղծն երբեմն վիճակն երկրավոր՝ Ադեն դրախտում։`](../translation_mk/chapter_46.md?plain=1#L132)
+- Evidence: [`Իբր նախաստեղծն երբեմն՝ զվիճակն երկրաւոր յԱդին դարաստանի,`](../original/chapter_46.md?plain=1#L142)
+
+## Chapter 48
+
+#### Removed duplicated line
+
+- Removed: `Ամոթապարտ զղջացած, տարակուսյալ աշխատող,`
+- Retained in: [`Ամոթապարտ զղջացած, տարակուսյալ աշխատող, աղոթավոր կռապաշտ,`](../translation_mk/chapter_48.md?plain=1#L94)
+
+## Chapter 49
+
+#### Corrected reading
+
+- Previous: `անկեղծություն`
+- Revised: [`անեղծություն`](../translation_mk/chapter_49.md?plain=1#L188)
+- Evidence: [`Արքայութիւն, անեղծութիւն եւ փառք յաւիտեանս`](../original/chapter_49.md?plain=1#L208)
+
 ## Chapter 90
 
 #### Corrected reading
