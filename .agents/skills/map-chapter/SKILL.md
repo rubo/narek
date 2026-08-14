@@ -123,10 +123,11 @@ While mapping, watch both texts and **collect** (never silently change):
   in the other, obviously divergent sense, etc.).
 - Any form of these words **in the original** that is **capitalized while not at the start of its
   line**: `աստուած`, `տէր`, `տեառն`, `արարիչ`, `բարձրեալ`.
+- When needed, verify findings against reliable online sources and cite them.
 
-**Display every finding at the end**, grouped and located by section and line.
-If anything is uncertain, **ask** — never assume and never alter text under the
-hood.
+**Report every finding at the end**, located by the `.md` file and its actual
+line number there (not the paragraph index), with the section number for context.
+If uncertainty remains, **ask** — never assume or alter text under the hood.
 
 ## Verify
 
