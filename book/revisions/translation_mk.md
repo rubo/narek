@@ -317,6 +317,55 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անեղծություն`](../translation_mk/chapter_49.md?plain=1#L188)
 - Evidence: [`Արքայութիւն, անեղծութիւն եւ փառք յաւիտեանս`](../original/chapter_49.md?plain=1#L208)
 
+## Chapter 51
+
+#### Typographical correction
+
+- Previous: `ճշմարտութեամբ`
+- Revised: [`ճշմարտությամբ`](../translation_mk/chapter_51.md?plain=1#L62)
+
+#### Corrected reading
+
+- Previous: `կյանքի կործանման`
+- Revised: [`մահվան կործանման`](../translation_mk/chapter_51.md?plain=1#L118)
+- Evidence: [`Կործանման մահու նախաժաման մեծ աւետագիր`](../original/chapter_51.md?plain=1#L136)
+
+#### Corrected reading
+
+- Previous: `անբուժելի վերքերից`
+- Revised: [`անբուժելի մեղքերից`](../translation_mk/chapter_51.md?plain=1#L136)
+- Evidence: [`Յետ այնքանեաց մեղանաց անբժշկականաց,`](../original/chapter_51.md?plain=1#L152)
+
+#### Corrected reading
+
+- Previous: `կյանքից արքայական`
+- Revised: [`կայքից արքայական`](../translation_mk/chapter_51.md?plain=1#L172)
+- Evidence: [`Զրկեալ զարքայն երկնաւոր ի յարքայականն կայից`](../original/chapter_51.md?plain=1#L204)
+
+## Chapter 52
+
+#### Typographical correction
+
+- Previous: `«Աղջամուղջի`
+- Revised: [`Աղջամուղջի`](../translation_mk/chapter_52.md?plain=1#L50)
+
+#### Typographical correction
+
+- Previous: `Փա՜ռք, քեզ`
+- Revised: [`Փա՜ռք քեզ`](../translation_mk/chapter_52.md?plain=1#L128)
+
+## Chapter 53
+
+#### Typographical correction
+
+- Previous: `Հավատում ես ես`
+- Revised: [`Հավատում եմ ես`](../translation_mk/chapter_53.md?plain=1#L92)
+
+#### Typographical correction
+
+- Previous: `Հավատում ես ես`
+- Revised: [`Հավատում եմ ես`](../translation_mk/chapter_53.md?plain=1#L158)
+
 ## Chapter 90
 
 #### Corrected reading
