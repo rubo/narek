@@ -366,6 +366,32 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Հավատում ես ես`
 - Revised: [`Հավատում եմ ես`](../translation_mk/chapter_53.md?plain=1#L158)
 
+## Chapter 56
+
+#### Typographical correction
+
+- Previous: `իրենից իսկ անունով`
+- Revised: [`իրենց իսկ անունով`](../translation_mk/chapter_56.md?plain=1#L12)
+
+#### Typographical correction
+
+- Previous: `ուտիաճակեր`
+- Revised: [`ուտիճակեր`](../translation_mk/chapter_56.md?plain=1#L50)
+
+#### Corrected reading
+
+- Previous: `Դաղձախեղդ`
+- Revised: [`Գաղձախեղդ`](../translation_mk/chapter_56.md?plain=1#L48)
+- Evidence: [`Այգի գաղձնաւոր, որթ որդնահար`](../original/chapter_56.md?plain=1#L60)
+
+## Chapter 57
+
+#### Corrected reading
+
+- Previous: `ստեղծված է ինձ`
+- Revised: [`եղծված է ինձ`](../translation_mk/chapter_57.md?plain=1#L48)
+- Evidence: [`Որ ինձ եղծեալն է, քումդ զաւրեղութեան գրեցեալ է,`](../original/chapter_57.md?plain=1#L52)
+
 ## Chapter 90
 
 #### Corrected reading
