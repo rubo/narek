@@ -392,6 +392,45 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`եղծված է ինձ`](../translation_mk/chapter_57.md?plain=1#L48)
 - Evidence: [`Որ ինձ եղծեալն է, քումդ զաւրեղութեան գրեցեալ է,`](../original/chapter_57.md?plain=1#L52)
 
+## Chapter 59
+
+#### Typographical correction
+
+- Previous: `Դաւթի`
+- Revised: [`Դավթի`](../translation_mk/chapter_59.md?plain=1#L68)
+
+## Chapter 60
+
+#### Corrected reading
+
+- Previous: `Չնվաճելով չարախոսների խարդավանքից`
+- Revised: [`Չնվաճվելով չարախոսների խարդավանքից`](../translation_mk/chapter_60.md?plain=1#L116)
+- Evidence: [`Ոչ տիրեալ ի խարդաւանաց չարաբանողաց,`](../original/chapter_60.md?plain=1#L122)
+
+## Chapter 61
+
+#### Corrected reading
+
+- Previous: `Ի՞նչ կարող ես ասել այն խոսքերի տեղ`
+- Revised: [`Ի՞նչ կարող եմ ասել այն խոսքերի տեղ`](../translation_mk/chapter_61.md?plain=1#L90)
+- Evidence: [`Զի՞նչ ունիմ ասել ի տեղի բանիցն`](../original/chapter_61.md?plain=1#L104)
+
+#### Typographical correction
+
+- Previous: `օրհներգ ու Դավթի`
+- Revised: [`օրհներգու Դավթի`](../translation_mk/chapter_61.md?plain=1#L92)
+
+#### Typographical correction
+
+- Previous: `Ի՞նչպես կկնեմ`
+- Revised: [`Ինչպե՞ս կրկնեմ`](../translation_mk/chapter_61.md?plain=1#L114)
+
+#### Corrected reading
+
+- Previous: `Հեղեղելով այս տողը ասեմ`
+- Revised: [`Հեղհեղելով այս տողը ասեմ`](../translation_mk/chapter_61.md?plain=1#L122)
+- Evidence: [`Զայս տուն յեղյեղել`](../original/chapter_61.md?plain=1#L146)
+
 ## Chapter 90
 
 #### Corrected reading
