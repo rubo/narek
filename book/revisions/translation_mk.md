@@ -431,6 +431,32 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Հեղհեղելով այս տողը ասեմ`](../translation_mk/chapter_61.md?plain=1#L122)
 - Evidence: [`Զայս տուն յեղյեղել`](../original/chapter_61.md?plain=1#L146)
 
+## Chapter 63
+
+#### Typographical correction
+
+- Previous: `Ցույց տալով թե, դո՛ւ կմնաս`
+- Revised: [`Ցույց տալով, թե դո՛ւ կմնաս`](../translation_mk/chapter_63.md?plain=1#L106)
+
+#### Typographical correction
+
+- Previous: `լեզուններին`
+- Revised: [`լեզուներին`](../translation_mk/chapter_63.md?plain=1#L136)
+
+## Chapter 64
+
+#### Typographical correction
+
+- Previous: `պարգեած`
+- Revised: [`պարգևած`](../translation_mk/chapter_64.md?plain=1#L32)
+- Evidence: [`Ըստ բանին սրբութեան, որ Աւետարանաւն կենաց ի քէն ընկալաք`](../original/chapter_64.md?plain=1#L34)
+
+#### Corrected reading
+
+- Previous: `բոլորովին հավասարապես`
+- Revised: [`բոլորին հավասարապես`](../translation_mk/chapter_64.md?plain=1#L104)
+- Evidence: [`Եւ զտէրդ հասարակաց՝ կտակաւն աւետեաց`](../original/chapter_64.md?plain=1#L112)
+
 ## Chapter 90
 
 #### Corrected reading
