@@ -457,6 +457,25 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`բոլորին հավասարապես`](../translation_mk/chapter_64.md?plain=1#L104)
 - Evidence: [`Եւ զտէրդ հասարակաց՝ կտակաւն աւետեաց`](../original/chapter_64.md?plain=1#L112)
 
+## Chapter 66
+
+#### Typographical correction
+
+- Previous: `Անվերջ-անվախճան տանջարանի մեջ սաստիկ կաշկանդող հուսկ շղթաների անզերծ տագնապից`
+- Revised: [`Անվերջ-անվախճան տանջարանի մեջ սաստիկ կաշկանդող հուսկ շղթաների անզերծ տագնապից.`](../translation_mk/chapter_66.md?plain=1#L306)
+
+## Chapter 68
+
+#### Typographical correction
+
+- Previous: `Որոնք Աստուծո կողմից ինձ հասած սպառնալիքներ են ահագնապես`
+- Revised: [`Որոնք Աստուծո կողմից ինձ հասած սպառնալիքներ են ահագնապես,`](../translation_mk/chapter_68.md?plain=1#L10)
+
+#### Typographical correction
+
+- Previous: `Մեղքի նմանակ գարշ ու տաղտկալի գորտերը պիտի ինձ զզվեցնեն`
+- Revised: [`Մեղքի նմանակ գարշ ու տաղտկալի գորտերը պիտի ինձ զզվեցնեն։`](../translation_mk/chapter_68.md?plain=1#L188)
+
 ## Chapter 90
 
 #### Corrected reading
