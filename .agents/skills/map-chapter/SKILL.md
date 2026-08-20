@@ -112,6 +112,9 @@ Line 2
 - `mode: "block"` presents the two ranges as blocks and they may differ in
   length. Use it when the correspondence is many-to-one, one-to-many, or
   reordered — anything that is not a clean line-for-line match.
+- Keep each `block` pair as tight as the sense allows — split at real meaning
+  boundaries rather than lumping distinct passages into one — but never at the
+  cost of a clean, faithful mapping.
 - Merge adjacent `line` pairs when both ranges are contiguous.
 
 ## Proofreading pass — report, do not fix
