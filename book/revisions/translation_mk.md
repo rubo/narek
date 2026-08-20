@@ -476,6 +476,37 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Մեղքի նմանակ գարշ ու տաղտկալի գորտերը պիտի ինձ զզվեցնեն`
 - Revised: [`Մեղքի նմանակ գարշ ու տաղտկալի գորտերը պիտի ինձ զզվեցնեն։`](../translation_mk/chapter_68.md?plain=1#L188)
 
+## Chapter 71
+
+#### Typographical correction
+
+- Previous: `դուզն-ինչ`
+- Revised: [`դույզն-ինչ`](../translation_mk/chapter_71.md?plain=1#L10)
+
+#### Typographical correction
+
+- Previous: `Դյուզն-ինչ`
+- Revised: [`Դույզն-ինչ`](../translation_mk/chapter_71.md?plain=1#L128)
+
+#### Typographical correction
+
+- Previous: `խելահեղնեի`
+- Revised: [`խելահեղների`](../translation_mk/chapter_71.md?plain=1#L208)
+
+## Chapter 72
+
+#### Typographical correction
+
+- Previous: `նաւ`
+- Revised: [`նաև`](../translation_mk/chapter_72.md?plain=1#L28)
+
+## Chapter 73
+
+#### Typographical correction
+
+- Previous: `տանգնապահար`
+- Revised: [`տագնապահար`](../translation_mk/chapter_73.md?plain=1#L40)
+
 ## Chapter 90
 
 #### Corrected reading
