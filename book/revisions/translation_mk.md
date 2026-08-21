@@ -20,8 +20,8 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `Հանճարով հզորացիր ինձ`
-- Revised: [`Հանճարով հզորացրիր ինձ`](../translation_mk/chapter_5.md?plain=1#L40)
+- Previous: `հզորացիր ինձ`
+- Revised: [`հզորացրիր ինձ`](../translation_mk/chapter_5.md?plain=1#L40)
 
 ## Chapter 7
 
@@ -34,9 +34,9 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `և չորացնում մատով`
-- Revised: [`և զորացնում մատով`](../translation_mk/chapter_9.md?plain=1#L134)
-- Evidence: [`Եւ մատամբ քո՝ զաւրեղութիւն`](../original/chapter_9.md?plain=1#L170)
+- Previous: `չորացնում`
+- Revised: [`զորացնում`](../translation_mk/chapter_9.md?plain=1#L134)
+- Evidence: [`զաւրեղութիւն`](../original/chapter_9.md?plain=1#L170)
 
 ## Chapter 10
 
@@ -47,17 +47,17 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Նա անկեղծության գրավականը ժառանգեց այստեղ`
-- Revised: [`Նա անեղծության գրավականը ժառանգեց այստեղ`](../translation_mk/chapter_10.md?plain=1#L58)
-- Evidence: [`Զգրաւականն անեղծութեան աստէն ժառանգեաց`](../original/chapter_10.md?plain=1#L68)
+- Previous: `անկեղծության`
+- Revised: [`անեղծության`](../translation_mk/chapter_10.md?plain=1#L58)
+- Evidence: [`անեղծութեան`](../original/chapter_10.md?plain=1#L68)
 
 ## Chapter 11
 
 #### Corrected reading
 
-- Previous: `միտքը գտած`
-- Revised: [`միտքը զտած`](../translation_mk/chapter_11.md?plain=1#L50)
-- Evidence: [`Եւ ի մթութենէ երկեւանութեան խաւարի զտեալ`](../original/chapter_11.md?plain=1#L52)
+- Previous: `գտած`
+- Revised: [`զտած`](../translation_mk/chapter_11.md?plain=1#L50)
+- Evidence: [`զտեալ`](../original/chapter_11.md?plain=1#L52)
 
 #### Corrected reading
 
@@ -71,7 +71,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `անապատում`
 - Revised: [`անպատում`](../translation_mk/chapter_14.md?plain=1#L10)
-- Evidence: [`Արքայ երկնաւոր, գովեալ անպատում`](../original/chapter_14.md?plain=1#L12)
+- Evidence: [`անպատում`](../original/chapter_14.md?plain=1#L12)
 
 #### Typographical correction
 
@@ -94,7 +94,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `անապատում`
 - Revised: [`անպատում`](../translation_mk/chapter_16.md?plain=1#L68)
-- Evidence: [`Զաւրաւոր, անպատում, անքնին, անճառ`](../original/chapter_16.md?plain=1#L76)
+- Evidence: [`անպատում`](../original/chapter_16.md?plain=1#L76)
 
 ## Chapter 17
 
@@ -119,7 +119,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `մանրված`
 - Revised: [`մատնված`](../translation_mk/chapter_20.md?plain=1#L196)
-- Evidence: [`Որպէս զանբժշկելի մատնեցեալ`](../original/chapter_20.md?plain=1#L226)
+- Evidence: [`մատնեցեալ`](../original/chapter_20.md?plain=1#L226)
 
 ## Chapter 23
 
@@ -127,7 +127,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `խնդությամբ`
 - Revised: [`բնությամբ`](../translation_mk/chapter_23.md?plain=1#L92)
-- Evidence: [`Եւ լոյսն բնութեամբ՝ զանգուածոյ հողոյս զայրացեալ`](../original/chapter_23.md?plain=1#L96)
+- Evidence: [`բնութեամբ`](../original/chapter_23.md?plain=1#L96)
 
 #### Typographical correction
 
@@ -147,21 +147,21 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `պատկեր`
 - Revised: [`պատվեր`](../translation_mk/chapter_27.md?plain=1#L60)
-- Evidence: [`Սոյն սա պատուելի աւանդ, անմոռաց պատուէր`](../original/chapter_27.md?plain=1#L64)
+- Evidence: [`պատուէր`](../original/chapter_27.md?plain=1#L64)
 
 #### Corrected reading
 
 - Previous: `քաջություն`
 - Revised: [`քավություն`](../translation_mk/chapter_27.md?plain=1#L214)
-- Evidence: [`Յարութիւն, նորոգութիւն, քաւութիւն`](../original/chapter_27.md?plain=1#L252)
+- Evidence: [`քաւութիւն`](../original/chapter_27.md?plain=1#L252)
 
 ## Chapter 29
 
 #### Corrected reading
 
-- Previous: `Ամբարտավան միտք և անհպարտ սիրտ`
-- Revised: [`Անամբարտավան միտք և անհպարտ սիրտ`](../translation_mk/chapter_29.md?plain=1#L206)
-- Evidence: [`Անամբարտաւան միտ, անհպարտ սիրտ, անխնդրող պարգեւի թշուառ`](../original/chapter_29.md?plain=1#L220)
+- Previous: `Ամբարտավան`
+- Revised: [`Անամբարտավան`](../translation_mk/chapter_29.md?plain=1#L206)
+- Evidence: [`Անամբարտաւան`](../original/chapter_29.md?plain=1#L220)
 
 ## Chapter 30
 
@@ -172,16 +172,16 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Վնասակարիս խստության դիմաց՝ քո հեզությունը`
-- Revised: [`Վնասակարիս խակության դիմաց՝ քո հեզությունը`](../translation_mk/chapter_30.md?plain=1#L172)
-- Evidence: [`Առ խակութիւն վնասակարիս՝ հեզութիւն քո`](../original/chapter_30.md?plain=1#L230)
+- Previous: `խստության`
+- Revised: [`խակության`](../translation_mk/chapter_30.md?plain=1#L172)
+- Evidence: [`խակութիւն`](../original/chapter_30.md?plain=1#L230)
 
 ## Chapter 31
 
 #### Typographical correction
 
-- Previous: `Դո՛ւ ստեղծեցիր, բոլորին, և քո՛նն են բոլորը`
-- Revised: [`Դո՛ւ ստեղծեցիր բոլորին, և քո՛նն են բոլորը`](../translation_mk/chapter_31.md?plain=1#L166)
+- Previous: `ստեղծեցիր, բոլորին`
+- Revised: [`ստեղծեցիր բոլորին`](../translation_mk/chapter_31.md?plain=1#L166)
 
 ## Chapter 32
 
@@ -194,9 +194,9 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Պարզեցիր խորհուրդը գավազանի`
-- Revised: [`Պարզեցիր խորհուրդը ավազանի`](../translation_mk/chapter_33.md?plain=1#L250)
-- Evidence: [`Գթասիրեալ ի ծնունդս նորոգս, զաւազանին խորհուրդ ծանուցեր`](../original/chapter_33.md?plain=1#L266)
+- Previous: `գավազանի`
+- Revised: [`ավազանի`](../translation_mk/chapter_33.md?plain=1#L250)
+- Evidence: [`զաւազանին`](../original/chapter_33.md?plain=1#L266)
 
 ## Chapter 35
 
@@ -209,26 +209,25 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `երկրայիններին`
 - Revised: [`երկնայիններին`](../translation_mk/chapter_35.md?plain=1#L28)
-- Evidence: [`Զերկնայինս լուսակերպիցն կոչեցեր զնոսին`](../original/chapter_35.md?plain=1#L38)
+- Evidence: [`Զերկնայինս`](../original/chapter_35.md?plain=1#L38)
 
 #### Corrected reading
 
 - Previous: `քո լոյսից`
 - Revised: [`քո հույսից`](../translation_mk/chapter_35.md?plain=1#L110)
-- Evidence: [`Մի՛ յանդգնաբար խաւսելով իբր զնախնին՝ լքայց ի յուսոյդ`](../original/chapter_35.md?plain=1#L128)
+- Evidence: [`ի յուսոյդ`](../original/chapter_35.md?plain=1#L128)
 
 ## Chapter 36
 
 #### Typographical correction
 
-- Previous: `Դու, որ արուսյակը մթնացրիր—`
-- Revised: [`Դու, որ արուսյակը մթնացրիր,—`](../translation_mk/chapter_36.md?plain=1#L40)
+- Previous: `մթնացրիր—`
+- Revised: [`մթնացրիր,—`](../translation_mk/chapter_36.md?plain=1#L40)
 
 #### Typographical correction
 
-- Previous: `Որպեսզի քեզ գովելու համար անհամարձակ լեզուս զորացնես`
-- Revised: [`Որպեսզի քեզ գովելու համար անհամարձակ լեզուս զորացնես։`](../translation_mk/chapter_36.md?plain=1#L48)
-- Evidence: [`Զի զանհամարձակ լեզուս ի գովեստ քեզ զաւրացուսցես։`](../original/chapter_36.md?plain=1#L54)
+- Previous: `զորացնես`
+- Revised: [`զորացնես։`](../translation_mk/chapter_36.md?plain=1#L48)
 
 ## Chapter 37
 
@@ -243,16 +242,16 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `Եվ ինձ որ`
-- Revised: [`Եվ ինձ, որ`](../translation_mk/chapter_38.md?plain=1#L156)
+- Previous: `ինձ որ`
+- Revised: [`ինձ, որ`](../translation_mk/chapter_38.md?plain=1#L156)
 
 ## Chapter 39
 
 #### Corrected reading
 
-- Previous: `Բայց դու խնայեցիր ինձ`
-- Revised: [`Բայց դու խնայի՛ր ինձ`](../translation_mk/chapter_39.md?plain=1#L120)
-- Evidence: [`Այլ խնայեա՛ յիս`](../original/chapter_39.md?plain=1#L130)
+- Previous: `խնայեցիր ինձ`
+- Revised: [`խնայի՛ր ինձ`](../translation_mk/chapter_39.md?plain=1#L120)
+- Evidence: [`խնայեա՛ յիս`](../original/chapter_39.md?plain=1#L130)
 
 ## Chapter 42
 
@@ -270,37 +269,37 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Չես վրիպած բարությունից`
-- Revised: [`Չես վրիպած բարկությունից`](../translation_mk/chapter_43.md?plain=1#L56)
-- Evidence: [`Ոչ վրիպեալ՝ ի բարկութենէ`](../original/chapter_43.md?plain=1#L86)
+- Previous: `բարությունից`
+- Revised: [`բարկությունից`](../translation_mk/chapter_43.md?plain=1#L56)
+- Evidence: [`ի բարկութենէ`](../original/chapter_43.md?plain=1#L86)
 
 ## Chapter 44
 
 #### Corrected reading
 
-- Previous: `Զի բարձրյալ Տիրոջ և՛ բավարարելն է անճառելի`
-- Revised: [`Զի բարձրյալ Տիրոջ և՛ բարերարելն է անճառելի`](../translation_mk/chapter_44.md?plain=1#L100)
-- Evidence: [`Քանզի անբովանդակելոյն եւ բարերարելն է անճառելի`](../original/chapter_44.md?plain=1#L110)
+- Previous: `բավարարելն է անճառելի`
+- Revised: [`բարերարելն է անճառելի`](../translation_mk/chapter_44.md?plain=1#L100)
+- Evidence: [`բարերարելն է անճառելի`](../original/chapter_44.md?plain=1#L110)
 
 ## Chapter 46
 
 #### Corrected reading
 
-- Previous: `Մատնելով հարմարապես ճյուղավորված ճարտար քո ձեռքերով`
-- Revised: [`Մատներով հարմարապես ճյուղավորված ճարտար քո ձեռքերով`](../translation_mk/chapter_46.md?plain=1#L58)
-- Evidence: [`Ձեռինդ հաստմամբ յարմարոստեան մատանցդ շառաւիղաւք`](../original/chapter_46.md?plain=1#L72)
+- Previous: `Մատնելով`
+- Revised: [`Մատներով`](../translation_mk/chapter_46.md?plain=1#L58)
+- Evidence: [`մատանցդ`](../original/chapter_46.md?plain=1#L72)
 
 #### Corrected reading
 
-- Previous: `Որով և ահա՜, պատկերն ընտանի կենթարկվի անարգ մի փոփոխության`
-- Revised: [`Որով և ահա՜, պատկերն ընտանի կենթարկվի անկարգ մի փոփոխության`](../translation_mk/chapter_46.md?plain=1#L112)
-- Evidence: [`Եւ շրջեալ է ընտանութիւն պատկերին յանկարգ փոփոխութիւն`](../original/chapter_46.md?plain=1#L122)
+- Previous: `անարգ`
+- Revised: [`անկարգ`](../translation_mk/chapter_46.md?plain=1#L112)
+- Evidence: [`յանկարգ`](../original/chapter_46.md?plain=1#L122)
 
 #### Corrected reading
 
-- Previous: `Ինչպես կորցրեց նախաստեղծն երբեմն վիճակն երկնավոր՝ Ադեն դրախտում։`
-- Revised: [`Ինչպես կորցրեց նախաստեղծն երբեմն վիճակն երկրավոր՝ Ադեն դրախտում։`](../translation_mk/chapter_46.md?plain=1#L132)
-- Evidence: [`Իբր նախաստեղծն երբեմն՝ զվիճակն երկրաւոր յԱդին դարաստանի,`](../original/chapter_46.md?plain=1#L142)
+- Previous: `երկնավոր`
+- Revised: [`երկրավոր`](../translation_mk/chapter_46.md?plain=1#L132)
+- Evidence: [`երկրաւոր`](../original/chapter_46.md?plain=1#L142)
 
 ## Chapter 48
 
@@ -315,7 +314,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `անկեղծություն`
 - Revised: [`անեղծություն`](../translation_mk/chapter_49.md?plain=1#L188)
-- Evidence: [`Արքայութիւն, անեղծութիւն եւ փառք յաւիտեանս`](../original/chapter_49.md?plain=1#L208)
+- Evidence: [`անեղծութիւն`](../original/chapter_49.md?plain=1#L208)
 
 ## Chapter 51
 
@@ -328,19 +327,19 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `կյանքի կործանման`
 - Revised: [`մահվան կործանման`](../translation_mk/chapter_51.md?plain=1#L118)
-- Evidence: [`Կործանման մահու նախաժաման մեծ աւետագիր`](../original/chapter_51.md?plain=1#L136)
+- Evidence: [`Կործանման մահու`](../original/chapter_51.md?plain=1#L136)
 
 #### Corrected reading
 
 - Previous: `անբուժելի վերքերից`
 - Revised: [`անբուժելի մեղքերից`](../translation_mk/chapter_51.md?plain=1#L136)
-- Evidence: [`Յետ այնքանեաց մեղանաց անբժշկականաց,`](../original/chapter_51.md?plain=1#L152)
+- Evidence: [`մեղանաց անբժշկականաց`](../original/chapter_51.md?plain=1#L152)
 
 #### Corrected reading
 
 - Previous: `կյանքից արքայական`
 - Revised: [`կայքից արքայական`](../translation_mk/chapter_51.md?plain=1#L172)
-- Evidence: [`Զրկեալ զարքայն երկնաւոր ի յարքայականն կայից`](../original/chapter_51.md?plain=1#L204)
+- Evidence: [`յարքայականն կայից`](../original/chapter_51.md?plain=1#L204)
 
 ## Chapter 52
 
@@ -380,17 +379,17 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Դաղձախեղդ`
-- Revised: [`Գաղձախեղդ`](../translation_mk/chapter_56.md?plain=1#L48)
-- Evidence: [`Այգի գաղձնաւոր, որթ որդնահար`](../original/chapter_56.md?plain=1#L60)
+- Previous: `Դաղձախեղդ այգի`
+- Revised: [`Գաղձախեղդ այգի`](../translation_mk/chapter_56.md?plain=1#L48)
+- Evidence: [`Այգի գաղձնաւոր`](../original/chapter_56.md?plain=1#L60)
 
 ## Chapter 57
 
 #### Corrected reading
 
-- Previous: `ստեղծված է ինձ`
-- Revised: [`եղծված է ինձ`](../translation_mk/chapter_57.md?plain=1#L48)
-- Evidence: [`Որ ինձ եղծեալն է, քումդ զաւրեղութեան գրեցեալ է,`](../original/chapter_57.md?plain=1#L52)
+- Previous: `ստեղծված`
+- Revised: [`եղծված`](../translation_mk/chapter_57.md?plain=1#L48)
+- Evidence: [`եղծեալն`](../original/chapter_57.md?plain=1#L52)
 
 ## Chapter 59
 
@@ -405,15 +404,15 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `Չնվաճելով չարախոսների խարդավանքից`
 - Revised: [`Չնվաճվելով չարախոսների խարդավանքից`](../translation_mk/chapter_60.md?plain=1#L116)
-- Evidence: [`Ոչ տիրեալ ի խարդաւանաց չարաբանողաց,`](../original/chapter_60.md?plain=1#L122)
+- Evidence: [`Ոչ տիրեալ ի խարդաւանաց չարաբանողաց`](../original/chapter_60.md?plain=1#L122)
 
 ## Chapter 61
 
 #### Corrected reading
 
-- Previous: `Ի՞նչ կարող ես ասել այն խոսքերի տեղ`
-- Revised: [`Ի՞նչ կարող եմ ասել այն խոսքերի տեղ`](../translation_mk/chapter_61.md?plain=1#L90)
-- Evidence: [`Զի՞նչ ունիմ ասել ի տեղի բանիցն`](../original/chapter_61.md?plain=1#L104)
+- Previous: `Ի՞նչ կարող ես ասել`
+- Revised: [`Ի՞նչ կարող եմ ասել`](../translation_mk/chapter_61.md?plain=1#L90)
+- Evidence: [`Զի՞նչ ունիմ ասել`](../original/chapter_61.md?plain=1#L104)
 
 #### Typographical correction
 
@@ -427,16 +426,16 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Հեղեղելով այս տողը ասեմ`
-- Revised: [`Հեղհեղելով այս տողը ասեմ`](../translation_mk/chapter_61.md?plain=1#L122)
-- Evidence: [`Զայս տուն յեղյեղել`](../original/chapter_61.md?plain=1#L146)
+- Previous: `Հեղեղելով`
+- Revised: [`Հեղհեղելով`](../translation_mk/chapter_61.md?plain=1#L122)
+- Evidence: [`յեղյեղել`](../original/chapter_61.md?plain=1#L146)
 
 ## Chapter 63
 
 #### Typographical correction
 
-- Previous: `Ցույց տալով թե, դո՛ւ կմնաս`
-- Revised: [`Ցույց տալով, թե դո՛ւ կմնաս`](../translation_mk/chapter_63.md?plain=1#L106)
+- Previous: `Ցույց տալով թե,`
+- Revised: [`Ցույց տալով, թե`](../translation_mk/chapter_63.md?plain=1#L106)
 
 #### Typographical correction
 
@@ -449,32 +448,31 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `պարգեած`
 - Revised: [`պարգևած`](../translation_mk/chapter_64.md?plain=1#L32)
-- Evidence: [`Ըստ բանին սրբութեան, որ Աւետարանաւն կենաց ի քէն ընկալաք`](../original/chapter_64.md?plain=1#L34)
 
 #### Corrected reading
 
 - Previous: `բոլորովին հավասարապես`
 - Revised: [`բոլորին հավասարապես`](../translation_mk/chapter_64.md?plain=1#L104)
-- Evidence: [`Եւ զտէրդ հասարակաց՝ կտակաւն աւետեաց`](../original/chapter_64.md?plain=1#L112)
+- Evidence: [`հասարակաց`](../original/chapter_64.md?plain=1#L112)
 
 ## Chapter 66
 
 #### Typographical correction
 
-- Previous: `Անվերջ-անվախճան տանջարանի մեջ սաստիկ կաշկանդող հուսկ շղթաների անզերծ տագնապից`
-- Revised: [`Անվերջ-անվախճան տանջարանի մեջ սաստիկ կաշկանդող հուսկ շղթաների անզերծ տագնապից.`](../translation_mk/chapter_66.md?plain=1#L306)
+- Previous: `տագնապից`
+- Revised: [`տագնապից.`](../translation_mk/chapter_66.md?plain=1#L306)
 
 ## Chapter 68
 
 #### Typographical correction
 
-- Previous: `Որոնք Աստուծո կողմից ինձ հասած սպառնալիքներ են ահագնապես`
-- Revised: [`Որոնք Աստուծո կողմից ինձ հասած սպառնալիքներ են ահագնապես,`](../translation_mk/chapter_68.md?plain=1#L10)
+- Previous: `ահագնապես`
+- Revised: [`ահագնապես,`](../translation_mk/chapter_68.md?plain=1#L10)
 
 #### Typographical correction
 
-- Previous: `Մեղքի նմանակ գարշ ու տաղտկալի գորտերը պիտի ինձ զզվեցնեն`
-- Revised: [`Մեղքի նմանակ գարշ ու տաղտկալի գորտերը պիտի ինձ զզվեցնեն։`](../translation_mk/chapter_68.md?plain=1#L188)
+- Previous: `զզվեցնեն`
+- Revised: [`զզվեցնեն։`](../translation_mk/chapter_68.md?plain=1#L188)
 
 ## Chapter 71
 
@@ -520,16 +518,16 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Եւ`
 - Revised: [`Եվ`](../translation_mk/chapter_75.md?plain=1#L632)
 
-#### Punctuation correction
+#### Typographical correction
 
-- Previous: `Սրա հարսնության փեսան է Որդին կենդանի Աստծու`
-- Revised: [`Սրա հարսնության փեսան է Որդին կենդանի Աստծու,`](../translation_mk/chapter_75.md?plain=1#L766)
+- Previous: `Աստծու`
+- Revised: [`Աստծու,`](../translation_mk/chapter_75.md?plain=1#L766)
 
 #### Corrected reading
 
-- Previous: `Ունի և գիրն իր արևելք հայող`
-- Revised: [`Ունի և դիրքն իր արևելք հայող`](../translation_mk/chapter_75.md?plain=1#L900)
-- Evidence: [`Ունի եւ զդիրն իւր ընդ արեւելս`](../original/chapter_75.md?plain=1#L76)
+- Previous: `գիրն`
+- Revised: [`դիրքն`](../translation_mk/chapter_75.md?plain=1#L900)
+- Evidence: [`զդիրն`](../original/chapter_75.md?plain=1#L76)
 
 ## Chapter 77
 
@@ -540,9 +538,9 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
-- Previous: `Այլ պատրաստեցին քեզ համար գործիք, որ կրես։`
-- Revised: [`Այլ պատրաստեցին քեզ համար մահվան գործիք, որ կրես։`](../translation_mk/chapter_77.md?plain=1#L74)
-- Evidence: [`Եթէ ոչ զգործի մահուն կրել քեզ պատրաստեցին։`](../original/chapter_77.md?plain=1#L88)
+- Previous: `Այլ պատրաստեցին քեզ համար գործիք, որ կրես`
+- Revised: [`Այլ պատրաստեցին քեզ համար մահվան գործիք, որ կրես`](../translation_mk/chapter_77.md?plain=1#L74)
+- Evidence: [`Եթէ ոչ զգործի մահուն կրել քեզ պատրաստեցին`](../original/chapter_77.md?plain=1#L88)
 
 ## Chapter 90
 
