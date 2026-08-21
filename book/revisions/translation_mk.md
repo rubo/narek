@@ -507,6 +507,43 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `տանգնապահար`
 - Revised: [`տագնապահար`](../translation_mk/chapter_73.md?plain=1#L40)
 
+## Chapter 75
+
+#### Corrected reading
+
+- Previous: `Թափոր լեռան վրա`
+- Revised: [`Թաբոր լեռան վրա`](../translation_mk/chapter_75.md?plain=1#L348)
+- Evidence: [`ի լերինն Թաբորական`](../original/chapter_75.md?plain=1#L40)
+
+#### Typographical correction
+
+- Previous: `Եւ`
+- Revised: [`Եվ`](../translation_mk/chapter_75.md?plain=1#L632)
+
+#### Punctuation correction
+
+- Previous: `Սրա հարսնության փեսան է Որդին կենդանի Աստծու`
+- Revised: [`Սրա հարսնության փեսան է Որդին կենդանի Աստծու,`](../translation_mk/chapter_75.md?plain=1#L766)
+
+#### Corrected reading
+
+- Previous: `Ունի և գիրն իր արևելք հայող`
+- Revised: [`Ունի և դիրքն իր արևելք հայող`](../translation_mk/chapter_75.md?plain=1#L900)
+- Evidence: [`Ունի եւ զդիրն իւր ընդ արեւելս`](../original/chapter_75.md?plain=1#L76)
+
+## Chapter 77
+
+#### Typographical correction
+
+- Previous: `Եւ`
+- Revised: [`Եվ`](../translation_mk/chapter_77.md?plain=1#L40)
+
+#### Corrected reading
+
+- Previous: `Այլ պատրաստեցին քեզ համար գործիք, որ կրես։`
+- Revised: [`Այլ պատրաստեցին քեզ համար մահվան գործիք, որ կրես։`](../translation_mk/chapter_77.md?plain=1#L74)
+- Evidence: [`Եթէ ոչ զգործի մահուն կրել քեզ պատրաստեցին։`](../original/chapter_77.md?plain=1#L88)
+
 ## Chapter 90
 
 #### Corrected reading
