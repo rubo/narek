@@ -8,11 +8,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `քանդըված`
-- Revised: [`քանդված`](../translation_mk/chapter_2.md?plain=1#L72)
-
-#### Typographical correction
-
 - Previous: `քազցրությամբ`
 - Revised: [`քաղցրությամբ`](../translation_mk/chapter_2.md?plain=1#L228)
 
@@ -73,22 +68,12 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անպատում`](../translation_mk/chapter_14.md?plain=1#L10)
 - Evidence: [`անպատում`](../original/chapter_14.md?plain=1#L12)
 
-#### Typographical correction
-
-- Previous: `այժըմ`
-- Revised: [`այժմ`](../translation_mk/chapter_14.md?plain=1#L12)
-
 ## Chapter 16
 
 #### Typographical correction
 
 - Previous: `բշկությունն`
 - Revised: [`բժշկությունն`](../translation_mk/chapter_16.md?plain=1#L12)
-
-#### Typographical correction
-
-- Previous: `այժըմ`
-- Revised: [`այժմ`](../translation_mk/chapter_16.md?plain=1#L54)
 
 #### Corrected reading
 
