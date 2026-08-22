@@ -601,6 +601,23 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `ողոմությունդ`
 - Revised: [`ողորմությունդ`](../translation_mk/chapter_85.md?plain=1#L56)
 
+## Chapter 87
+
+#### Typographical correction
+
+- Previous: `մի իջեցնի`
+- Revised: [`մի՛ իջեցնիր`](../translation_mk/chapter_87.md?plain=1#L98)
+
+#### Typographical correction
+
+- Previous: `Մի՛ ցած բերի`
+- Revised: [`Մի՛ ցած բեր`](../translation_mk/chapter_87.md?plain=1#L100)
+
+#### Typographical correction
+
+- Previous: `Մի՛ բաց թողնի`
+- Revised: [`Մի՛ բաց թողնիր`](../translation_mk/chapter_87.md?plain=1#L102)
+
 ## Chapter 90
 
 #### Corrected reading
