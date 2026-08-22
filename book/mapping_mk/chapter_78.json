@@ -1,0 +1,40 @@
+{
+  "chapter": 78,
+  "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
+  "sections": [
+    [
+      { "original": [0, 5], "translation": [0, 5], "mode": "line" },
+      { "original": [6, 7], "translation": [6, 7], "mode": "block" },
+      { "original": [8, 9], "translation": [8, 8], "mode": "block" },
+      { "original": [10, 17], "translation": [9, 16], "mode": "line" }
+    ],
+    [
+      { "original": [0, 3], "translation": [0, 3], "mode": "line" },
+      { "original": [4, 5], "translation": [4, 4], "mode": "block" },
+      { "original": [6, 7], "translation": [5, 5], "mode": "block" },
+      { "original": [8, 9], "translation": [6, 6], "mode": "block" },
+      { "original": [10, 29], "translation": [7, 26], "mode": "line" }
+    ],
+    [
+      { "original": [0, 8], "translation": [0, 8], "mode": "line" },
+      { "original": [9, 10], "translation": [9, 9], "mode": "block" },
+      { "original": [11, 19], "translation": [10, 18], "mode": "line" },
+      { "original": [20, 22], "translation": [19, 20], "mode": "block" },
+      { "original": [23, 26], "translation": [21, 24], "mode": "line" },
+      { "original": [27, 27], "translation": [25, 26], "mode": "block" },
+      { "original": [28, 32], "translation": [27, 31], "mode": "line" },
+      { "original": [33, 34], "translation": [32, 32], "mode": "block" },
+      { "original": [35, 36], "translation": [33, 33], "mode": "block" },
+      { "original": [37, 38], "translation": [34, 34], "mode": "block" },
+      { "original": [39, 40], "translation": [35, 36], "mode": "line" },
+      { "original": [41, 42], "translation": [37, 37], "mode": "block" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 0], "mode": "line" },
+      { "original": [1, 2], "translation": [1, 1], "mode": "block" },
+      { "original": [3, 5], "translation": [2, 3], "mode": "block" },
+      { "original": [6, 11], "translation": [4, 9], "mode": "line" },
+      { "original": [12, 13], "translation": [10, 10], "mode": "block" }
+    ]
+  ]
+}

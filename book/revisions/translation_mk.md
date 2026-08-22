@@ -527,6 +527,80 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Այլ պատրաստեցին քեզ համար մահվան գործիք, որ կրես`](../translation_mk/chapter_77.md?plain=1#L74)
 - Evidence: [`Եթէ ոչ զգործի մահուն կրել քեզ պատրաստեցին`](../original/chapter_77.md?plain=1#L88)
 
+## Chapter 78
+
+#### Typographical correction
+
+- Previous: `Մի`
+- Revised: [`Մի՛`](../translation_mk/chapter_78.md?plain=1#L132)
+
+#### Corrected reading
+
+- Previous: `երկնաստեղծ`
+- Revised: [`երկրաստեղծ`](../translation_mk/chapter_78.md?plain=1#L146)
+- Evidence: [`երկրաստեղծ`](../original/chapter_78.md?plain=1#L160)
+
+#### Typographical correction
+
+- Previous: `իսպառ`
+- Revised: [`իսպառ.`](../translation_mk/chapter_78.md?plain=1#L176)
+
+## Chapter 79
+
+#### Typographical correction
+
+- Previous: `դրշոմված`
+- Revised: [`դրոշմված`](../translation_mk/chapter_79.md?plain=1#L184)
+
+#### Corrected reading
+
+- Previous: `իր մտքի առաջ չպատկերանան`
+- Revised: [`իմ մտքի առաջ չպատկերանան`](../translation_mk/chapter_79.md?plain=1#L56)
+- Evidence: [`Ի ցոյցս ինձ եկեալ կերպարանեսցին`](../original/chapter_79.md?plain=1#L64)
+
+## Chapter 80
+
+#### Typographical correction
+
+- Previous: `անարա՛տ։`
+- Revised: [`անարա՛տ,`](../translation_mk/chapter_80.md?plain=1#L110)
+
+#### Typographical correction
+
+- Previous: `քացրությո՜ւն`
+- Revised: [`քաղցրությո՜ւն`](../translation_mk/chapter_80.md?plain=1#L130)
+
+#### Typographical reading
+
+- Previous: `Տիրոջդ-Հիսուսի`
+- Revised: [`Տիրոջդ՝ Հիսուսի`](../translation_mk/chapter_80.md?plain=1#L152)
+
+## Chapter 82
+
+#### Typographical correction
+
+- Previous: `գոոռոզ`
+- Revised: [`գոռոզ`](../translation_mk/chapter_82.md?plain=1#L108)
+
+#### Corrected reading
+
+- Previous: `անհուսության`
+- Revised: [`անհասության`](../translation_mk/chapter_82.md?plain=1#L302)
+- Evidence: [`անհասութեան`](../original/chapter_82.md?plain=1#L314)
+
+## Chapter 85
+
+#### Corrected reading
+
+- Previous: `ակնթարթ`
+- Revised: [`անթարթ`](../translation_mk/chapter_85.md?plain=1#L12)
+- Evidence: [`Անթարթափ`](../original/chapter_85.md?plain=1#L18)
+
+#### Typographical correction
+
+- Previous: `ողոմությունդ`
+- Revised: [`ողորմությունդ`](../translation_mk/chapter_85.md?plain=1#L56)
+
 ## Chapter 90
 
 #### Corrected reading
