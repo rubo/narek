@@ -658,3 +658,16 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Քո աստվածության պատվիրանի հանդեպ`
 - Revised: [`Քո աստվածավանդ պատվիրանի հանդեպ`](../translation_mk/chapter_92.md?plain=1#L638)
 - Evidence: [`աստուածաւանդ քո պատուիրանիդ`](../original/chapter_92.md?plain=1#L64)
+
+## Chapter 93
+
+#### Corrected reading
+
+- Previous: `Միշտ արձանանում`
+- Revised: [`Միշտ արձանանամ`](../translation_mk/chapter_93.md?plain=1#L1898)
+- Evidence: [`մի՛շտ արձանացայց`](../original/chapter_93.md?plain=1#L148)
+
+#### Typographical correction
+
+- Previous: `պղծություներից`
+- Revised: [`պղծություններից`](../translation_mk/chapter_93.md?plain=1#L1910)
