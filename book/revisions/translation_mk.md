@@ -633,3 +633,28 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Խաչի նշանով խարխափում են հարձակումները ընդդիմամարտի`
 - Revised: [`Խաչի նշանով խափանվում են հարձակումները ընդդիմամարտի`](../translation_mk/chapter_91.md?plain=1#L34)
 - Evidence: [`Կապին նշանաւ խաչին յարձակմունք դիմամարտին`](../original/chapter_91.md?plain=1#L38)
+
+## Chapter 92
+
+#### Typographical correction
+
+- Previous: `նման`
+- Revised: [`նման,`](../translation_mk/chapter_92.md?plain=1#L382)
+
+#### Typographical correction
+
+- Previous: `հեների`
+- Revised: [`հների`](../translation_mk/chapter_92.md?plain=1#L546)
+- Evidence: [`հինից`](../original/chapter_92.md?plain=1#L58)
+
+#### Corrected reading
+
+- Previous: `Կրկնագեղ կամ վայելուչ`
+- Revised: [`Կրկնատգեղ և անվայելուչ`](../translation_mk/chapter_92.md?plain=1#L592)
+- Evidence: [`կրկնատգեղ եւ անվայելուչ`](../original/chapter_92.md?plain=1#L58)
+
+#### Corrected reading
+
+- Previous: `Քո աստվածության պատվիրանի հանդեպ`
+- Revised: [`Քո աստվածավանդ պատվիրանի հանդեպ`](../translation_mk/chapter_92.md?plain=1#L638)
+- Evidence: [`աստուածաւանդ քո պատուիրանիդ`](../original/chapter_92.md?plain=1#L64)
