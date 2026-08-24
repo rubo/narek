@@ -514,6 +514,23 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`դիրքն`](../translation_mk/chapter_75.md?plain=1#L900)
 - Evidence: [`զդիրն`](../original/chapter_75.md?plain=1#L76)
 
+#### Corrected reading
+
+- Previous: `Հրաձգված`
+- Revised: [`Հարաձգված`](../translation_mk/chapter_75.md?plain=1#L168)
+- Evidence: [`յարաձգեալ`](../original/chapter_75.md?plain=1#L91)
+
+#### Typographical correction
+
+- Previous: `Մեծ է քան`
+- Revised: [`Մեծ է, քան`](../translation_mk/chapter_75.md?plain=1#L528)
+
+#### Corrected reading
+
+- Previous: `համրելով`
+- Revised: [`համարելով`](../translation_mk/chapter_75.md?plain=1#L606)
+- Evidence: [`ինքեամբ պարտաւոր իւրովն գտեալ`](../original/chapter_75.md?plain=1#L293)
+
 ## Chapter 77
 
 #### Typographical correction
