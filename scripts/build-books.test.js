@@ -3,7 +3,14 @@
 
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { checkMapping, checkPunctuation, parse, readSections } from './build-books.js';
+import {
+  buildChapter,
+  checkMapping,
+  checkPunctuation,
+  parse,
+  readProse,
+  readSections,
+} from './build-books.js';
 
 const chapter = (...lines) =>
   new Map([['original/chapters.json', [{ chapter: 42, heading: ['Գլուխ'], sections: [lines] }]]]);
@@ -97,6 +104,61 @@ test('accepts brackets around an interpolated word', () => {
 
 test('reports every bad character in a line, not just the first', () => {
   assert.equal(checkPunctuation(chapter('բա`ռ~տող')).length, 2);
+});
+
+test('rejects a line break outside a prose section', () => {
+  assert.throws(() => readSections(parse('առաջին\nերկրորդ'), 'x.md'), /line break inside/u);
+});
+
+test('a prose section takes its lines from the soft breaks', () => {
+  assert.deepEqual(readProse(parse('առաջին\nերկրորդ'), 'x.md'), {
+    lines: ['առաջին', 'երկրորդ'],
+    paragraphs: [0],
+  });
+});
+
+test('blank lines still divide a prose section into paragraphs', () => {
+  assert.deepEqual(readProse(parse('առաջին\nերկրորդ\n\nերրորդ'), 'x.md'), {
+    lines: ['առաջին', 'երկրորդ', 'երրորդ'],
+    paragraphs: [0, 2],
+  });
+});
+
+test('rejects a hard break, which toString drops without even a space', () => {
+  for (const reader of [readSections, readProse]) {
+    assert.throws(() => reader(parse('առաջին  \nերկրորդ'), 'x.md'), /hard line break/u);
+    assert.throws(() => reader(parse('առաջին\\\nերկրորդ'), 'x.md'), /hard line break/u);
+  }
+});
+
+const section = (attributes, ...paragraphs) =>
+  `:::section{${attributes}}\n\n${paragraphs.join('\n\n')}\n\n:::`;
+
+const document = (...sections) =>
+  parse(`---\nnumber: 42\nheading: Գլուխ\n---\n\n${sections.join('\n\n')}\n`);
+
+test('{prose} lineates the section and the plain form does not', () => {
+  const built = buildChapter(
+    document(section('number=1 prose', 'առաջին\nերկրորդ'), section('number=2', 'երրորդ')),
+    'x.md',
+    42,
+  );
+
+  assert.deepEqual(built.sections, [['առաջին', 'երկրորդ'], ['երրորդ']]);
+  assert.deepEqual(built.prose, [[0], null]);
+});
+
+test('a chapter with no prose section carries no prose key', () => {
+  const built = buildChapter(document(section('number=1', 'առաջին')), 'x.md', 42);
+
+  assert.deepEqual(built, { chapter: 42, heading: ['Գլուխ'], sections: [['առաջին']] });
+});
+
+test('rejects a valued prose flag, which would read as prose even when false', () => {
+  assert.throws(
+    () => buildChapter(document(section('number=1 prose=false', 'առաջին')), 'x.md', 42),
+    /prose takes no value, got "false"/u,
+  );
 });
 
 const mapped = (heading) => {

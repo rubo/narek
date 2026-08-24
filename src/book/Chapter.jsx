@@ -65,6 +65,7 @@ export default function Chapter() {
               key={sectionIndex}
               number={sectionIndex + 1}
               lines={section}
+              paragraphs={chapter.prose?.[sectionIndex]}
               hideNumber={hideNumber}
             />
           ))}

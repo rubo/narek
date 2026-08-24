@@ -44,9 +44,8 @@ export function parse(text) {
   return processor.runSync(tree);
 }
 
-// An ASCII colon touching a letter parses as a text directive, and toString
-// drops it — silently deleting the word. Only :::section is intentional here,
-// so an inline directive always means a stray colon.
+// toString drops directive names and hard-break separators, silently deleting
+// a word or fusing two. Reject both before extraction.
 function checkInline(node, file) {
   if (node.type === 'textDirective' || node.type === 'leafDirective') {
     throw new BuildError(
@@ -56,14 +55,22 @@ function checkInline(node, file) {
     );
   }
 
+  if (node.type === 'break') {
+    throw new BuildError(
+      file,
+      node,
+      'hard line break — end the line after its last character, with no trailing spaces or backslash',
+    );
+  }
+
   for (const child of node.children ?? []) {
     checkInline(child, file);
   }
 }
 
-// One paragraph per section; wrapping inside it collapses to a single line.
-export function readSections(parent, file) {
-  const sections = [];
+// Preserve soft breaks until the section reader decides whether they are valid.
+function readParagraphs(parent, file) {
+  const paragraphs = [];
 
   for (const child of parent.children) {
     if (child.type === 'yaml') continue;
@@ -73,17 +80,57 @@ export function readSections(parent, file) {
     }
 
     checkInline(child, file);
+    paragraphs.push({ node: child, text: toString(child) });
+  }
 
-    const section = toString(child).replaceAll(/\s+/gu, ' ').trim();
+  return paragraphs;
+}
+
+// Outside prose, each paragraph is one extracted line and cannot be reflowed.
+export function readSections(parent, file) {
+  const sections = [];
+
+  for (const { node, text } of readParagraphs(parent, file)) {
+    if (text.includes('\n')) {
+      throw new BuildError(
+        file,
+        node,
+        'line break inside a paragraph — breaks divide lines only in a {prose} section',
+      );
+    }
+
+    const section = text.replaceAll(/\s+/gu, ' ').trim();
 
     if (!section) {
-      throw new BuildError(file, child, 'empty section');
+      throw new BuildError(file, node, 'empty section');
     }
 
     sections.push(section);
   }
 
   return sections;
+}
+
+// In prose, soft breaks divide lines and blank lines remain paragraphs.
+export function readProse(parent, file) {
+  const lines = [];
+  const paragraphs = [];
+
+  for (const { node, text } of readParagraphs(parent, file)) {
+    paragraphs.push(lines.length);
+
+    for (const part of text.split('\n')) {
+      const line = part.replaceAll(/\s+/gu, ' ').trim();
+
+      if (!line) {
+        throw new BuildError(file, node, 'empty line in a prose section');
+      }
+
+      lines.push(line);
+    }
+  }
+
+  return { lines, paragraphs };
 }
 
 function readFrontMatter(tree, file) {
@@ -102,9 +149,10 @@ function readFrontMatter(tree, file) {
   return { data, node };
 }
 
-// Every :::section block in the document, in order, as its own array.
+// Read :::section blocks in order; prose sections also record paragraph starts.
 function readDirectives(tree, file) {
-  const directives = [];
+  const sections = [];
+  const prose = [];
 
   for (const node of tree.children.slice(1)) {
     if (node.type !== 'containerDirective' || node.name !== 'section') {
@@ -113,31 +161,42 @@ function readDirectives(tree, file) {
 
     const number = Number(node.attributes?.number);
 
-    if (number !== directives.length + 1) {
+    if (number !== sections.length + 1) {
       throw new BuildError(
         file,
         node,
-        `expected section ${directives.length + 1}, got ${node.attributes?.number}`,
+        `expected section ${sections.length + 1}, got ${node.attributes?.number}`,
       );
     }
 
-    const sections = readSections(node, file);
+    const marker = node.attributes?.prose;
 
-    if (sections.length === 0) {
+    // {prose=false} would read as prose, so the flag takes no value at all.
+    if (marker !== undefined && marker !== '') {
+      throw new BuildError(file, node, `prose takes no value, got ${JSON.stringify(marker)}`);
+    }
+
+    const { lines, paragraphs } =
+      marker === undefined
+        ? { lines: readSections(node, file), paragraphs: null }
+        : readProse(node, file);
+
+    if (lines.length === 0) {
       throw new BuildError(file, node, 'empty section');
     }
 
-    directives.push(sections);
+    sections.push(lines);
+    prose.push(paragraphs);
   }
 
-  if (directives.length === 0) {
+  if (sections.length === 0) {
     throw new BuildError(file, tree, 'no sections');
   }
 
-  return directives;
+  return { sections, prose: prose.some(Boolean) ? prose : null };
 }
 
-function buildChapter(tree, file, number) {
+export function buildChapter(tree, file, number) {
   const { data, node } = readFrontMatter(tree, file);
 
   if (data.number !== number) {
@@ -154,7 +213,12 @@ function buildChapter(tree, file, number) {
     throw new BuildError(file, node, 'missing heading');
   }
 
-  return { chapter: number, heading, sections: readDirectives(tree, file) };
+  const { sections, prose } = readDirectives(tree, file);
+
+  // Avoid an all-null prose array on chapters with no prose section.
+  return prose
+    ? { chapter: number, heading, prose, sections }
+    : { chapter: number, heading, sections };
 }
 
 // A standalone page such as the superscription: paragraphs under one heading.
