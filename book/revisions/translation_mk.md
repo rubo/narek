@@ -690,13 +690,90 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 ## Chapter 93
 
+#### Typographical correction
+
+- Previous: `անկնկալությամբ`
+- Revised: [`ակնկալությամբ`](../translation_mk/chapter_93.md?plain=1#L116)
+
 #### Corrected reading
 
-- Previous: `Միշտ արձանանում`
-- Revised: [`Միշտ արձանանամ`](../translation_mk/chapter_93.md?plain=1#L1898)
-- Evidence: [`մի՛շտ արձանացայց`](../original/chapter_93.md?plain=1#L148)
+- Previous: `Նախավճռում էր`
+- Revised: [`Նախավճռում էիր`](../translation_mk/chapter_93.md?plain=1#L184)
+- Evidence: [`նախավճռէիր`](../original/chapter_93.md?plain=1#L91)
+
+#### Typographical correction
+
+- Previous: `Վեր չբարձրանար`
+- Revised: [`Վեր չբարձրանար։`](../translation_mk/chapter_93.md?plain=1#L310)
+- Evidence: [`գլուխ ամբառնայր։`](../original/chapter_93.md?plain=1#L153)
+
+#### Typographical correction
+
+- Previous: `ինչպես`
+- Revised: [`ինչպե՞ս`](../translation_mk/chapter_93.md?plain=1#L312)
+- Evidence: [`զիա՞րդ`](../original/chapter_93.md?plain=1#L154)
 
 #### Typographical correction
 
 - Previous: `պղծություներից`
 - Revised: [`պղծություններից`](../translation_mk/chapter_93.md?plain=1#L1910)
+
+#### Corrected reading
+
+- Previous: `չկենագործվի`
+- Revised: [`կենագործվի`](../translation_mk/chapter_93.md?plain=1#L638)
+- Evidence: [`կենագործեալ`](../original/chapter_93.md?plain=1#L307)
+
+#### Corrected reading
+
+- Previous: `անհասության`
+- Revised: [`անհուսության`](../translation_mk/chapter_93.md?plain=1#L644)
+- Evidence: [`անյուսութեան`](../original/chapter_93.md?plain=1#L309)
+
+#### Corrected reading
+
+- Previous: `բարի`
+- Revised: [`բերի`](../translation_mk/chapter_93.md?plain=1#L738)
+- Evidence: [`բերի`](../original/chapter_93.md?plain=1#L353)
+
+#### Corrected reading
+
+- Previous: `մտքին, ըղձին`
+- Revised: [`մտքի ըղձին`](../translation_mk/chapter_93.md?plain=1#L836)
+- Evidence: [`մտաց ըղձից`](../original/chapter_93.md?plain=1#L396)
+
+#### Corrected reading
+
+- Previous: `Իմաստուն և աստվածաբան Ավետարանչի`
+- Revised: [`Իմաստունի և աստվածաբան Ավետարանչի`](../translation_mk/chapter_93.md?plain=1#L924)
+- Evidence: [`իմաստնոյն եւ աստուածաբան աւետարանչին`](../original/chapter_93.md?plain=1#L427)
+
+#### Corrected reading
+
+- Previous: `Ինչպե՞ս ես գրում`
+- Revised: [`Ինչպե՞ս են գրում`](../translation_mk/chapter_93.md?plain=1#L1094)
+- Evidence: [`զիա՞րդ գրեն`](../original/chapter_93.md?plain=1#L499)
+
+#### Corrected reading
+
+- Previous: `հոտոտեց`
+- Revised: [`հոտոտեցիր`](../translation_mk/chapter_93.md?plain=1#L1228)
+- Evidence: [`հոտոտեալ`](../original/chapter_93.md?plain=1#L565)
+
+#### Corrected reading
+
+- Previous: `նկատվի`
+- Revised: [`նկարվի`](../translation_mk/chapter_93.md?plain=1#L1288)
+- Evidence: [`նկարեալ`](../original/chapter_93.md?plain=1#L588)
+
+#### Corrected reading
+
+- Previous: `Ուր բանսարկուի`
+- Revised: [`Որ բանսարկուի`](../translation_mk/chapter_93.md?plain=1#L1296)
+- Evidence: [`որ ի բանսարկուին`](../original/chapter_93.md?plain=1#L591)
+
+#### Corrected reading
+
+- Previous: `Միշտ արձանանում`
+- Revised: [`Միշտ արձանանամ`](../translation_mk/chapter_93.md?plain=1#L1900)
+- Evidence: [`մի՛շտ արձանացայց`](../original/chapter_93.md?plain=1#L866)
