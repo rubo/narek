@@ -676,6 +676,18 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Քո աստվածավանդ պատվիրանի հանդեպ`](../translation_mk/chapter_92.md?plain=1#L638)
 - Evidence: [`աստուածաւանդ քո պատուիրանիդ`](../original/chapter_92.md?plain=1#L64)
 
+#### Corrected reading
+
+- Previous: `Հայտնության`
+- Revised: [`Հարության`](../translation_mk/chapter_92.md?plain=1#L76)
+- Evidence: [`յարութեան`](../original/chapter_92.md?plain=1#L39)
+
+#### Corrected reading
+
+- Previous: `տուն`
+- Revised: [`տոն`](../translation_mk/chapter_92.md?plain=1#L158)
+- Evidence: [`տաւն`](../original/chapter_92.md?plain=1#L75)
+
 ## Chapter 93
 
 #### Corrected reading
