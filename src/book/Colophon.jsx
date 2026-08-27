@@ -5,7 +5,7 @@ export default function Colophon() {
     <article>
       <h1 className="chapter-heading">{colophon.heading}</h1>
       {colophon.content.map((text, index) => (
-        <p key={index} className="mb-3 text-justify indent-6 last:mb-0">
+        <p key={index} className="mb-3 indent-2 last:mb-0 md:text-justify md:indent-6">
           {text}
         </p>
       ))}
