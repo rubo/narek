@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import {
   Button,
   ButtonGroup,
@@ -7,6 +9,7 @@ import {
   IconChevronLeft,
   IconChevronRight,
   Label,
+  Link,
   ListBox,
 } from '@heroui/react';
 import { useOverlayState } from '@heroui/react';
@@ -189,36 +192,38 @@ export default function Layout() {
                   </ListBox.Item>
                 </ListBox>
               </Drawer.Body>
-              <Drawer.Footer>
-                <ButtonGroup variant="tertiary" fullWidth>
+              <Drawer.Footer className="flex flex-row justify-between gap-4">
+                <Link href="https://github.com/rubo/narek">
+                  <Link.Icon className="size-6">
+                    <img alt="GitHub" src="/github.svg" />
+                  </Link.Icon>
+                </Link>
+                <ButtonGroup variant="tertiary">
                   <Button
-                    className="text-xs"
+                    className="w-16 text-xs"
                     aria-pressed={fontScale === 'sm'}
                     aria-label="Փոքր տառաչափ"
                     onClick={() => handleFontScaleChange('sm')}
                   >
-                    {fontScale === 'sm' && <CheckIcon className="size-2.5" />}
-                    Աբգ
+                    {fontScale === 'sm' && <CheckIcon className="size-2.5" />}Ա
                   </Button>
                   <Button
-                    className="text-base"
+                    className="w-16 text-base"
                     aria-pressed={fontScale === 'base'}
                     aria-label="Միջին տառաչափ"
                     onClick={() => handleFontScaleChange('base')}
                   >
                     <ButtonGroup.Separator />
-                    {fontScale === 'base' && <CheckIcon className="size-2.5" />}
-                    Աբգ
+                    {fontScale === 'base' && <CheckIcon className="size-2.5" />}Ա
                   </Button>
                   <Button
-                    className="text-lg"
+                    className="w-16 text-lg"
                     aria-pressed={fontScale === 'lg'}
                     aria-label="Մեծ տառաչափ"
                     onClick={() => handleFontScaleChange('lg')}
                   >
                     <ButtonGroup.Separator />
-                    {fontScale === 'lg' && <CheckIcon className="size-2.5" />}
-                    Աբգ
+                    {fontScale === 'lg' && <CheckIcon className="size-2.5" />}Ա
                   </Button>
                 </ButtonGroup>
               </Drawer.Footer>
@@ -253,7 +258,7 @@ export default function Layout() {
               <Dropdown.ItemIndicator />
               <div className="flex flex-col">
                 <Label>Թարգմանություն</Label>
-                <Description>Մ․ Խերանյան</Description>
+                <Description>Մ. Խերանյան</Description>
               </div>
             </Dropdown.Item>
             <Dropdown.Item id="combined">

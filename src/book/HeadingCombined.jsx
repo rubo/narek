@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { range } from '../shared/utils';
 
 export default function HeadingCombined({

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { Fragment } from 'react';
 import { range, toArmenian } from '../shared/utils';
 

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 // Builds src/assets/generated/ from the Markdown in book/.
 // --check verifies the output is current instead of writing it.
 

@@ -1,8 +1,8 @@
 # AGENTS instructions
 
-A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the Grabar original, a modern Armenian translation, and a line-to-line mapping between them. React 19 + Vite, react-router, HeroUI, Tailwind 4, oxlint/oxfmt.
+A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the Grabar original, a modern Armenian translation, and a line-to-line mapping between them. See [package.json](./package.json) for project setup.
 
-**The mapping is the point of this project.** It is what no other digital edition has. Treat it as the most valuable thing in the repo.
+**The mapping is the main point of this project.** It is what no other digital edition has. Treat it as the most valuable thing in the repo.
 
 ## Armenian punctuation
 

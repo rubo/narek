@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { toArmenian } from '../shared/utils';
 
 export default function Section({ number, lines, paragraphs, hideNumber }) {

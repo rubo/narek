@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { build } from './build-books.js';
 
 // Watcher paths are relative to the root, so the leading separator is optional.

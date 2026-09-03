@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { useOutletContext } from 'react-router';
 import mapping from '../assets/generated/mapping_mk/superscription.json';
 import original from '../assets/generated/original/superscription.json';

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { useOutletContext, useParams } from 'react-router';
 import mapping from '../assets/generated/mapping_mk.json';
 import originalChapters from '../assets/generated/original/chapters.json';

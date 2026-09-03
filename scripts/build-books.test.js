@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 // The corpus only ever proves what is accepted. These cover what must be
 // rejected, because a miss here corrupts the text silently.
 

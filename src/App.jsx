@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import './App.css';
 import { useTheme } from '@heroui/react';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router';

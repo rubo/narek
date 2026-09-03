@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 import { useOutletContext } from 'react-router';
 import mapping from '../assets/generated/mapping_mk/colophon.json';
 import original from '../assets/generated/original/colophon.json';

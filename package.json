@@ -2,6 +2,7 @@
   "name": "narek",
   "version": "0.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "books": "node scripts/build-books.js",
