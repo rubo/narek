@@ -1,0 +1,8 @@
+{
+  "heading": [{ "original": [0, 0], "translation": [0, 0], "mode": "line" }],
+  "content": [
+    { "original": [0, 13], "translation": [0, 13], "mode": "line" },
+    { "original": [14, 15], "translation": [14, 14], "mode": "block" },
+    { "original": [16, 18], "translation": [15, 16], "mode": "block" }
+  ]
+}

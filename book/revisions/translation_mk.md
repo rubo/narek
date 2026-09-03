@@ -4,6 +4,14 @@
 
 Section boundaries in the translation were adjusted to correspond with the original text (Grabar). The resulting alignment is documented by the mapping files.
 
+## Superscription
+
+#### Typographical correction
+
+- Previous: `կյանքի զղջման կանոնների`
+- Revised: [`կյանքի զղջման կանոնների՝`](../translation_mk/superscription.md?plain=1#L9)
+- Evidence: [`զղջականաց կանոնաց կենաց՝`](../original/superscription.md?plain=1#L9)
+
 ## Chapter 2
 
 #### Typographical correction

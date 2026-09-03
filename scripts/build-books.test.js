@@ -6,7 +6,9 @@ import { test } from 'node:test';
 import {
   buildChapter,
   checkMapping,
+  checkPageMapping,
   checkPunctuation,
+  mappingFilenameProblem,
   parse,
   readProse,
   readSections,
@@ -23,6 +25,12 @@ const only = (outputs) => {
   assert.equal(problems.length, 1, `expected one problem, got ${problems.length}`);
   return problems[0];
 };
+
+test('rejects malformed chapter mapping names instead of treating them as pages', () => {
+  assert.equal(mappingFilenameProblem('chapter_5b.json'), 'expected chapter_<n>.json');
+  assert.equal(mappingFilenameProblem('notes.json'), null);
+  assert.equal(mappingFilenameProblem('notes.txt'), 'expected a JSON mapping file');
+});
 
 test('accepts the marks the corpus actually uses', () => {
   const text = 'Բառ, կարդա՛ հիմա. եւ գրեա՜ տող՝ դարձեալ ։ «գիրք» — (այս) ֊ …';
@@ -189,4 +197,38 @@ test('rejects a line-mode heading whose sides differ in length', () => {
 
 test('rejects a mapping with no heading at all', () => {
   assert.deepEqual(mapped(undefined), ['mapping_mk: chapter 42: missing heading mapping']);
+});
+
+test('accepts a standalone page mapping that covers both pages once', () => {
+  const mapping = {
+    heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+    content: [{ original: [0, 1], translation: [0, 0], mode: 'block' }],
+  };
+
+  assert.deepEqual(
+    checkPageMapping(
+      'mapping_mk: superscription',
+      mapping,
+      { heading: 'Ա', content: ['ա', 'բ'] },
+      { heading: 'Բ', content: ['գ'] },
+    ),
+    [],
+  );
+});
+
+test('rejects a standalone page mapping with incomplete content coverage', () => {
+  const mapping = {
+    heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+    content: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+  };
+
+  assert.deepEqual(
+    checkPageMapping(
+      'mapping_mk: superscription',
+      mapping,
+      { heading: 'Ա', content: ['ա', 'բ'] },
+      { heading: 'Բ', content: ['գ'] },
+    ),
+    ['mapping_mk: superscription content: original lines never mapped: 1'],
+  );
 });

@@ -1,8 +1,14 @@
 import { range } from '../shared/utils';
 
-export default function HeadingCombined({ originalLines, translationLines, mapping }) {
+export default function HeadingCombined({
+  originalLines,
+  translationLines,
+  mapping,
+  as: Heading = 'h2',
+  className = 'text-book-sm px-4 text-center',
+}) {
   return (
-    <h2 className="text-book-sm px-4 text-center">
+    <Heading className={className}>
       {mapping.map((pair, pairIndex) => {
         if (pair.mode === 'line') {
           const origRange = range(pair.original[0], pair.original[1]);
@@ -40,6 +46,6 @@ export default function HeadingCombined({ originalLines, translationLines, mappi
         // Unreachable: only validated mappings are emitted.
         throw new Error(`unexpected mapping mode: ${pair.mode}`);
       })}
-    </h2>
+    </Heading>
   );
 }

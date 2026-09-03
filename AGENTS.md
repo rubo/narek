@@ -85,6 +85,8 @@ In chapters 34, 75, 92 and 93 some original sections run as unbroken paragraphs 
 
 `book/mapping_<edition>/chapter_<n>.json` pairs `original` line ranges with `translation` ranges, one file per chapter (`.chapter` must match the file name). Each file carries a `heading` mapping and a `sections` array; the build merges them and the app imports the merged file. Validated on every build:
 
+Standalone pages use a matching mapping file such as `book/mapping_<edition>/superscription.json`, with `heading` and `content` pair lists. Their paragraph indices follow the same zero-based, inclusive, exact-coverage rules.
+
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no overlaps.
 - `mode: "line"` pairs ranges position by position, so both must be the **same length**. `mode: "block"` presents them as blocks and may differ.

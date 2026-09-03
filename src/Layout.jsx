@@ -13,8 +13,10 @@ import { useOverlayState } from '@heroui/react';
 import { useState } from 'react';
 import { Outlet, useLocation, useNavigate, useSearchParams } from 'react-router';
 import chapters from './assets/generated/original/chapters.json';
-import colophon from './assets/generated/original/colophon.json';
-import superscription from './assets/generated/original/superscription.json';
+import originalColophon from './assets/generated/original/colophon.json';
+import originalSuperscription from './assets/generated/original/superscription.json';
+import translatedColophon from './assets/generated/translation_mk/colophon.json';
+import translatedSuperscription from './assets/generated/translation_mk/superscription.json';
 import { toArmenian } from './shared/utils';
 
 // From the URL, so untrusted.
@@ -75,6 +77,9 @@ export default function Layout() {
 
   const mode = searchParams.get('mode');
   const displayMode = displayModes.includes(mode) ? mode : defaultDisplayMode;
+  const superscription =
+    displayMode === 'translated' ? translatedSuperscription : originalSuperscription;
+  const colophon = displayMode === 'translated' ? translatedColophon : originalColophon;
   const selectedKeys = paths.includes(location.pathname) ? [location.pathname] : [];
 
   // Keep the display mode when moving between pages.
@@ -221,49 +226,46 @@ export default function Layout() {
           </Drawer.Content>
         </Drawer.Backdrop>
       </Drawer>
-      {/* Only the chapters are translated. */}
-      {currentChapter >= 0 && (
-        <Dropdown>
-          <Button
-            variant="tertiary"
-            isIconOnly
-            className="fixed top-4 right-4 shadow-lg"
-            aria-label="Թարգմանություն"
+      <Dropdown>
+        <Button
+          variant="tertiary"
+          isIconOnly
+          className="fixed top-4 right-4 shadow-lg"
+          aria-label="Թարգմանություն"
+        >
+          <span className="material-symbols-outlined">translate</span>
+        </Button>
+        <Dropdown.Popover placement="bottom end">
+          <Dropdown.Menu
+            disallowEmptySelection
+            selectedKeys={[displayMode]}
+            selectionMode="single"
+            onSelectionChange={handleDisplayChange}
           >
-            <span className="material-symbols-outlined">translate</span>
-          </Button>
-          <Dropdown.Popover placement="bottom end">
-            <Dropdown.Menu
-              disallowEmptySelection
-              selectedKeys={[displayMode]}
-              selectionMode="single"
-              onSelectionChange={handleDisplayChange}
-            >
-              <Dropdown.Item id="original">
-                <Dropdown.ItemIndicator />
-                <div className="flex flex-col">
-                  <Label>Բնագիր</Label>
-                  <Description>Գրաբար</Description>
-                </div>
-              </Dropdown.Item>
-              <Dropdown.Item id="translated">
-                <Dropdown.ItemIndicator />
-                <div className="flex flex-col">
-                  <Label>Թարգմանություն</Label>
-                  <Description>Մ․ Խերանյան</Description>
-                </div>
-              </Dropdown.Item>
-              <Dropdown.Item id="combined">
-                <Dropdown.ItemIndicator />
-                <div className="flex flex-col">
-                  <Label>Համատեղ</Label>
-                  <Description>Բնագիր + թարգմանություն</Description>
-                </div>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown.Popover>
-        </Dropdown>
-      )}
+            <Dropdown.Item id="original">
+              <Dropdown.ItemIndicator />
+              <div className="flex flex-col">
+                <Label>Բնագիր</Label>
+                <Description>Գրաբար</Description>
+              </div>
+            </Dropdown.Item>
+            <Dropdown.Item id="translated">
+              <Dropdown.ItemIndicator />
+              <div className="flex flex-col">
+                <Label>Թարգմանություն</Label>
+                <Description>Մ․ Խերանյան</Description>
+              </div>
+            </Dropdown.Item>
+            <Dropdown.Item id="combined">
+              <Dropdown.ItemIndicator />
+              <div className="flex flex-col">
+                <Label>Համատեղ</Label>
+                <Description>Բնագիր + թարգմանություն</Description>
+              </div>
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown.Popover>
+      </Dropdown>
       <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]}`}>
         <Outlet context={{ displayMode }} />
       </main>

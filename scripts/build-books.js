@@ -26,6 +26,7 @@ const CHAPTER_FILE = /^chapter_(\d+)\.md$/;
 // mapping_<edition> pairs original with translation_<edition>.
 const MAPPING_DIR = /^mapping_(.+)$/u;
 const MAPPING_CHAPTER = /^chapter_(\d+)\.json$/u;
+const MAPPING_PAGE = /^(.+)\.json$/u;
 const MAPPING_MODES = new Set(['line', 'block']);
 
 const processor = unified().use(remarkParse).use(remarkFrontmatter, ['yaml']).use(remarkDirective);
@@ -42,6 +43,20 @@ class BuildError extends Error {
 export function parse(text) {
   const tree = processor.parse(text);
   return processor.runSync(tree);
+}
+
+export function mappingFilenameProblem(file) {
+  if (!MAPPING_PAGE.test(file)) {
+    return 'expected a JSON mapping file';
+  }
+
+  // A chapter_* name that fails the numeric pattern is a malformed chapter,
+  // not a standalone page with a coincidentally similar name.
+  if (file.startsWith('chapter_') && !MAPPING_CHAPTER.test(file)) {
+    return 'expected chapter_<n>.json';
+  }
+
+  return null;
 }
 
 // toString drops directive names and hard-break separators, silently deleting
@@ -391,19 +406,46 @@ export function checkMapping(file, mapping, original, translation) {
   return problems;
 }
 
-// Keep mappings aligned with the chapter arrays indexed by Chapter.
+// Standalone pages use the same exact-coverage contract as chapter headings and
+// sections, with their paragraphs mapped under `content`.
+export function checkPageMapping(file, mapping, original, translation) {
+  const problems = [];
+
+  for (const key of ['heading', 'content']) {
+    if (Array.isArray(mapping[key])) {
+      checkPairs(
+        `${file} ${key}`,
+        mapping[key],
+        key === 'heading' ? 1 : original.content.length,
+        key === 'heading' ? 1 : translation.content.length,
+        problems,
+      );
+    } else {
+      problems.push(`${file}: missing ${key} mapping`);
+    }
+  }
+
+  return problems;
+}
+
+// Keep chapter mappings aligned with the chapter arrays and retain standalone
+// page mappings by their matching file names.
 async function readMapping(edition, original) {
   const dir = join(sourceRoot, `mapping_${edition}`);
   const byChapter = new Map();
+  const pages = new Map();
   const problems = [];
 
   for (const file of (await readdir(dir)).sort()) {
-    const match = MAPPING_CHAPTER.exec(file);
+    const filenameProblem = mappingFilenameProblem(file);
 
-    if (!match) {
-      problems.push(`mapping_${edition}/${file}: expected chapter_<n>.json`);
+    if (filenameProblem) {
+      problems.push(`mapping_${edition}/${file}: ${filenameProblem}`);
       continue;
     }
+
+    const chapterMatch = MAPPING_CHAPTER.exec(file);
+    const pageMatch = MAPPING_PAGE.exec(file);
 
     let entry;
 
@@ -414,7 +456,12 @@ async function readMapping(edition, original) {
       continue;
     }
 
-    if (entry.chapter !== Number(match[1])) {
+    if (!chapterMatch) {
+      pages.set(pageMatch[1], { entry, file });
+      continue;
+    }
+
+    if (entry.chapter !== Number(chapterMatch[1])) {
       problems.push(
         `mapping_${edition}/${file}: chapter ${entry.chapter} does not match the file name`,
       );
@@ -434,7 +481,12 @@ async function readMapping(edition, original) {
 
   const merged = original.map(({ chapter }) => byChapter.get(chapter)?.entry ?? null);
 
-  return { merged, chapters: [...byChapter.values()].map((seen) => seen.entry), problems };
+  return {
+    merged,
+    chapters: [...byChapter.values()].map((seen) => seen.entry),
+    pages,
+    problems,
+  };
 }
 
 async function emitMappings(outputs) {
@@ -460,10 +512,34 @@ async function emitMappings(outputs) {
       continue;
     }
 
-    const { merged, chapters, problems: readProblems } = await readMapping(edition, original);
+    const {
+      merged,
+      chapters,
+      pages,
+      problems: readProblems,
+    } = await readMapping(edition, original);
+    const pageProblems = [];
+
+    for (const [page, { entry, file }] of pages) {
+      const originalPage = outputs.get(`original/${page}.json`);
+      const translationPage = outputs.get(`translation_${edition}/${page}.json`);
+
+      if (!originalPage || !translationPage) {
+        pageProblems.push(
+          `${label}/${file}: ${page}.md is missing from the ${originalPage ? 'translation' : 'original'}`,
+        );
+        continue;
+      }
+
+      pageProblems.push(
+        ...checkPageMapping(`${label}: ${page}`, entry, originalPage, translationPage),
+      );
+    }
+
     const editionProblems = [
       ...readProblems,
       ...checkMapping(label, chapters, original, translation),
+      ...pageProblems,
     ];
 
     problems.push(...editionProblems);
@@ -471,6 +547,10 @@ async function emitMappings(outputs) {
     // Keep invalid mappings out of the app; dev serves the last valid output.
     if (editionProblems.length === 0) {
       outputs.set(`${label}.json`, merged);
+
+      for (const { entry, file } of pages.values()) {
+        outputs.set(`${label}/${file}`, entry);
+      }
     }
   }
 
