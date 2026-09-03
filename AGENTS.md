@@ -1,6 +1,6 @@
 # AGENTS instructions
 
-A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the Grabar original, a modern Armenian translation, and a line-to-line mapping between them. See [package.json](./package.json) for project setup.
+A digital edition of Grigor Narekatsi's _Book of Lamentations_: the classical Armenian (Grabar) original, a modern Armenian translation, and a line-to-line mapping between the two. See [package.json](./package.json) for project setup.
 
 **The mapping is the main point of this project.** It is what no other digital edition has. Treat it as the most valuable thing in the repo.
 
@@ -39,7 +39,7 @@ Square brackets are plain text (`բան [բառ] բան`).
 
 ```
 book/<edition>/*.md              source of truth, hand-authored
-book/mapping_<edition>/*.json    hand-authored mapping, one file per chapter
+book/mapping_<edition>/*.json    hand-authored mapping, per chapter and page
 src/assets/generated/            GENERATED — never edit
 scripts/build-books.js           the generator + CLI
 scripts/vite-plugin-books.js     Vite plugin wrapping it

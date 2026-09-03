@@ -3,17 +3,17 @@
 [![CI](https://github.com/rubo/narek/actions/workflows/ci.yml/badge.svg)](https://github.com/rubo/narek/actions/workflows/ci.yml)
 [![Deploy](https://github.com/rubo/narek/actions/workflows/deploy.yml/badge.svg)](https://github.com/rubo/narek/actions/workflows/deploy.yml)
 
-A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the Grabar original, a modern Armenian translation, and a line-to-line mapping between the two.
+A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the classical Armenian (Grabar) original, a modern Armenian translation, and a line-to-line mapping between the two.
 
 ## Structure
 
-| Path                                    |                                                 |
-| --------------------------------------- | ----------------------------------------------- |
-| `book/<edition>/*.md`                   | the texts — source of truth                     |
-| `book/mapping_<edition>/chapter_*.json` | line-to-line mapping, one file per chapter      |
-| `book/revisions/<edition>.md`           | revisions made to an edition                    |
-| `src/assets/generated/`                 | built from `book/`, not committed               |
-| `scripts/`                              | the generator, and the Vite plugin that runs it |
+| Path                            |                                                 |
+| ------------------------------- | ----------------------------------------------- |
+| `book/<edition>/*.md`           | the texts — source of truth                     |
+| `book/mapping_<edition>/*.json` | line-to-line mapping, per chapter and page      |
+| `book/revisions/<edition>.md`   | revisions made to an edition                    |
+| `src/assets/generated/`         | built from `book/`, not committed               |
+| `scripts/`                      | the generator, and the Vite plugin that runs it |
 
 Chapters are `chapter_<number>.md` with numbered `:::section` blocks; sections are separated by blank lines. `superscription.md` and `colophon.md` are plain paragraphs under a heading.
 
