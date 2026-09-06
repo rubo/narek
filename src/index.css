@@ -43,8 +43,15 @@
 }
 
 @layer components {
+  .reader {
+    container-type: inline-size;
+  }
+
   .chapter-heading {
-    @apply text-book-2xl mb-12 px-12 text-center uppercase lg:px-0;
+    @apply mb-12 px-12 text-center uppercase lg:px-0;
+    font-size: clamp(var(--text-book-lg), calc(5cqi * var(--font-scale, 1)), var(--text-book-2xl));
+    line-height: var(--leading-tight);
+    text-wrap: balance;
   }
 }
 
