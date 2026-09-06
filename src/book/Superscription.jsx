@@ -22,6 +22,7 @@ export default function Superscription() {
             originalLines={[original.heading]}
             translationLines={[translation.heading]}
             mapping={mapping.heading}
+            translationClassName="text-book-base"
           />
           <SectionCombined
             hideNumber
