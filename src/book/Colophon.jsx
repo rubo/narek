@@ -22,7 +22,6 @@ export default function Colophon() {
               originalLines={[original.heading]}
               translationLines={[translation.heading]}
               mapping={mapping.heading}
-              translationClassName="heading-translation"
             />
           </FitHeading>
           <SectionCombined

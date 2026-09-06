@@ -12,7 +12,6 @@ export default function ChapterHeading({ displayMode, originalLines, translation
         originalLines={originalLines}
         translationLines={translationLines}
         mapping={mapping}
-        translationClassName="subheading-translation"
       />
     );
   } else {

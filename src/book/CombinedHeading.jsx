@@ -2,12 +2,7 @@
 
 import { range } from '../shared/utils';
 
-export default function CombinedHeading({
-  originalLines,
-  translationLines,
-  mapping,
-  translationClassName,
-}) {
+export default function CombinedHeading({ originalLines, translationLines, mapping }) {
   return mapping.map((pair, pairIndex) => {
     if (pair.mode === 'line') {
       const origRange = range(pair.original[0], pair.original[1]);
@@ -16,7 +11,7 @@ export default function CombinedHeading({
       return origRange.map((lineNumber, lineIndex) => (
         <span key={lineNumber} className="mt-4 block first:mt-0">
           <span className="block">{originalLines[lineNumber]}</span>
-          <span className={`${translationClassName} text-muted block`}>
+          <span className="translation text-muted block">
             {translationLines[transRange[lineIndex]]}
           </span>
         </span>
@@ -33,7 +28,7 @@ export default function CombinedHeading({
           ))}
           <span className="text-muted block">
             {range(pair.translation[0], pair.translation[1]).map((lineNumber) => (
-              <span key={lineNumber} className={`${translationClassName} mt-2 block first:mt-0`}>
+              <span key={lineNumber} className="translation mt-2 block first:mt-0">
                 {translationLines[lineNumber]}
               </span>
             ))}

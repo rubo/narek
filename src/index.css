@@ -50,8 +50,8 @@
     text-wrap: balance;
   }
 
-  .heading-translation {
-    font-size: calc(var(--text-base) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
+  .heading .translation {
+    font-size: calc(var(--text-xl) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
   }
 
   .subheading {
@@ -61,7 +61,7 @@
     text-wrap: balance;
   }
 
-  .subheading-translation {
+  .subheading .translation {
     font-size: calc(var(--text-xs) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
   }
 }
