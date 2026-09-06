@@ -2,12 +2,7 @@
 
 import { useLayoutEffect, useRef } from 'react';
 
-export default function FitHeading({
-  as: Heading = 'h1',
-  children,
-  minFontSize = 'var(--text-book-lg)',
-  ...props
-}) {
+export default function FitHeading({ as: Heading = 'h1', children, ...props }) {
   const headingRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -25,14 +20,6 @@ export default function FitHeading({
     const fit = () => {
       heading.style.removeProperty('--fit-heading-scale');
 
-      const maxFontSize = Number.parseFloat(getComputedStyle(heading).fontSize);
-      heading.style.fontSize = minFontSize;
-      const minimumFontSize = Number.parseFloat(getComputedStyle(heading).fontSize);
-      heading.style.removeProperty('font-size');
-
-      const previousWhiteSpace = content.style.whiteSpace;
-      content.style.whiteSpace = 'nowrap';
-
       const styles = getComputedStyle(heading);
       const horizontalPadding =
         Number.parseFloat(styles.paddingLeft) + Number.parseFloat(styles.paddingRight);
@@ -40,12 +27,8 @@ export default function FitHeading({
       const requiredWidth = content.scrollWidth;
 
       if (availableWidth > 0 && requiredWidth > availableWidth) {
-        const minScale = minimumFontSize / maxFontSize;
-        const scale = Math.max(minScale, availableWidth / requiredWidth);
-        heading.style.setProperty('--fit-heading-scale', String(scale));
+        heading.style.setProperty('--fit-heading-scale', String(availableWidth / requiredWidth));
       }
-
-      content.style.whiteSpace = previousWhiteSpace;
     };
 
     const scheduleFit = () => {
@@ -57,6 +40,7 @@ export default function FitHeading({
 
     const observer = new ResizeObserver(scheduleFit);
     observer.observe(heading);
+    observer.observe(content);
 
     document.fonts?.ready.then(() => {
       if (active) {
@@ -69,7 +53,7 @@ export default function FitHeading({
       cancelAnimationFrame(frame);
       observer.disconnect();
     };
-  }, [children, minFontSize]);
+  }, [children]);
 
   return (
     <Heading ref={headingRef} {...props}>

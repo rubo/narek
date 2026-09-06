@@ -30,7 +30,7 @@ export default function ChapterHeading({ displayMode, originalLines, translation
   }
 
   return (
-    <FitHeading as="h2" className="subheading" minFontSize="var(--text-book-xs)">
+    <FitHeading as="h2" className="subheading">
       {content}
     </FitHeading>
   );

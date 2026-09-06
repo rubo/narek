@@ -45,24 +45,24 @@
 @layer components {
   .heading {
     @apply mb-12 w-full px-14 text-center uppercase lg:px-0;
-    font-size: calc(var(--text-book-2xl) * var(--fit-heading-scale, 1));
-    line-height: var(--leading-tight);
+    font-size: calc(var(--text-2xl) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
+    line-height: var(--text-book-2xl--line-height);
     text-wrap: balance;
   }
 
   .heading-translation {
-    font-size: calc(var(--text-book-base) * var(--fit-heading-scale, 1));
+    font-size: calc(var(--text-base) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
   }
 
   .subheading {
     @apply w-full px-4 text-center;
-    font-size: calc(var(--text-book-sm) * var(--fit-heading-scale, 1));
-    line-height: var(--leading-snug);
+    font-size: calc(var(--text-sm) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
+    line-height: var(--text-book-sm--line-height);
     text-wrap: balance;
   }
 
   .subheading-translation {
-    font-size: calc(var(--text-book-xs) * var(--fit-heading-scale, 1));
+    font-size: calc(var(--text-xs) * var(--font-scale, 1) * var(--fit-heading-scale, 1));
   }
 }
 
