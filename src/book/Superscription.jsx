@@ -4,7 +4,8 @@ import { useOutletContext } from 'react-router';
 import mapping from '../assets/generated/mapping_mk/superscription.json';
 import original from '../assets/generated/original/superscription.json';
 import translation from '../assets/generated/translation_mk/superscription.json';
-import HeadingCombined from './HeadingCombined';
+import CombinedHeading from './CombinedHeading';
+import FitHeading from './FitHeading';
 import SectionCombined from './SectionCombined';
 
 export default function Superscription() {
@@ -16,14 +17,14 @@ export default function Superscription() {
     <article className="text-center">
       {displayMode === 'combined' ? (
         <>
-          <HeadingCombined
-            as="h1"
-            className="chapter-heading"
-            originalLines={[original.heading]}
-            translationLines={[translation.heading]}
-            mapping={mapping.heading}
-            translationClassName="text-book-base"
-          />
+          <FitHeading className="heading">
+            <CombinedHeading
+              originalLines={[original.heading]}
+              translationLines={[translation.heading]}
+              mapping={mapping.heading}
+              translationClassName="heading-translation"
+            />
+          </FitHeading>
           <SectionCombined
             hideNumber
             originalLines={original.content}
@@ -33,7 +34,7 @@ export default function Superscription() {
         </>
       ) : (
         <>
-          <h1 className="chapter-heading">{superscription.heading}</h1>
+          <FitHeading className="heading">{superscription.heading}</FitHeading>
           {superscription.content.map((text, index) => (
             <p key={index} className="indent-2">
               {text}

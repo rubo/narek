@@ -4,7 +4,8 @@ import { useOutletContext } from 'react-router';
 import mapping from '../assets/generated/mapping_mk/colophon.json';
 import original from '../assets/generated/original/colophon.json';
 import translation from '../assets/generated/translation_mk/colophon.json';
-import HeadingCombined from './HeadingCombined';
+import CombinedHeading from './CombinedHeading';
+import FitHeading from './FitHeading';
 import SectionCombined from './SectionCombined';
 
 export default function Colophon() {
@@ -16,14 +17,14 @@ export default function Colophon() {
     <article>
       {displayMode === 'combined' ? (
         <>
-          <HeadingCombined
-            as="h1"
-            className="chapter-heading"
-            originalLines={[original.heading]}
-            translationLines={[translation.heading]}
-            mapping={mapping.heading}
-            translationClassName="text-book-base"
-          />
+          <FitHeading className="heading">
+            <CombinedHeading
+              originalLines={[original.heading]}
+              translationLines={[translation.heading]}
+              mapping={mapping.heading}
+              translationClassName="heading-translation"
+            />
+          </FitHeading>
           <SectionCombined
             hideNumber
             originalLines={original.content}
@@ -33,7 +34,7 @@ export default function Colophon() {
         </>
       ) : (
         <>
-          <h1 className="chapter-heading">{colophon.heading}</h1>
+          <FitHeading className="heading">{colophon.heading}</FitHeading>
           {colophon.content.map((text, index) => (
             <p key={index} className="mb-3 indent-2 last:mb-0 md:text-justify md:indent-6">
               {text}

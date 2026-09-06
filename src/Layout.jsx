@@ -271,9 +271,7 @@ export default function Layout() {
           </Dropdown.Menu>
         </Dropdown.Popover>
       </Dropdown>
-      <main
-        className={`reader text-book-base max-w-xl font-serif ${scaleClasses[fontScale]} w-full`}
-      >
+      <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]} w-full`}>
         <Outlet context={{ displayMode }} />
       </main>
       {(previous || next) && (

@@ -43,15 +43,26 @@
 }
 
 @layer components {
-  .reader {
-    container-type: inline-size;
-  }
-
-  .chapter-heading {
-    @apply mb-12 px-12 text-center uppercase lg:px-0;
-    font-size: clamp(var(--text-book-lg), calc(5cqi * var(--font-scale, 1)), var(--text-book-2xl));
+  .heading {
+    @apply mb-12 w-full px-14 text-center uppercase lg:px-0;
+    font-size: calc(var(--text-book-2xl) * var(--fit-heading-scale, 1));
     line-height: var(--leading-tight);
     text-wrap: balance;
+  }
+
+  .heading-translation {
+    font-size: calc(var(--text-book-base) * var(--fit-heading-scale, 1));
+  }
+
+  .subheading {
+    @apply w-full px-4 text-center;
+    font-size: calc(var(--text-book-sm) * var(--fit-heading-scale, 1));
+    line-height: var(--leading-snug);
+    text-wrap: balance;
+  }
+
+  .subheading-translation {
+    font-size: calc(var(--text-book-xs) * var(--fit-heading-scale, 1));
   }
 }
 
