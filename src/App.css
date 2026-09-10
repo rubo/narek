@@ -1,0 +1,14 @@
+/* SPDX-License-Identifier: MIT */
+
+::view-transition-group(.reading-view) {
+  animation-duration: 180ms;
+  animation-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none;
+  }
+}

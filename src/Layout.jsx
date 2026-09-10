@@ -13,8 +13,8 @@ import {
   ListBox,
 } from '@heroui/react';
 import { useOverlayState } from '@heroui/react';
-import { useState } from 'react';
-import { Outlet, useLocation, useNavigate, useSearchParams } from 'react-router';
+import { useLayoutEffect, useState, ViewTransition } from 'react';
+import { Outlet, useLocation, useNavigate, useNavigationType, useSearchParams } from 'react-router';
 import chapters from './assets/generated/original/chapters.json';
 import originalColophon from './assets/generated/original/colophon.json';
 import originalSuperscription from './assets/generated/original/superscription.json';
@@ -62,6 +62,7 @@ function CheckIcon(props) {
 export default function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
+  const navigationType = useNavigationType();
   const [searchParams, setSearchParams] = useSearchParams();
   const drawerState = useOverlayState({
     defaultOpen: false,
@@ -85,10 +86,19 @@ export default function Layout() {
   const colophon = displayMode === 'translated' ? translatedColophon : originalColophon;
   const selectedKeys = paths.includes(location.pathname) ? [location.pathname] : [];
 
+  useLayoutEffect(() => {
+    // Leave initial loads and history navigation to browser scroll restoration.
+    if (navigationType === 'POP') {
+      return;
+    }
+
+    // Reset between the old and new snapshots, before the transition is painted.
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname, displayMode, navigationType]);
+
   // Keep the display mode when moving between pages.
   const goTo = (pathname) => {
     navigate({ pathname, search: location.search });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Keyed by path, so the route drives the selection.
@@ -143,8 +153,6 @@ export default function Layout() {
       // Switching the view is not a navigation step.
       { replace: true },
     );
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -271,9 +279,12 @@ export default function Layout() {
           </Dropdown.Menu>
         </Dropdown.Popover>
       </Dropdown>
-      <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]} w-full`}>
-        <Outlet context={{ displayMode }} />
-      </main>
+      {/* Separate snapshots avoid animating the scroll reset as a position change. */}
+      <ViewTransition key={`${location.pathname}:${displayMode}`} default="reading-view">
+        <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]} w-full`}>
+          <Outlet context={{ displayMode }} />
+        </main>
+      </ViewTransition>
       {(previous || next) && (
         <ButtonGroup variant="tertiary" className="mt-12">
           {previous && (
