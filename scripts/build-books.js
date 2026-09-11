@@ -238,21 +238,27 @@ export function buildChapter(tree, file, number) {
     : { chapter: number, heading, sections };
 }
 
-// A standalone page such as the superscription: paragraphs under one heading.
-function buildPage(tree, file) {
-  const { data, node } = readFrontMatter(tree, file);
+// A standalone page may start with one heading, followed by its paragraphs.
+export function buildPage(tree, file) {
+  let heading;
 
-  if (typeof data.heading !== 'string' || !data.heading.trim()) {
-    throw new BuildError(file, node, 'heading must be a single line');
+  if (tree.children[0]?.type === 'yaml') {
+    const { data, node } = readFrontMatter(tree, file);
+
+    if (typeof data.heading !== 'string' || !data.heading.trim()) {
+      throw new BuildError(file, node, 'heading must be a single line');
+    }
+
+    heading = data.heading;
   }
 
   const content = readSections(tree, file);
 
   if (content.length === 0) {
-    throw new BuildError(file, node, 'no content');
+    throw new BuildError(file, tree, 'no content');
   }
 
-  return { heading: data.heading, content };
+  return heading === undefined ? { content } : { heading, content };
 }
 
 async function buildSource(source, outputs) {
@@ -412,14 +418,23 @@ export function checkMapping(file, mapping, original, translation) {
 // sections, with their paragraphs mapped under `content`.
 export function checkPageMapping(file, mapping, original, translation) {
   const problems = [];
+  const keys = ['content'];
 
-  for (const key of ['heading', 'content']) {
+  if (
+    original.heading !== undefined ||
+    translation.heading !== undefined ||
+    mapping.heading !== undefined
+  ) {
+    keys.unshift('heading');
+  }
+
+  for (const key of keys) {
     if (Array.isArray(mapping[key])) {
       checkPairs(
         `${file} ${key}`,
         mapping[key],
-        key === 'heading' ? 1 : original.content.length,
-        key === 'heading' ? 1 : translation.content.length,
+        key === 'heading' ? Number(original.heading !== undefined) : original.content.length,
+        key === 'heading' ? Number(translation.heading !== undefined) : translation.content.length,
         problems,
       );
     } else {
@@ -659,7 +674,9 @@ export function checkPunctuation(outputs) {
     if (file !== 'chapters.json') {
       const label = `book/${source}/${file.replace(/\.json$/u, '.md')}`;
 
-      checkText(label, 'heading', value.heading, problems);
+      if (value.heading !== undefined) {
+        checkText(label, 'heading', value.heading, problems);
+      }
 
       for (const [i, line] of value.content.entries()) {
         checkText(label, `line ${i + 1}`, line, problems);

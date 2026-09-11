@@ -9,7 +9,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 #### Typographical correction
 
 - Previous: `կանոնների`
-- Revised: [`կանոնների,`](../translation_mk/superscription.md?plain=1#L9)
+- Revised: [`կանոնների,`](../translation_mk/superscription.md?plain=1#L7)
 
 ## Chapter 2
 

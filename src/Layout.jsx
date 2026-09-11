@@ -180,8 +180,8 @@ export default function Layout() {
                   onSelectionChange={handleChapterChange}
                   aria-label="Բովանդակություն"
                 >
-                  <ListBox.Item id="/" textValue={superscription.heading}>
-                    <Label>{superscription.heading}</Label>
+                  <ListBox.Item id="/" textValue={superscription.content[0]}>
+                    <Label>{superscription.content[0]}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
                   {chapters.map(({ chapter }) => (

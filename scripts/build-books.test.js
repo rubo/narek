@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
   buildChapter,
+  buildPage,
   checkMapping,
   checkPageMapping,
   checkPunctuation,
@@ -89,6 +90,16 @@ test('checks chapter headings, not only sections', () => {
 test('checks standalone pages, both heading and content', () => {
   assert.match(only(page('Յառաջաբան:', 'բառ')), /heading, col 10:/u);
   assert.match(only(page('Յառաջաբան', 'բա`ռ')), /line 1, col 3:/u);
+});
+
+test('accepts a standalone page with content and no heading', () => {
+  assert.deepEqual(buildPage(parse('Առաջին\n\nԵրկրորդ'), 'superscription.md'), {
+    content: ['Առաջին', 'Երկրորդ'],
+  });
+});
+
+test('rejects an empty standalone page with no heading', () => {
+  assert.throws(() => buildPage(parse(''), 'superscription.md'), /no content/u);
 });
 
 test('rejects a colon touching a letter, which parse would otherwise swallow', () => {
@@ -213,6 +224,22 @@ test('accepts a standalone page mapping that covers both pages once', () => {
       mapping,
       { heading: 'Ա', content: ['ա', 'բ'] },
       { heading: 'Բ', content: ['գ'] },
+    ),
+    [],
+  );
+});
+
+test('accepts a standalone page mapping when both pages have no heading', () => {
+  const mapping = {
+    content: [{ original: [0, 1], translation: [0, 0], mode: 'block' }],
+  };
+
+  assert.deepEqual(
+    checkPageMapping(
+      'mapping_mk: superscription',
+      mapping,
+      { content: ['ա', 'բ'] },
+      { content: ['գ'] },
     ),
     [],
   );

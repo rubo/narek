@@ -69,7 +69,7 @@ Line 2
 - `number` must match the file name; sections numbered from 1, no gaps.
 - **`:::section` blocks separate sections; blank lines separate the lines** inside one — the text's own paragraphs in a prose section.
 - Outside prose sections, soft breaks inside paragraphs are rejected. Hard Markdown breaks (two trailing spaces or a backslash) are rejected everywhere because `mdast-util-to-string` drops their separator.
-- Standalone pages (`superscription.md`, `colophon.md`) have no `:::section` blocks — a `heading`, then blank-line-separated paragraphs.
+- Standalone pages (`superscription.md`, `colophon.md`) have no `:::section` blocks — an optional `heading`, then blank-line-separated paragraphs. A page with no heading omits the front matter and begins directly with its content.
 - Parsing goes through remark (`remark-parse`, `remark-frontmatter`, `remark-directive`) and reads the **mdast object graph**. Do not hand-parse Markdown text.
 
 ### Prose sections
@@ -85,7 +85,7 @@ In chapters 34, 75, 92 and 93 some original sections run as unbroken paragraphs 
 
 `book/mapping_<edition>/chapter_<n>.json` pairs `original` line ranges with `translation` ranges, one file per chapter (`.chapter` must match the file name). Each file carries a `heading` mapping and a `sections` array; the build merges them and the app imports the merged file. Validated on every build:
 
-Standalone pages use a matching mapping file such as `book/mapping_<edition>/superscription.json`, with `heading` and `content` pair lists. Their paragraph indices follow the same zero-based, inclusive, exact-coverage rules.
+Standalone pages use a matching mapping file such as `book/mapping_<edition>/superscription.json`, with `content` and, when both pages have headings, `heading` pair lists. Their paragraph indices follow the same zero-based, inclusive, exact-coverage rules.
 
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no overlaps.
