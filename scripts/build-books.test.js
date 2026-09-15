@@ -212,6 +212,53 @@ test('rejects a mapping with no heading at all', () => {
   assert.deepEqual(mapped(undefined), ['mapping_mk: chapter 42: missing heading mapping']);
 });
 
+const untranslated = {
+  original: [
+    { chapter: 41, heading: ['Ա'], sections: [['ա']] },
+    { chapter: 42, heading: ['Բ'], sections: [['բ']] },
+  ],
+  translation: [{ chapter: 42, heading: ['Գ'], sections: [['գ']] }],
+  entry: {
+    chapter: 42,
+    heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+    sections: [[{ original: [0, 0], translation: [0, 0], mode: 'line' }]],
+  },
+};
+
+test('accepts a partial edition that leaves original chapters untranslated', () => {
+  const { original, translation, entry } = untranslated;
+
+  assert.deepEqual(
+    checkMapping('mapping_vg', [entry], original, translation, { partial: true }),
+    [],
+  );
+});
+
+test('rejects a complete edition that lost a chapter together with its mapping', () => {
+  const { original, translation, entry } = untranslated;
+
+  assert.deepEqual(checkMapping('mapping_mk', [entry], original, translation), [
+    'mapping_mk: chapter 41 has no mapping',
+  ]);
+});
+
+test('rejects a translated chapter with no mapping in a partial edition', () => {
+  const { original, translation } = untranslated;
+
+  assert.deepEqual(checkMapping('mapping_vg', [], original, translation, { partial: true }), [
+    'mapping_vg: chapter 42 has no mapping',
+  ]);
+});
+
+test('rejects a partial mapping for a chapter the edition does not translate', () => {
+  const original = [{ chapter: 42, heading: ['Ա'], sections: [['ա']] }];
+  const entry = { chapter: 42, heading: [], sections: [] };
+
+  assert.deepEqual(checkMapping('mapping_vg', [entry], original, [], { partial: true }), [
+    'mapping_vg: chapter 42 is missing from the translation',
+  ]);
+});
+
 test('accepts a standalone page mapping that covers both pages once', () => {
   const mapping = {
     heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],

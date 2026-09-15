@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 # Project files
-.agents/skills/map-chapter/*.txt
+.agents/skills/map-chapter-*/*.txt
 src/assets/generated/*
 *.woff2

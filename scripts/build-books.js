@@ -21,7 +21,9 @@ const siteUrl = (process.env.SITE_URL ?? '').replace(/\/+$/u, '');
 
 // One entry per edition. Output mirrors book/<source>/, with the chapters
 // collected into chapters.json.
-const sources = ['original', 'translation_mk'];
+const sources = ['original', 'translation_mk', 'translation_vg'];
+
+const partialEditions = new Set(['vg']);
 
 const CHAPTER_FILE = /^chapter_(\d+)\.md$/;
 
@@ -354,13 +356,14 @@ function checkPairs(where, pairs, originalCount, translationCount, problems) {
 }
 
 // Exported to test rejection paths that a valid corpus cannot exercise.
-export function checkMapping(file, mapping, original, translation) {
+export function checkMapping(file, mapping, original, translation, { partial = false } = {}) {
   const problems = [];
   const byChapter = (chapters) => new Map(chapters.map((entry) => [entry.chapter, entry]));
   const originalChapters = byChapter(original);
   const translationChapters = byChapter(translation);
 
-  for (const { chapter } of original) {
+  // A complete edition must still fail when a chapter and its mapping both go.
+  for (const { chapter } of partial ? translation : original) {
     if (!mapping.some((entry) => entry.chapter === chapter)) {
       problems.push(`${file}: chapter ${chapter} has no mapping`);
     }
@@ -555,7 +558,9 @@ async function emitMappings(outputs) {
 
     const editionProblems = [
       ...readProblems,
-      ...checkMapping(label, chapters, original, translation),
+      ...checkMapping(label, chapters, original, translation, {
+        partial: partialEditions.has(edition),
+      }),
       ...pageProblems,
     ];
 

@@ -1,15 +1,14 @@
 // SPDX-License-Identifier: MIT
 
 import { useOutletContext } from 'react-router';
-import mapping from '../assets/generated/mapping_mk/superscription.json';
 import original from '../assets/generated/original/superscription.json';
-import translation from '../assets/generated/translation_mk/superscription.json';
 import SectionCombined from './SectionCombined';
 
 export default function Superscription() {
-  /** @type {{ displayMode: string }} */
-  const { displayMode } = useOutletContext();
-  const superscription = displayMode === 'original' ? original : translation;
+  /** @type {{ displayMode: string, translation: object | null }} */
+  const { displayMode, translation } = useOutletContext();
+  const translated = translation?.superscription;
+  const superscription = displayMode === 'original' ? original : translated.text;
 
   return (
     <article className="mt-12 text-center">
@@ -17,8 +16,8 @@ export default function Superscription() {
         <SectionCombined
           hideNumber
           originalLines={original.content}
-          translationLines={translation.content}
-          mapping={mapping.content}
+          translationLines={translated.text.content}
+          mapping={translated.mapping.content}
         />
       ) : (
         <>

@@ -1,17 +1,16 @@
 // SPDX-License-Identifier: MIT
 
 import { useOutletContext } from 'react-router';
-import mapping from '../assets/generated/mapping_mk/colophon.json';
 import original from '../assets/generated/original/colophon.json';
-import translation from '../assets/generated/translation_mk/colophon.json';
 import CombinedHeading from './CombinedHeading';
 import FitHeading from './FitHeading';
 import SectionCombined from './SectionCombined';
 
 export default function Colophon() {
-  /** @type {{ displayMode: string }} */
-  const { displayMode } = useOutletContext();
-  const colophon = displayMode === 'original' ? original : translation;
+  /** @type {{ displayMode: string, translation: object | null }} */
+  const { displayMode, translation } = useOutletContext();
+  const translated = translation?.colophon;
+  const colophon = displayMode === 'original' ? original : translated.text;
 
   return (
     <article>
@@ -20,15 +19,15 @@ export default function Colophon() {
           <FitHeading className="heading">
             <CombinedHeading
               originalLines={[original.heading]}
-              translationLines={[translation.heading]}
-              mapping={mapping.heading}
+              translationLines={[translated.text.heading]}
+              mapping={translated.mapping.heading}
             />
           </FitHeading>
           <SectionCombined
             hideNumber
             originalLines={original.content}
-            translationLines={translation.content}
-            mapping={mapping.content}
+            translationLines={translated.text.content}
+            mapping={translated.mapping.content}
           />
         </>
       ) : (

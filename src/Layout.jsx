@@ -11,20 +11,71 @@ import {
   Label,
   Link,
   ListBox,
+  Separator,
 } from '@heroui/react';
 import { useOverlayState } from '@heroui/react';
 import { useLayoutEffect, useState, ViewTransition } from 'react';
-import { Outlet, useLocation, useNavigate, useNavigationType, useSearchParams } from 'react-router';
+import {
+  matchPath,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useNavigationType,
+  useSearchParams,
+} from 'react-router';
+import mkMapping from './assets/generated/mapping_mk.json';
+import mkColophonMapping from './assets/generated/mapping_mk/colophon.json';
+import mkSuperscriptionMapping from './assets/generated/mapping_mk/superscription.json';
+import vgMapping from './assets/generated/mapping_vg.json';
 import chapters from './assets/generated/original/chapters.json';
 import originalColophon from './assets/generated/original/colophon.json';
 import originalSuperscription from './assets/generated/original/superscription.json';
-import translatedColophon from './assets/generated/translation_mk/colophon.json';
-import translatedSuperscription from './assets/generated/translation_mk/superscription.json';
+import mkChapters from './assets/generated/translation_mk/chapters.json';
+import mkColophon from './assets/generated/translation_mk/colophon.json';
+import mkSuperscription from './assets/generated/translation_mk/superscription.json';
+import vgChapters from './assets/generated/translation_vg/chapters.json';
 import { toArmenian } from './shared/utils';
 
-// From the URL, so untrusted.
-const displayModes = ['original', 'translated', 'combined'];
-const defaultDisplayMode = 'original';
+// Keyed by the id in the URL. `mapping` follows the original's chapters, with
+// null where the edition lacks one; a partial edition omits the pages it lacks.
+const translations = {
+  mk: {
+    name: 'Մ. Խերանյան',
+    chapters: mkChapters,
+    mapping: mkMapping,
+    superscription: { text: mkSuperscription, mapping: mkSuperscriptionMapping },
+    colophon: { text: mkColophon, mapping: mkColophonMapping },
+  },
+  vg: {
+    name: 'Վ. Գևորգյան',
+    chapters: vgChapters,
+    mapping: vgMapping,
+  },
+};
+
+// The translated part a route shows, or undefined where the edition lacks it.
+function translatedPart(translation, pathname) {
+  if (matchPath('/', pathname)) {
+    return translation.superscription;
+  }
+
+  if (matchPath('/colophon', pathname)) {
+    return translation.colophon;
+  }
+
+  const number = Number(matchPath('/chapter/:number', pathname)?.params.number);
+
+  return translation.chapters.find(({ chapter }) => chapter === number);
+}
+
+// From the URL, so untrusted. A translation always names its translator.
+const views = [
+  'original',
+  ...['translated', 'combined'].flatMap((mode) =>
+    Object.keys(translations).map((id) => `${mode}-${id}`),
+  ),
+];
+const defaultView = 'original';
 
 const fontScales = ['sm', 'base', 'lg'];
 const defaultFontScale = 'base';
@@ -80,10 +131,21 @@ export default function Layout() {
   };
 
   const mode = searchParams.get('mode');
-  const displayMode = displayModes.includes(mode) ? mode : defaultDisplayMode;
-  const superscription =
-    displayMode === 'translated' ? translatedSuperscription : originalSuperscription;
-  const colophon = displayMode === 'translated' ? translatedColophon : originalColophon;
+  const requestedView = views.includes(mode) ? mode : defaultView;
+  const [requestedMode, translationId] = requestedView.split('-');
+  const requested = translations[translationId];
+  // A translation that lacks this page shows the original, and the menu says so;
+  // the URL keeps the request for the next page.
+  const translation = requested && translatedPart(requested, location.pathname) ? requested : null;
+  const selectedView = translation ? requestedView : defaultView;
+  const displayMode = translation ? requestedMode : defaultView;
+  const drawerTranslation = displayMode === 'translated' ? translation : null;
+  const superscription = drawerTranslation?.superscription?.text ?? originalSuperscription;
+  const colophon = drawerTranslation?.colophon?.text ?? originalColophon;
+  // Rows for a translation that lacks this page.
+  const disabledViews = Object.keys(translations)
+    .filter((id) => !translatedPart(translations[id], location.pathname))
+    .flatMap((id) => [`translated-${id}`, `combined-${id}`]);
   const selectedKeys = paths.includes(location.pathname) ? [location.pathname] : [];
 
   useLayoutEffect(() => {
@@ -94,7 +156,7 @@ export default function Layout() {
 
     // Reset between the old and new snapshots, before the transition is painted.
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [location.pathname, displayMode, navigationType]);
+  }, [location.pathname, selectedView, navigationType]);
 
   // Keep the display mode when moving between pages.
   const goTo = (pathname) => {
@@ -141,8 +203,8 @@ export default function Layout() {
       (params) => {
         const updated = new URLSearchParams(params);
 
-        // The default mode stays out of the URL.
-        if (value === defaultDisplayMode) {
+        // Keep original URLs canonical.
+        if (value === defaultView) {
           updated.delete('mode');
         } else {
           updated.set('mode', String(value));
@@ -251,38 +313,46 @@ export default function Layout() {
         <Dropdown.Popover placement="bottom end">
           <Dropdown.Menu
             disallowEmptySelection
-            selectedKeys={[displayMode]}
+            disabledKeys={disabledViews}
+            selectedKeys={[selectedView]}
             selectionMode="single"
             onSelectionChange={handleDisplayChange}
           >
-            <Dropdown.Item id="original">
+            <Dropdown.Item id="original" textValue="Բնագիր">
               <Dropdown.ItemIndicator />
               <div className="flex flex-col">
                 <Label>Բնագիր</Label>
                 <Description>Գրաբար</Description>
               </div>
             </Dropdown.Item>
-            <Dropdown.Item id="translated">
-              <Dropdown.ItemIndicator />
-              <div className="flex flex-col">
-                <Label>Թարգմանություն</Label>
-                <Description>Մ. Խերանյան</Description>
-              </div>
-            </Dropdown.Item>
-            <Dropdown.Item id="combined">
-              <Dropdown.ItemIndicator />
-              <div className="flex flex-col">
-                <Label>Համատեղ</Label>
-                <Description>Բնագիր + թարգմանություն</Description>
-              </div>
-            </Dropdown.Item>
+            <Separator />
+            {/* Repeated labels need the name for typeahead. */}
+            {Object.entries(translations).map(([id, { name }]) => (
+              <Dropdown.Item key={id} id={`translated-${id}`} textValue={`Թարգմանություն, ${name}`}>
+                <Dropdown.ItemIndicator />
+                <div className="flex flex-col">
+                  <Label>Թարգմանություն</Label>
+                  <Description>{name}</Description>
+                </div>
+              </Dropdown.Item>
+            ))}
+            <Separator />
+            {Object.entries(translations).map(([id, { name }]) => (
+              <Dropdown.Item key={id} id={`combined-${id}`} textValue={`Համատեղ, ${name}`}>
+                <Dropdown.ItemIndicator />
+                <div className="flex flex-col">
+                  <Label>Համատեղ</Label>
+                  <Description>Բնագիր + {name}</Description>
+                </div>
+              </Dropdown.Item>
+            ))}
           </Dropdown.Menu>
         </Dropdown.Popover>
       </Dropdown>
       {/* Separate snapshots avoid animating the scroll reset as a position change. */}
-      <ViewTransition key={`${location.pathname}:${displayMode}`} default="reading-view">
+      <ViewTransition key={`${location.pathname}:${selectedView}`} default="reading-view">
         <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]} w-full`}>
-          <Outlet context={{ displayMode }} />
+          <Outlet context={{ displayMode, translation }} />
         </main>
       </ViewTransition>
       {(previous || next) && (

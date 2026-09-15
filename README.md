@@ -3,7 +3,7 @@
 [![CI](https://github.com/rubo/narek/actions/workflows/ci.yml/badge.svg)](https://github.com/rubo/narek/actions/workflows/ci.yml)
 [![Deploy](https://github.com/rubo/narek/actions/workflows/deploy.yml/badge.svg)](https://github.com/rubo/narek/actions/workflows/deploy.yml)
 
-A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the classical Armenian (Grabar) original, a modern Armenian translation, and a line-to-line mapping between the two.
+A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ողբերգութեան): the classical Armenian (Grabar) original, Eastern Armenian translations, and a line-to-line mapping between the original and each translation.
 
 ## Structure
 
@@ -15,7 +15,7 @@ A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ո�
 | `src/assets/generated/`         | built from `book/`, not committed               |
 | `scripts/`                      | the generator, and the Vite plugin that runs it |
 
-Chapters are `chapter_<number>.md` with numbered `:::section` blocks; sections are separated by blank lines. `superscription.md` and `colophon.md` are plain paragraphs under a heading.
+Chapters are `chapter_<number>.md` with numbered `:::section` blocks; blank lines separate the lines within a section. `superscription.md` and `colophon.md` are plain paragraphs, with an optional heading.
 
 ## Development
 
@@ -25,7 +25,7 @@ npm run dev      # regenerates from book/ and watches it
 npm run build
 ```
 
-`npm run books` regenerates by hand; `npm run books:check` validates the mapping against both texts and verifies the generated output is current. A broken mapping fails the build.
+`npm run books` regenerates by hand; `npm run books:check` validates each mapping against its texts and verifies the generated output is current. A broken mapping fails the build.
 
 Set `SITE_URL` when building for deployment to emit `sitemap.xml` and `robots.txt`.
 

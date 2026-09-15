@@ -1,5 +1,5 @@
 ---
-name: map-chapter
+name: map-chapter-mk
 description: >
   Map one chapter of the Book of Lamentations from the original.txt and translation.txt beside this skill into the corpus — generate the per-chapter mapping JSON plus the original and modern-Armenian (mk) markdown files, then run a proofreading pass. Use when the user asks to map, add, or generate a chapter from those .txt sources.
 ---

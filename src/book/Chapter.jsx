@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 import { useOutletContext, useParams } from 'react-router';
-import mapping from '../assets/generated/mapping_mk.json';
 import originalChapters from '../assets/generated/original/chapters.json';
-import translationChapters from '../assets/generated/translation_mk/chapters.json';
 import { toArmenian } from '../shared/utils';
 import ChapterHeading from './ChapterHeading';
 import FitHeading from './FitHeading';
@@ -12,8 +10,8 @@ import SectionCombined from './SectionCombined';
 
 export default function Chapter() {
   const { number } = useParams();
-  /** @type {{ displayMode: string }} */
-  const { displayMode } = useOutletContext();
+  /** @type {{ displayMode: string, translation: object | null }} */
+  const { displayMode, translation } = useOutletContext();
 
   const chapterIndex = originalChapters.findIndex((entry) => entry.chapter === Number(number));
 
@@ -26,8 +24,9 @@ export default function Chapter() {
   }
 
   const original = originalChapters[chapterIndex];
-  const translation = translationChapters[chapterIndex];
-  const chapter = displayMode === 'original' ? original : translation;
+  const translated = translation?.chapters.find((entry) => entry.chapter === original.chapter);
+  const mapping = translation?.mapping[chapterIndex];
+  const chapter = displayMode === 'original' ? original : translated;
   const hideNumber = chapter.sections?.length === 1;
 
   return (
@@ -37,8 +36,8 @@ export default function Chapter() {
         <ChapterHeading
           displayMode={displayMode}
           originalLines={original.heading}
-          translationLines={translation.heading}
-          mapping={mapping[chapterIndex].heading}
+          translationLines={translated?.heading}
+          mapping={mapping?.heading}
         />
       </header>
       {displayMode === 'combined'
@@ -48,7 +47,7 @@ export default function Chapter() {
               number={sectionIndex + 1}
               translationLines={section}
               originalLines={original.sections[sectionIndex]}
-              mapping={mapping[chapterIndex].sections[sectionIndex]}
+              mapping={mapping.sections[sectionIndex]}
               hideNumber={hideNumber}
             />
           ))
