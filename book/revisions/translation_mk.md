@@ -231,19 +231,24 @@ Section boundaries in the translation were adjusted to correspond with the origi
 #### Corrected reading
 
 - Previous: `տուն`
-- Revised: [`տոն`](../translation_mk/chapter_92.md?plain=1#L158)
+- Revised: [`տոն`](../translation_mk/chapter_92.md?plain=1#L156)
 - Evidence: [`տաւն`](../original/chapter_92.md?plain=1#L75)
 
 #### Typographical correction
 
+- Previous: `Լույսի`
+- Revised: [`լույսի`](../translation_mk/chapter_92.md?plain=1#L244)
+
+#### Typographical correction
+
 - Previous: `հեների`
-- Revised: [`հների`](../translation_mk/chapter_92.md?plain=1#L546)
+- Revised: [`հների`](../translation_mk/chapter_92.md?plain=1#L542)
 - Evidence: [`հինից`](../original/chapter_92.md?plain=1#L256)
 
 #### Corrected reading
 
 - Previous: `Քո աստվածության պատվիրանի հանդեպ`
-- Revised: [`Քո աստվածավանդ պատվիրանի հանդեպ`](../translation_mk/chapter_92.md?plain=1#L638)
+- Revised: [`Քո աստվածավանդ պատվիրանի հանդեպ`](../translation_mk/chapter_92.md?plain=1#L634)
 - Evidence: [`աստուածաւանդ քո պատուիրանիդ`](../original/chapter_92.md?plain=1#L299)
 
 ## Chapter 93
