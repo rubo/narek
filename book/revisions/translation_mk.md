@@ -83,6 +83,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`խակության`](../translation_mk/chapter_30.md?plain=1#L172)
 - Evidence: [`խակութիւն`](../original/chapter_30.md?plain=1#L230)
 
+## Chapter 34
+
+#### Typographical correction
+
+- Previous: `մաքրագործե`
+- Revised: [`մաքրագործեց`](../translation_mk/chapter_34.md?plain=1#L344)
+
 ## Chapter 35
 
 #### Corrected reading
