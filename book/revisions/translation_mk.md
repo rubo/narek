@@ -83,6 +83,18 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`խակության`](../translation_mk/chapter_30.md?plain=1#L172)
 - Evidence: [`խակութիւն`](../original/chapter_30.md?plain=1#L230)
 
+## Chapter 33
+
+#### Typographical correction
+
+- Previous: `մեղադրանքների`
+- Revised: [`մեղադրանքներից`](../translation_mk/chapter_33.md?plain=1#L24)
+
+#### Typographical correction
+
+- Previous: `ծանուցվեց`
+- Revised: [`ծանուցվեցին`](../translation_mk/chapter_33.md?plain=1#L226)
+
 ## Chapter 34
 
 #### Typographical correction
