@@ -18,3 +18,10 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Երկնայինի`
 - Revised: [`Երկրայինի`](../translation_vg/chapter_17.md?plain=1#L222)
 - Evidence: [`ընդ երկրաւորիս`](../original/chapter_17.md?plain=1#L214)
+
+## Chapter 25
+
+#### Typographical correction
+
+- Previous: `արդոք`
+- Revised: [`արդյոք`](../translation_vg/chapter_25.md?plain=1#L170)
