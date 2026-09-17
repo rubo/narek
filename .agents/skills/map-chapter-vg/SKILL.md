@@ -78,7 +78,7 @@ Line 2
 
 - `chapter` must equal `<n>` and the file name.
 - Map `heading` with the same zero-based pair format as a section. Usually pair the original's two lines with the translation's one using a single `block`: `[0, 1] → [0, 0]`.
-- `translation.txt` must have the **same number of sections** as the original chapter, and section _i_ of the original pairs with section _i_ of the translation. If the counts differ, stop and flag it — report both counts and where the sections seem to drift apart. Do not force a mapping and do not move section breaks.
+- `translation.txt` must have the **same number of sections** as the original chapter, and section _i_ of the original pairs with section _i_ of the translation. If the counts differ, stop and flag it — report both counts and where the sections seem to drift apart. Do not force a mapping and do not move section breaks. Once the user confirms which sections vg lacks, write each as an empty `:::section{number=<n> untranslated}` block followed by `:::`, and map it as `null` in `sections`.
 - `sections` is one array **per section, in order**; each holds the pairings for that section, and indices are **local to the section** (each section restarts at line 0 for both texts).
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no overlaps.

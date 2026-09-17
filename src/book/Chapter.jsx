@@ -51,15 +51,17 @@ export default function Chapter() {
               hideNumber={hideNumber}
             />
           ))
-        : chapter.sections?.map((section, sectionIndex) => (
-            <Section
-              key={sectionIndex}
-              number={sectionIndex + 1}
-              lines={section}
-              paragraphs={chapter.prose?.[sectionIndex]}
-              hideNumber={hideNumber}
-            />
-          ))}
+        : chapter.sections?.map((section, sectionIndex) =>
+            section ? (
+              <Section
+                key={sectionIndex}
+                number={sectionIndex + 1}
+                lines={section}
+                paragraphs={chapter.prose?.[sectionIndex]}
+                hideNumber={hideNumber}
+              />
+            ) : null,
+          )}
     </article>
   );
 }

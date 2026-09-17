@@ -168,8 +168,20 @@ function readFrontMatter(tree, file) {
   return { data, node };
 }
 
-// Read :::section blocks in order; prose sections also record paragraph starts.
-function readDirectives(tree, file) {
+// {prose=false} would still read as set, so a flag takes no value at all.
+function readFlag(node, name, file) {
+  const value = node.attributes?.[name];
+
+  if (value !== undefined && value !== '') {
+    throw new BuildError(file, node, `${name} takes no value, got ${JSON.stringify(value)}`);
+  }
+
+  return value !== undefined;
+}
+
+// Read :::section blocks in order; prose sections also record paragraph starts,
+// and untranslated sections are null.
+function readDirectives(tree, file, partial) {
   const sections = [];
   const prose = [];
 
@@ -188,17 +200,25 @@ function readDirectives(tree, file) {
       );
     }
 
-    const marker = node.attributes?.prose;
+    const isProse = readFlag(node, 'prose', file);
 
-    // {prose=false} would read as prose, so the flag takes no value at all.
-    if (marker !== undefined && marker !== '') {
-      throw new BuildError(file, node, `prose takes no value, got ${JSON.stringify(marker)}`);
+    if (readFlag(node, 'untranslated', file)) {
+      if (!partial) {
+        throw new BuildError(file, node, 'untranslated is allowed only in a partial edition');
+      }
+
+      if (isProse || node.children.length > 0) {
+        throw new BuildError(file, node, 'an untranslated section takes no prose flag or content');
+      }
+
+      sections.push(null);
+      prose.push(null);
+      continue;
     }
 
-    const { lines, paragraphs } =
-      marker === undefined
-        ? { lines: readSections(node, file), paragraphs: null }
-        : readProse(node, file);
+    const { lines, paragraphs } = isProse
+      ? readProse(node, file)
+      : { lines: readSections(node, file), paragraphs: null };
 
     if (lines.length === 0) {
       throw new BuildError(file, node, 'empty section');
@@ -212,10 +232,14 @@ function readDirectives(tree, file) {
     throw new BuildError(file, tree, 'no sections');
   }
 
+  if (sections.every((lines) => lines === null)) {
+    throw new BuildError(file, tree, 'every section is untranslated — omit the chapter instead');
+  }
+
   return { sections, prose: prose.some(Boolean) ? prose : null };
 }
 
-export function buildChapter(tree, file, number) {
+export function buildChapter(tree, file, number, { partial = false } = {}) {
   const { data, node } = readFrontMatter(tree, file);
 
   if (data.number !== number) {
@@ -232,7 +256,7 @@ export function buildChapter(tree, file, number) {
     throw new BuildError(file, node, 'missing heading');
   }
 
-  const { sections, prose } = readDirectives(tree, file);
+  const { sections, prose } = readDirectives(tree, file, partial);
 
   // Avoid an all-null prose array on chapters with no prose section.
   return prose
@@ -265,6 +289,7 @@ export function buildPage(tree, file) {
 
 async function buildSource(source, outputs) {
   const dir = join(sourceRoot, source);
+  const partial = partialEditions.has(source.replace(/^translation_/u, ''));
   const files = (await readdir(dir)).filter((file) => file.endsWith('.md')).sort();
   const chapters = [];
 
@@ -275,7 +300,7 @@ async function buildSource(source, outputs) {
     const match = CHAPTER_FILE.exec(file);
 
     if (match) {
-      chapters.push(buildChapter(tree, label, Number(match[1])));
+      chapters.push(buildChapter(tree, label, Number(match[1]), { partial }));
       continue;
     }
 
@@ -404,8 +429,23 @@ export function checkMapping(file, mapping, original, translation, { partial = f
     }
 
     entry.sections.forEach((pairs, index) => {
+      const where = `${label} section ${index + 1}`;
+      const untranslated = translated.sections[index] === null;
+
+      if (untranslated !== (pairs === null)) {
+        problems.push(
+          untranslated
+            ? `${where}: untranslated, so its mapping must be null`
+            : `${where}: null mapping for a translated section`,
+        );
+      }
+
+      if (untranslated || pairs === null) {
+        return;
+      }
+
       checkPairs(
-        `${label} section ${index + 1}`,
+        where,
         pairs,
         chapter.sections[index]?.length,
         translated.sections[index]?.length,
@@ -698,7 +738,7 @@ export function checkPunctuation(outputs) {
       }
 
       for (const [s, lines] of sections.entries()) {
-        for (const [i, line] of lines.entries()) {
+        for (const [i, line] of (lines ?? []).entries()) {
           checkText(label, `§${s + 1} line ${i + 1}`, line, problems);
         }
       }

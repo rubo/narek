@@ -182,6 +182,102 @@ test('rejects a valued prose flag, which would read as prose even when false', (
   );
 });
 
+const gap = ':::section{number=2 untranslated}\n:::';
+
+test('an untranslated section builds as null in a partial edition', () => {
+  const built = buildChapter(
+    document(section('number=1 prose', 'առաջին'), gap, section('number=3', 'երրորդ')),
+    'x.md',
+    42,
+    { partial: true },
+  );
+
+  assert.deepEqual(built.sections, [['առաջին'], null, ['երրորդ']]);
+  assert.deepEqual(built.prose, [[0], null, null]);
+});
+
+test('rejects an untranslated section outside a partial edition', () => {
+  assert.throws(
+    () => buildChapter(document(section('number=1', 'առաջին'), gap), 'x.md', 42),
+    /untranslated is allowed only in a partial edition/u,
+  );
+});
+
+test('rejects an untranslated section with content or a prose flag', () => {
+  for (const invalid of [
+    section('number=2 untranslated', 'երկրորդ'),
+    ':::section{number=2 untranslated prose}\n:::',
+  ]) {
+    assert.throws(
+      () =>
+        buildChapter(document(section('number=1', 'առաջին'), invalid), 'x.md', 42, {
+          partial: true,
+        }),
+      /an untranslated section takes no prose flag or content/u,
+    );
+  }
+});
+
+test('rejects a chapter with every section untranslated', () => {
+  assert.throws(
+    () =>
+      buildChapter(document(':::section{number=1 untranslated}\n:::'), 'x.md', 42, {
+        partial: true,
+      }),
+    /every section is untranslated/u,
+  );
+});
+
+test('rejects a valued untranslated flag', () => {
+  assert.throws(
+    () =>
+      buildChapter(document(':::section{number=1 untranslated=no}\n:::'), 'x.md', 42, {
+        partial: true,
+      }),
+    /untranslated takes no value, got "no"/u,
+  );
+});
+
+const sectionGap = (sections) =>
+  checkMapping(
+    'mapping_vg',
+    [
+      {
+        chapter: 42,
+        heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+        sections,
+      },
+    ],
+    [{ chapter: 42, heading: ['Ա'], sections: [['ա'], ['բ']] }],
+    [{ chapter: 42, heading: ['Գ'], sections: [['գ'], null] }],
+    { partial: true },
+  );
+
+const pair = { original: [0, 0], translation: [0, 0], mode: 'line' };
+
+test('accepts a null mapping for an untranslated section', () => {
+  assert.deepEqual(sectionGap([[pair], null]), []);
+});
+
+test('rejects a mapping for an untranslated section', () => {
+  assert.deepEqual(sectionGap([[pair], [pair]]), [
+    'mapping_vg: chapter 42 section 2: untranslated, so its mapping must be null',
+  ]);
+});
+
+test('still checks coverage of the sections beside an untranslated one', () => {
+  assert.deepEqual(sectionGap([[], null]), [
+    'mapping_vg: chapter 42 section 1: original lines never mapped: 0',
+    'mapping_vg: chapter 42 section 1: translation lines never mapped: 0',
+  ]);
+});
+
+test('rejects a null mapping for a translated section', () => {
+  assert.deepEqual(sectionGap([null, null]), [
+    'mapping_vg: chapter 42 section 1: null mapping for a translated section',
+  ]);
+});
+
 const mapped = (heading) => {
   const original = [{ chapter: 42, heading: ['Ա', 'Բ'], sections: [['ա', 'բ']] }];
   const translation = [{ chapter: 42, heading: ['Գ'], sections: [['գ', 'դ']] }];

@@ -81,6 +81,10 @@ In chapters 34, 75, 92 and 93 some original sections run as unbroken paragraphs 
 - The flag takes no value — `{prose=false}` would read as prose, so it is rejected.
 - Generated chapters carry `prose` only when a section uses it: one entry per section, either the zero-based indices where its paragraphs start or `null`.
 
+### Untranslated sections
+
+A partial edition marks a section it lacks as an empty `:::section{number=<n> untranslated}` block, so section numbers stay aligned with the original. It builds as `null` in `sections`, and its mapping entry is `null`. The flag takes no value, no content and no `prose`; a chapter with every section untranslated is omitted instead.
+
 ## The mapping
 
 `book/mapping_<edition>/chapter_<n>.json` pairs `original` line ranges with `translation` ranges, one file per chapter (`.chapter` must match the file name). Each file carries a `heading` mapping and a `sections` array; the build merges them and the app imports the merged file. Validated on every build:
