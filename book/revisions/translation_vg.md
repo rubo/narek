@@ -25,3 +25,11 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `արդոք`
 - Revised: [`արդյոք`](../translation_vg/chapter_25.md?plain=1#L170)
+
+## Chapter 27
+
+#### Corrected reading
+
+- Previous: `անապատում`
+- Revised: [`անպատում`](../translation_vg/chapter_27.md?plain=1#L288)
+- Evidence: [`Անճառ`](../original/chapter_27.md?plain=1#L250)
