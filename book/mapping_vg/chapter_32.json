@@ -1,0 +1,74 @@
+{
+  "chapter": 32,
+  "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
+  "sections": [
+    [
+      { "original": [0, 1], "translation": [0, 1], "mode": "line" },
+      { "original": [2, 2], "translation": [2, 3], "mode": "block" },
+      { "original": [3, 18], "translation": [4, 19], "mode": "line" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 1], "mode": "block" },
+      { "original": [1, 3], "translation": [2, 4], "mode": "line" },
+      { "original": [4, 4], "translation": [5, 6], "mode": "block" },
+      { "original": [5, 5], "translation": [7, 8], "mode": "block" },
+      { "original": [6, 6], "translation": [9, 10], "mode": "block" },
+      { "original": [7, 7], "translation": [11, 11], "mode": "line" },
+      { "original": [8, 8], "translation": [12, 13], "mode": "block" },
+      { "original": [9, 13], "translation": [14, 20], "mode": "block" },
+      { "original": [14, 14], "translation": [21, 22], "mode": "block" },
+      { "original": [15, 16], "translation": [23, 24], "mode": "line" },
+      { "original": [17, 18], "translation": [25, 27], "mode": "block" },
+      { "original": [19, 19], "translation": [28, 28], "mode": "line" },
+      { "original": [20, 21], "translation": [29, 31], "mode": "block" },
+      { "original": [22, 22], "translation": [32, 32], "mode": "line" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 1], "mode": "block" },
+      { "original": [1, 3], "translation": [2, 4], "mode": "line" },
+      { "original": [4, 4], "translation": [5, 6], "mode": "block" },
+      { "original": [5, 5], "translation": [7, 7], "mode": "line" },
+      { "original": [6, 6], "translation": [8, 9], "mode": "block" },
+      { "original": [7, 18], "translation": [10, 21], "mode": "line" },
+      { "original": [19, 20], "translation": [22, 24], "mode": "block" },
+      { "original": [21, 22], "translation": [25, 27], "mode": "block" },
+      { "original": [23, 24], "translation": [28, 29], "mode": "line" },
+      { "original": [25, 28], "translation": [30, 34], "mode": "block" },
+      { "original": [29, 33], "translation": [35, 39], "mode": "line" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 0], "mode": "line" },
+      { "original": [1, 1], "translation": [1, 2], "mode": "block" },
+      { "original": [2, 2], "translation": [3, 3], "mode": "line" },
+      { "original": [3, 3], "translation": [4, 5], "mode": "block" },
+      { "original": [4, 4], "translation": [6, 6], "mode": "line" },
+      { "original": [5, 5], "translation": [7, 8], "mode": "block" },
+      { "original": [6, 6], "translation": [9, 9], "mode": "line" },
+      { "original": [7, 7], "translation": [10, 11], "mode": "block" },
+      { "original": [8, 8], "translation": [12, 12], "mode": "line" },
+      { "original": [9, 9], "translation": [13, 14], "mode": "block" },
+      { "original": [10, 18], "translation": [15, 23], "mode": "line" },
+      { "original": [19, 20], "translation": [24, 25], "mode": "block" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 0], "mode": "line" },
+      { "original": [1, 1], "translation": [1, 2], "mode": "block" },
+      { "original": [2, 4], "translation": [3, 5], "mode": "line" },
+      { "original": [5, 6], "translation": [6, 8], "mode": "block" },
+      { "original": [7, 10], "translation": [9, 12], "mode": "line" },
+      { "original": [11, 13], "translation": [13, 15], "mode": "block" },
+      { "original": [14, 15], "translation": [16, 19], "mode": "block" },
+      { "original": [16, 18], "translation": [20, 23], "mode": "block" }
+    ],
+    [
+      { "original": [0, 1], "translation": [0, 1], "mode": "block" },
+      { "original": [2, 4], "translation": [2, 4], "mode": "line" },
+      { "original": [5, 5], "translation": [5, 6], "mode": "block" },
+      { "original": [6, 6], "translation": [7, 8], "mode": "block" },
+      { "original": [7, 8], "translation": [9, 10], "mode": "block" },
+      { "original": [9, 10], "translation": [11, 12], "mode": "line" },
+      { "original": [11, 12], "translation": [13, 14], "mode": "block" },
+      { "original": [13, 15], "translation": [15, 16], "mode": "block" }
+    ]
+  ]
+}

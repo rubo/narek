@@ -40,3 +40,10 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `Չէ՛`
 - Revised: [`Չէ՞`](../translation_vg/chapter_30.md?plain=1#L244)
+
+## Chapter 38
+
+#### Typographical correction
+
+- Previous: `տանգապիս`
+- Revised: [`տագնապիս`](../translation_vg/chapter_38.md?plain=1#L170)
