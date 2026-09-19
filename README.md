@@ -15,7 +15,7 @@ A digital edition of Grigor Narekatsi's _Book of Lamentations_ (Մատեան ո�
 | `src/assets/generated/`         | built from `book/`, not committed               |
 | `scripts/`                      | the generator, and the Vite plugin that runs it |
 
-Chapters are `chapter_<number>.md` with numbered `:::section` blocks; blank lines separate the lines within a section. `superscription.md` and `colophon.md` are plain paragraphs, with an optional heading.
+Chapters are `chapter_<n>.md` with numbered `:::section` blocks; blank lines separate the lines within a section. `superscription.md` and `colophon.md` are plain paragraphs, with an optional heading.
 
 ## Development
 
