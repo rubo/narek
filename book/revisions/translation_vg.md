@@ -47,3 +47,37 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `տանգապիս`
 - Revised: [`տագնապիս`](../translation_vg/chapter_38.md?plain=1#L170)
+
+## Chapter 43
+
+#### Typographical correction
+
+- Previous: `Ոչ՛`
+- Revised: [`Ո՛չ`](../translation_vg/chapter_43.md?plain=1#L74)
+
+## Chapter 46
+
+#### Typographical correction
+
+- Previous: `չէ՛`
+- Revised: [`չէ՞`](../translation_vg/chapter_46.md?plain=1#L160)
+
+#### Corrected reading
+
+- Previous: `վիճակն երկնավոր`
+- Revised: [`վիճակն երկրավոր`](../translation_vg/chapter_46.md?plain=1#L172)
+- Evidence: [`զվիճակն երկրաւոր`](../original/chapter_46.md?plain=1#L142)
+
+## Chapter 48
+
+#### Typographical correction
+
+- Previous: `ինչպե՜ս`
+- Revised: [`ինչպե՞ս`](../translation_vg/chapter_48.md?plain=1#L204)
+
+## Chapter 50
+
+#### Typographical correction
+
+- Previous: `ո՜վ`
+- Revised: [`ո՞վ`](../translation_vg/chapter_50.md?plain=1#L122)

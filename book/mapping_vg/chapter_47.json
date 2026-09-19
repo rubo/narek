@@ -1,0 +1,37 @@
+{
+  "chapter": 47,
+  "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
+  "sections": [
+    [
+      { "original": [0, 0], "translation": [0, 1], "mode": "block" },
+      { "original": [1, 1], "translation": [2, 2], "mode": "line" },
+      { "original": [2, 2], "translation": [3, 4], "mode": "block" },
+      { "original": [3, 4], "translation": [5, 6], "mode": "line" },
+      { "original": [5, 6], "translation": [7, 9], "mode": "block" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 1], "mode": "block" },
+      { "original": [1, 1], "translation": [2, 2], "mode": "line" },
+      { "original": [2, 2], "translation": [3, 4], "mode": "block" },
+      { "original": [3, 4], "translation": [5, 6], "mode": "block" },
+      { "original": [5, 6], "translation": [7, 8], "mode": "line" },
+      { "original": [7, 9], "translation": [9, 11], "mode": "line" },
+      { "original": [10, 11], "translation": [12, 15], "mode": "block" },
+      { "original": [12, 12], "translation": [16, 16], "mode": "line" },
+      { "original": [13, 14], "translation": [17, 18], "mode": "block" },
+      { "original": [15, 15], "translation": [19, 20], "mode": "block" },
+      { "original": [16, 17], "translation": [21, 22], "mode": "block" },
+      { "original": [18, 18], "translation": [23, 24], "mode": "block" },
+      { "original": [19, 21], "translation": [25, 27], "mode": "line" },
+      { "original": [22, 22], "translation": [28, 29], "mode": "block" },
+      { "original": [23, 25], "translation": [30, 32], "mode": "line" },
+      { "original": [26, 28], "translation": [33, 36], "mode": "block" },
+      { "original": [29, 29], "translation": [37, 37], "mode": "line" },
+      { "original": [30, 30], "translation": [38, 39], "mode": "block" },
+      { "original": [31, 31], "translation": [40, 41], "mode": "block" },
+      { "original": [32, 34], "translation": [42, 44], "mode": "line" },
+      { "original": [35, 35], "translation": [45, 46], "mode": "block" },
+      { "original": [36, 37], "translation": [47, 47], "mode": "block" }
+    ]
+  ]
+}
