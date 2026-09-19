@@ -96,7 +96,16 @@ While mapping, **collect** (never silently change):
 - Anything wrong you happen to notice in the original — it is already proofread, so do not audit it.
 - When needed, verify findings against reliable online sources and cite them.
 
-**Report every finding at the end**, located by the `.md` file and its actual line number there (not the paragraph index), with the section number for context. If uncertainty remains, **ask** — never assume or alter text under the hood.
+**Report every finding at the end as a numbered list**, located by the `.md` file and its actual line number there (not the paragraph index), with the section number for context. If uncertainty remains, **ask** — never assume or alter text under the hood.
+
+### Armenian punctuation-confusion check
+
+The character allowlist catches Latin lookalikes, but it cannot catch one valid Armenian mark substituted for another. After creating the markdown, search it for `՛`, `՜` and `՞`, and review every hit in context, noting each one's line number.
+
+- Determine the mark from the word's grammatical role, not its appearance. In particular, check interrogatives, vocatives, imperatives, prohibitive `մի`, and constructions such as `չէ՞ որ`.
+- Compare parallel or repeated lines. A lone `՜` in a run of `ինչպե՞ս` questions, an imperative with `՜` among imperatives with `՛`, or vocative `ո՛վ` among vocatives with `ո՜վ` is a strong typo candidate.
+- Check the aligned original line and `book/translation_mk/chapter_<n>.md`. Use them as evidence, not as an automatic replacement: a form such as exclamatory `ինչպե՜ս` can be legitimate outside an actual question.
+- Do not normalize marks mechanically. Report a candidate only after the sentence meaning and immediate context support it.
 
 ## Verify
 
