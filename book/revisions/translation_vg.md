@@ -81,3 +81,22 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `ո՜վ`
 - Revised: [`ո՞վ`](../translation_vg/chapter_50.md?plain=1#L122)
+
+## Chapter 51
+
+#### Typographical correction
+
+- Previous: `Կանոններ.`
+- Revised: [`Կանոններ,`](../translation_vg/chapter_51.md?plain=1#L136)
+
+#### Typographical correction
+
+- Previous: `հավիտյանս,`
+- Revised: [`հավիտյանս.`](../translation_vg/chapter_51.md?plain=1#L340)
+
+## Chapter 52
+
+#### Typographical correction
+
+- Previous: `հավիտյանս,`
+- Revised: [`հավիտյանս.`](../translation_vg/chapter_52.md?plain=1#L188)
