@@ -100,16 +100,6 @@ Standalone pages use a matching mapping file such as `book/mapping_<edition>/sup
 
 ## Commands
 
-```sh
-npm run books         # regenerate
-npm run books:check   # verify output is current and the mapping is valid (CI)
-npm run dev           # plugin regenerates and watches book/
-npm run build
-npm run lint          # oxlint
-npm run fmt:check     # oxfmt
-npm run test          # node --test: the validator's rejection paths
-```
-
 All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 
 ## Code conventions
@@ -119,7 +109,6 @@ All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 - Chapter and section numbers render as Armenian numerals via `toArmenian()`.
 - Comments explain _why_. Keep them focused and concise. Do not add ones that restate the code.
 - Do not use single-line `if` or `for` statements — put curly braces instead.
-- Stay task-focused, keep the code clean, and prioritize performance.
 - Do use conventional commits.
 - Do not hard-wrap Markdown text to a fixed line width unless explicitly asked.
 

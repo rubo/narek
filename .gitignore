@@ -23,6 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+# Agents
+.claude/*
+!.claude/skills
+.codex/
+
 # Project files
 .agents/skills/map-chapter-*/*.txt
 src/assets/generated/*
