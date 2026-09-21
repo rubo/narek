@@ -100,3 +100,10 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `հավիտյանս,`
 - Revised: [`հավիտյանս.`](../translation_vg/chapter_52.md?plain=1#L188)
+
+## Chapter 70
+
+#### Typographical correction
+
+- Previous: `չէ՛`
+- Revised: [`չէ՞`](../translation_vg/chapter_70.md?plain=1#L56)
