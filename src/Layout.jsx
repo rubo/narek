@@ -325,7 +325,6 @@ export default function Layout() {
                 <Description>Գրաբար</Description>
               </div>
             </Dropdown.Item>
-            <Separator />
             {/* Repeated labels need the name for typeahead. */}
             {Object.entries(translations).map(([id, { name }]) => (
               <Dropdown.Item key={id} id={`translated-${id}`} textValue={`Թարգմանություն, ${name}`}>
