@@ -4,8 +4,7 @@
   "sections": [
     [
       { "original": [0, 0], "translation": [0, 1], "mode": "block" },
-      { "original": [1, 4], "translation": [2, 5], "mode": "line" },
-      { "original": [5, 14], "translation": [6, 15], "mode": "line" },
+      { "original": [1, 14], "translation": [2, 15], "mode": "line" },
       { "original": [15, 16], "translation": [16, 18], "mode": "block" },
       { "original": [17, 21], "translation": [19, 23], "mode": "line" },
       { "original": [22, 22], "translation": [24, 26], "mode": "block" },

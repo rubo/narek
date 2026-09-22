@@ -304,6 +304,83 @@ test('rejects a line-mode heading whose sides differ in length', () => {
   assert.match(problems[0], /heading: line mode maps 2 original lines onto 1 translation lines/u);
 });
 
+const ordered = (section) =>
+  checkMapping(
+    'mapping_mk',
+    [
+      {
+        chapter: 42,
+        heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+        sections: [section],
+      },
+    ],
+    [{ chapter: 42, heading: ['Ա'], sections: [['ա', 'բ', 'գ']] }],
+    [{ chapter: 42, heading: ['Դ'], sections: [['դ', 'ե', 'զ']] }],
+  );
+
+test('rejects mapping pairs that put the translation out of order', () => {
+  const problems = ordered([
+    { original: [0, 0], translation: [1, 2], mode: 'block' },
+    { original: [1, 2], translation: [0, 0], mode: 'block' },
+  ]);
+  assert.deepEqual(problems, [
+    'mapping_mk: chapter 42 section 1: translation ranges are out of order between 1-2 and 0-0',
+  ]);
+});
+
+test('rejects mapping pairs that put the original out of order', () => {
+  const problems = ordered([
+    { original: [1, 2], translation: [0, 0], mode: 'block' },
+    { original: [0, 0], translation: [1, 2], mode: 'block' },
+  ]);
+  assert.deepEqual(problems, [
+    'mapping_mk: chapter 42 section 1: original ranges are out of order between 1-2 and 0-0',
+  ]);
+});
+
+test('reports overlapping pairs once, as repeated lines', () => {
+  const problems = ordered([
+    { original: [0, 1], translation: [0, 1], mode: 'block' },
+    { original: [1, 2], translation: [2, 2], mode: 'block' },
+  ]);
+  assert.deepEqual(problems, [
+    'mapping_mk: chapter 42 section 1: original lines mapped more than once: 1',
+  ]);
+});
+
+test('reports pairs starting on the same line once, as repeated lines', () => {
+  const problems = ordered([
+    { original: [0, 1], translation: [0, 1], mode: 'block' },
+    { original: [0, 2], translation: [2, 2], mode: 'block' },
+  ]);
+  assert.deepEqual(problems, [
+    'mapping_mk: chapter 42 section 1: original lines mapped more than once: 0, 1',
+  ]);
+});
+
+test('rejects contiguous line pairs that should be one', () => {
+  const split = checkMapping(
+    'mapping_mk',
+    [
+      {
+        chapter: 42,
+        heading: [{ original: [0, 0], translation: [0, 0], mode: 'line' }],
+        sections: [
+          [
+            { original: [0, 0], translation: [0, 0], mode: 'line' },
+            { original: [1, 1], translation: [1, 1], mode: 'line' },
+          ],
+        ],
+      },
+    ],
+    [{ chapter: 42, heading: ['Ա'], sections: [['ա', 'բ']] }],
+    [{ chapter: 42, heading: ['Գ'], sections: [['գ', 'դ']] }],
+  );
+  assert.deepEqual(split, [
+    'mapping_mk: chapter 42 section 1: contiguous line pairs at original 0-0 and 1-1 should be merged',
+  ]);
+});
+
 test('rejects a mapping with no heading at all', () => {
   assert.deepEqual(mapped(undefined), ['mapping_mk: chapter 42: missing heading mapping']);
 });

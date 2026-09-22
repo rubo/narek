@@ -55,8 +55,7 @@
     [
       { "original": [0, 1], "translation": [0, 1], "mode": "block" },
       { "original": [2, 3], "translation": [2, 2], "mode": "block" },
-      { "original": [4, 13], "translation": [3, 12], "mode": "line" },
-      { "original": [14, 14], "translation": [13, 13], "mode": "line" },
+      { "original": [4, 14], "translation": [3, 13], "mode": "line" },
       { "original": [15, 17], "translation": [14, 14], "mode": "block" }
     ]
   ]

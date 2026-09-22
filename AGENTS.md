@@ -94,7 +94,8 @@ Standalone pages use a matching mapping file such as `book/mapping_<edition>/sup
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no overlaps.
 - A translation may be partial only when its edition is listed in `partialEditions` (`vg` lacks chapters, the superscription and the colophon among them). A partial edition maps every chapter it has; any other edition maps every original chapter.
-- `mode: "line"` pairs ranges position by position, so both must be the **same length**. `mode: "block"` presents them as blocks and may differ.
+- Mapping pairs stay in source order on both sides. A reordered correspondence must be one `block` large enough to preserve both texts' order.
+- `mode: "line"` pairs ranges position by position, so both must be the **same length**. `mode: "block"` presents them as blocks and may differ. Adjacent `line` pairs contiguous on both sides must be one pair.
 - `heading` maps the chapter's `heading` lines the same way a section does, but as one list of pairs — the front-matter headings, indexed from 0. The two sides need not be the same length (the original title is often two lines, the translation one), so a heading is usually a single `block` pair.
 - Editing a text shifts indices, so a corpus change usually means a mapping change. The build names the heading or section that broke.
 

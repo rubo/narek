@@ -40,9 +40,7 @@
       { "original": [10, 10], "translation": [11, 12], "mode": "block" },
       { "original": [11, 11], "translation": [13, 13], "mode": "line" },
       { "original": [12, 13], "translation": [14, 15], "mode": "block" },
-      { "original": [14, 15], "translation": [16, 17], "mode": "line" },
-      { "original": [16, 18], "translation": [18, 20], "mode": "line" },
-      { "original": [19, 20], "translation": [21, 22], "mode": "line" },
+      { "original": [14, 20], "translation": [16, 22], "mode": "line" },
       { "original": [21, 22], "translation": [23, 23], "mode": "block" }
     ]
   ]

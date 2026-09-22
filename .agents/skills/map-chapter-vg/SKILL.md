@@ -82,6 +82,7 @@ Line 2
 - `sections` is one array **per section, in order**; each holds the pairings for that section, and indices are **local to the section** (each section restarts at line 0 for both texts).
 - Ranges are **zero-based and inclusive**: `[0, 5]` is six lines.
 - Every line of **both** texts must be covered **exactly once** — no gaps, no overlaps.
+- Pairs stay in source order on **both** sides. When the translation reorders lines, cover the reordered stretch with one `block` large enough that neither side runs backwards.
 - `mode: "line"` pairs the two ranges position-by-position, so they must be the **same length**. Use it whenever the lines correspond one-to-one.
 - `mode: "block"` presents the two ranges as blocks and they may differ in length. Use it when the correspondence is many-to-one, one-to-many, or reordered — anything that is not a clean line-for-line match.
 - Keep each `block` pair as tight as the sense allows — split at real meaning boundaries rather than lumping distinct passages into one — but never at the cost of a clean, faithful mapping.

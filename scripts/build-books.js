@@ -371,6 +371,36 @@ function checkPairs(where, pairs, originalCount, translationCount, problems) {
     }
   }
 
+  for (let i = 1; i < pairs.length; i++) {
+    const [previous, pair] = [pairs[i - 1], pairs[i]];
+    const ranges = [previous.original, previous.translation, pair.original, pair.translation];
+
+    // Pair order preserves each text's reading order. Comparing starts leaves
+    // overlaps to `checkCoverage`, which reports them as repeated lines.
+    if (ranges.every((range) => span(range) !== null && range[0] <= range[1])) {
+      for (const key of ['original', 'translation']) {
+        if (previous[key][0] > pair[key][0]) {
+          problems.push(
+            `${where}: ${key} ranges are out of order between ${previous[key][0]}-${previous[key][1]} and ${pair[key][0]}-${pair[key][1]}`,
+          );
+        }
+      }
+    }
+
+    // Two contiguous `line` pairs display exactly as one, so the split is noise.
+    if (
+      previous.mode === 'line' &&
+      pair.mode === 'line' &&
+      ranges.every((range) => span(range) !== null) &&
+      previous.original[1] + 1 === pair.original[0] &&
+      previous.translation[1] + 1 === pair.translation[0]
+    ) {
+      problems.push(
+        `${where}: contiguous line pairs at original ${previous.original[0]}-${previous.original[1]} and ${pair.original[0]}-${pair.original[1]} should be merged`,
+      );
+    }
+  }
+
   if (originalCount !== undefined) {
     checkCoverage(where, pairs, 'original', originalCount, problems);
   }
