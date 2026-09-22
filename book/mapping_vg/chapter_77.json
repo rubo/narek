@@ -1,0 +1,37 @@
+{
+  "chapter": 77,
+  "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
+  "sections": [
+    [
+      { "original": [0, 5], "translation": [0, 7], "mode": "block" },
+      { "original": [6, 6], "translation": [8, 8], "mode": "line" },
+      { "original": [7, 7], "translation": [9, 10], "mode": "block" },
+      { "original": [8, 9], "translation": [11, 12], "mode": "line" }
+    ],
+    [
+      { "original": [0, 0], "translation": [0, 1], "mode": "block" },
+      { "original": [1, 6], "translation": [2, 7], "mode": "line" },
+      { "original": [7, 7], "translation": [8, 9], "mode": "block" },
+      { "original": [8, 19], "translation": [10, 21], "mode": "line" },
+      { "original": [20, 21], "translation": [22, 24], "mode": "block" },
+      { "original": [22, 23], "translation": [25, 26], "mode": "line" }
+    ],
+    [
+      { "original": [0, 1], "translation": [0, 1], "mode": "line" },
+      { "original": [2, 3], "translation": [2, 2], "mode": "block" },
+      { "original": [4, 6], "translation": [3, 5], "mode": "line" },
+      { "original": [7, 8], "translation": [6, 8], "mode": "block" },
+      { "original": [9, 19], "translation": [9, 19], "mode": "line" },
+      { "original": [20, 20], "translation": [20, 21], "mode": "block" },
+      { "original": [21, 25], "translation": [22, 26], "mode": "line" },
+      { "original": [26, 27], "translation": [27, 28], "mode": "block" }
+    ],
+    [
+      { "original": [0, 1], "translation": [0, 1], "mode": "block" },
+      { "original": [2, 7], "translation": [2, 7], "mode": "line" },
+      { "original": [8, 8], "translation": [8, 9], "mode": "block" },
+      { "original": [9, 10], "translation": [10, 11], "mode": "line" },
+      { "original": [11, 12], "translation": [12, 13], "mode": "block" }
+    ]
+  ]
+}
