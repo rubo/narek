@@ -4,12 +4,23 @@ import { useOutletContext } from 'react-router';
 import original from '../assets/generated/original/colophon.json';
 import CombinedHeading from './CombinedHeading';
 import FitHeading from './FitHeading';
+import MissingTranslation from './MissingTranslation';
 import SectionCombined from './SectionCombined';
 
 export default function Colophon() {
   /** @type {{ displayMode: string, translation: object | null }} */
   const { displayMode, translation } = useOutletContext();
   const translated = translation?.colophon;
+
+  if (translation && !translated) {
+    return (
+      <article>
+        <FitHeading className="heading">{original.heading}</FitHeading>
+        <MissingTranslation />
+      </article>
+    );
+  }
+
   const colophon = displayMode === 'original' ? original : translated.text;
 
   return (

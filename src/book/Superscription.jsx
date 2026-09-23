@@ -2,12 +2,22 @@
 
 import { useOutletContext } from 'react-router';
 import original from '../assets/generated/original/superscription.json';
+import MissingTranslation from './MissingTranslation';
 import SectionCombined from './SectionCombined';
 
 export default function Superscription() {
   /** @type {{ displayMode: string, translation: object | null }} */
   const { displayMode, translation } = useOutletContext();
   const translated = translation?.superscription;
+
+  if (translation && !translated) {
+    return (
+      <article className="mt-12">
+        <MissingTranslation />
+      </article>
+    );
+  }
+
   const superscription = displayMode === 'original' ? original : translated.text;
 
   return (

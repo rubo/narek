@@ -131,14 +131,10 @@ export default function Layout() {
   };
 
   const mode = searchParams.get('mode');
-  const requestedView = views.includes(mode) ? mode : defaultView;
-  const [requestedMode, translationId] = requestedView.split('-');
-  const requested = translations[translationId];
-  // A translation that lacks this page shows the original, and the menu says so;
-  // the URL keeps the request for the next page.
-  const translation = requested && translatedPart(requested, location.pathname) ? requested : null;
-  const selectedView = translation ? requestedView : defaultView;
-  const displayMode = translation ? requestedMode : defaultView;
+  const selectedView = views.includes(mode) ? mode : defaultView;
+  const [displayMode, translationId] = selectedView.split('-');
+  // Passed even where it lacks this page, so the page can say so.
+  const translation = translations[translationId] ?? null;
   const drawerTranslation = displayMode === 'translated' ? translation : null;
   const superscription = drawerTranslation?.superscription?.text ?? originalSuperscription;
   const colophon = drawerTranslation?.colophon?.text ?? originalColophon;
@@ -146,6 +142,10 @@ export default function Layout() {
   const disabledViews = Object.keys(translations)
     .filter((id) => !translatedPart(translations[id], location.pathname))
     .flatMap((id) => [`translated-${id}`, `combined-${id}`]);
+  // Pages the chosen translation lacks.
+  const disabledPaths = translation
+    ? paths.filter((path) => !translatedPart(translation, path))
+    : [];
   const selectedKeys = paths.includes(location.pathname) ? [location.pathname] : [];
 
   useLayoutEffect(() => {
@@ -163,24 +163,22 @@ export default function Layout() {
     navigate({ pathname, search: location.search });
   };
 
-  // Keyed by path, so the route drives the selection.
-  const currentChapter = chapters.findIndex(
-    ({ chapter }) => `/chapter/${chapter}` === location.pathname,
-  );
+  const pageable = chapters.filter(({ chapter }) => !disabledPaths.includes(`/chapter/${chapter}`));
 
-  let previous = currentChapter > 0 ? chapters[currentChapter - 1] : null;
-  let next =
-    currentChapter >= 0 && currentChapter < chapters.length - 1
-      ? chapters[currentChapter + 1]
-      : null;
+  // Keyed by path, so the route drives the selection.
+  const current = chapters.find(({ chapter }) => `/chapter/${chapter}` === location.pathname);
+
+  // By number, so a chapter the translation lacks still has neighbours.
+  let previous = current ? pageable.findLast(({ chapter }) => chapter < current.chapter) : null;
+  let next = current ? pageable.find(({ chapter }) => chapter > current.chapter) : null;
 
   // The superscription and colophon lead into the chapters, not back out.
   if (location.pathname === '/') {
-    next = chapters[0];
+    next = pageable[0];
   }
 
   if (location.pathname === '/colophon') {
-    previous = chapters.at(-1);
+    previous = pageable.at(-1);
   }
 
   const handleChapterChange = (keys) => {
@@ -238,6 +236,7 @@ export default function Layout() {
                 <ListBox
                   autoFocus
                   selectionMode="single"
+                  disabledKeys={disabledPaths}
                   selectedKeys={selectedKeys}
                   onSelectionChange={handleChapterChange}
                   aria-label="Բովանդակություն"
