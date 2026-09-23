@@ -107,3 +107,43 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `չէ՛`
 - Revised: [`չէ՞`](../translation_vg/chapter_70.md?plain=1#L56)
+
+## Chapter 82
+
+#### Typographical correction
+
+- Previous: `Չէ՛`
+- Revised: [`Չէ՞`](../translation_vg/chapter_82.md?plain=1#L212)
+
+## Chapter 83
+
+#### Typographical correction
+
+- Previous: `չէ՛`
+- Revised: [`չէ՞`](../translation_vg/chapter_83.md?plain=1#L84)
+
+## Chapter 84
+
+#### Typographical correction
+
+- Previous: `միա՜ն`
+- Revised: [`միա՜յն`](../translation_vg/chapter_84.md?plain=1#L88)
+
+## Chapter 87
+
+#### Typographical correction
+
+- Previous: `Չէ՛`
+- Revised: [`Չէ՞`](../translation_vg/chapter_87.md?plain=1#L20)
+
+## Chapter 90
+
+#### Typographical correction
+
+- Previous: `Կտրի՜ր`
+- Revised: [`Կտրի՛ր`](../translation_vg/chapter_90.md?plain=1#L168)
+
+#### Typographical correction
+
+- Previous: `և՜`
+- Revised: [`և՛`](../translation_vg/chapter_90.md?plain=1#L304)
