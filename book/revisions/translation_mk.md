@@ -11,6 +11,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `կանոնների`
 - Revised: [`կանոնների,`](../translation_mk/superscription.md?plain=1#L7)
 
+## Chapter 2
+
+#### Typographical correction
+
+- Previous: `չծագե՞ցնես`
+- Revised: [`չծագեցնե՞ս`](../translation_mk/chapter_2.md?plain=1#L280)
+
 ## Chapter 5
 
 #### Typographical correction
