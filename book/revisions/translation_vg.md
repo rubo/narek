@@ -4,6 +4,28 @@
 
 Section boundaries in the translation were adjusted to correspond with the original text (Grabar). The resulting alignment is documented by the mapping files.
 
+## Chapter 3
+
+#### Corrected reading
+
+- Previous: `ռազմիկ`
+- Revised: [`ռամիկ`](../translation_vg/chapter_3.md?plain=1#L164)
+- Evidence: [`ռամկաց`](../original/chapter_3.md?plain=1#L148)
+
+## Chapter 4
+
+#### Typographical correction
+
+- Previous: `Չէ՛ որ`
+- Revised: [`Չէ՞ որ`](../translation_vg/chapter_4.md?plain=1#L152)
+
+## Chapter 7
+
+#### Typographical correction
+
+- Previous: `Ծառած`
+- Revised: [`Ծառաս`](../translation_vg/chapter_7.md?plain=1#L100)
+
 ## Chapter 8
 
 #### Typographical correction
@@ -38,8 +60,8 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `Չէ՛`
-- Revised: [`Չէ՞`](../translation_vg/chapter_30.md?plain=1#L244)
+- Previous: `Չէ՛ որ`
+- Revised: [`Չէ՞ որ`](../translation_vg/chapter_30.md?plain=1#L244)
 
 ## Chapter 38
 
@@ -59,8 +81,8 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `չէ՛`
-- Revised: [`չէ՞`](../translation_vg/chapter_46.md?plain=1#L160)
+- Previous: `չէ՛ որ`
+- Revised: [`չէ՞ որ`](../translation_vg/chapter_46.md?plain=1#L160)
 
 #### Corrected reading
 
@@ -105,22 +127,22 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `չէ՛`
-- Revised: [`չէ՞`](../translation_vg/chapter_70.md?plain=1#L56)
+- Previous: `չէ՛ որ`
+- Revised: [`չէ՞ որ`](../translation_vg/chapter_70.md?plain=1#L56)
 
 ## Chapter 82
 
 #### Typographical correction
 
-- Previous: `Չէ՛`
-- Revised: [`Չէ՞`](../translation_vg/chapter_82.md?plain=1#L212)
+- Previous: `Չէ՛ որ`
+- Revised: [`Չէ՞ որ`](../translation_vg/chapter_82.md?plain=1#L212)
 
 ## Chapter 83
 
 #### Typographical correction
 
-- Previous: `չէ՛`
-- Revised: [`չէ՞`](../translation_vg/chapter_83.md?plain=1#L84)
+- Previous: `չէ՛ որ`
+- Revised: [`չէ՞ որ`](../translation_vg/chapter_83.md?plain=1#L84)
 
 ## Chapter 84
 
@@ -133,8 +155,8 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
-- Previous: `Չէ՛`
-- Revised: [`Չէ՞`](../translation_vg/chapter_87.md?plain=1#L20)
+- Previous: `Չէ՛ որ`
+- Revised: [`Չէ՞ որ`](../translation_vg/chapter_87.md?plain=1#L20)
 
 ## Chapter 90
 
