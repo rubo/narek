@@ -12,13 +12,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`ռամիկ`](../translation_vg/chapter_3.md?plain=1#L164)
 - Evidence: [`ռամկաց`](../original/chapter_3.md?plain=1#L148)
 
-## Chapter 4
-
-#### Typographical correction
-
-- Previous: `Չէ՛ որ`
-- Revised: [`Չէ՞ որ`](../translation_vg/chapter_4.md?plain=1#L152)
-
 ## Chapter 7
 
 #### Typographical correction
@@ -70,13 +63,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անպատում`](../translation_vg/chapter_27.md?plain=1#L288)
 - Evidence: [`Անճառ`](../original/chapter_27.md?plain=1#L250)
 
-## Chapter 30
-
-#### Typographical correction
-
-- Previous: `Չէ՛ որ`
-- Revised: [`Չէ՞ որ`](../translation_vg/chapter_30.md?plain=1#L244)
-
 ## Chapter 38
 
 #### Typographical correction
@@ -91,13 +77,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Ոչ՛`
 - Revised: [`Ո՛չ`](../translation_vg/chapter_43.md?plain=1#L74)
 
-## Chapter 46
-
-#### Typographical correction
-
-- Previous: `չէ՛ որ`
-- Revised: [`չէ՞ որ`](../translation_vg/chapter_46.md?plain=1#L160)
-
 #### Corrected reading
 
 - Previous: `վիճակն երկնավոր`
@@ -110,13 +89,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `ինչպե՜ս`
 - Revised: [`ինչպե՞ս`](../translation_vg/chapter_48.md?plain=1#L204)
-
-## Chapter 50
-
-#### Typographical correction
-
-- Previous: `ո՜վ`
-- Revised: [`ո՞վ`](../translation_vg/chapter_50.md?plain=1#L122)
 
 ## Chapter 51
 
@@ -137,40 +109,12 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `հավիտյանս,`
 - Revised: [`հավիտյանս.`](../translation_vg/chapter_52.md?plain=1#L188)
 
-## Chapter 70
-
-#### Typographical correction
-
-- Previous: `չէ՛ որ`
-- Revised: [`չէ՞ որ`](../translation_vg/chapter_70.md?plain=1#L56)
-
-## Chapter 82
-
-#### Typographical correction
-
-- Previous: `Չէ՛ որ`
-- Revised: [`Չէ՞ որ`](../translation_vg/chapter_82.md?plain=1#L212)
-
-## Chapter 83
-
-#### Typographical correction
-
-- Previous: `չէ՛ որ`
-- Revised: [`չէ՞ որ`](../translation_vg/chapter_83.md?plain=1#L84)
-
 ## Chapter 84
 
 #### Typographical correction
 
 - Previous: `միա՜ն`
 - Revised: [`միա՜յն`](../translation_vg/chapter_84.md?plain=1#L88)
-
-## Chapter 87
-
-#### Typographical correction
-
-- Previous: `Չէ՛ որ`
-- Revised: [`Չէ՞ որ`](../translation_vg/chapter_87.md?plain=1#L20)
 
 ## Chapter 90
 
