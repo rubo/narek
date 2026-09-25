@@ -33,6 +33,11 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անեղծության`](../translation_mk/chapter_10.md?plain=1#L58)
 - Evidence: [`անեղծութեան`](../original/chapter_10.md?plain=1#L68)
 
+#### Typographical correction
+
+- Previous: `հի՛շենք`
+- Revised: [`հիշե՛նք`](../translation_mk/chapter_10.md?plain=1#L72)
+
 ## Chapter 11
 
 #### Corrected reading
