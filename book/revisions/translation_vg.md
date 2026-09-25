@@ -33,6 +33,20 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Գուբը, մահախեղդ`
 - Revised: [`Գուբը՝ մահախեղդ`](../translation_vg/chapter_8.md?plain=1#L32)
 
+## Chapter 10
+
+#### Typographical correction
+
+- Previous: `անխափան`
+- Revised: [`անխափան՝`](../translation_vg/chapter_10.md?plain=1#L144)
+
+## Chapter 11
+
+#### Typographical correction
+
+- Previous: `խոսքից մտքից`
+- Revised: [`խոսքից, մտքից`](../translation_vg/chapter_11.md?plain=1#L56)
+
 ## Chapter 17
 
 #### Corrected reading
