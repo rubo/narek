@@ -58,6 +58,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `կուրացնի`
 - Revised: [`կուրացնիր`](../translation_mk/chapter_17.md?plain=1#L28)
 
+## Chapter 18
+
+#### Typographical correction
+
+- Previous: `մառախողը`
+- Revised: [`մառախուղը`](../translation_mk/chapter_18.md?plain=1#L48)
+
 ## Chapter 20
 
 #### Corrected reading
