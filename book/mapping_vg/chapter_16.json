@@ -3,7 +3,8 @@
   "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
   "sections": [
     [
-      { "original": [0, 10], "translation": [0, 10], "mode": "line" },
+      { "original": [0, 8], "translation": [0, 8], "mode": "line" },
+      { "original": [9, 10], "translation": [9, 10], "mode": "block" },
       { "original": [11, 13], "translation": [11, 13], "mode": "block" },
       { "original": [14, 18], "translation": [14, 18], "mode": "line" },
       { "original": [19, 21], "translation": [19, 22], "mode": "block" },

@@ -48,6 +48,14 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`Երկրայինի`](../translation_vg/chapter_17.md?plain=1#L222)
 - Evidence: [`ընդ երկրաւորիս`](../original/chapter_17.md?plain=1#L214)
 
+## Chapter 18
+
+#### Corrected reading
+
+- Previous: `բերում է`
+- Revised: [`բերում եմ`](../translation_vg/chapter_18.md?plain=1#L150)
+- Evidence: [`ընծայեցուցանեմ`](../original/chapter_18.md?plain=1#L120)
+
 ## Chapter 25
 
 #### Typographical correction
@@ -76,6 +84,8 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `Ոչ՛`
 - Revised: [`Ո՛չ`](../translation_vg/chapter_43.md?plain=1#L74)
+
+## Chapter 46
 
 #### Corrected reading
 
