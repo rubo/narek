@@ -63,6 +63,11 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `արդոք`
 - Revised: [`արդյոք`](../translation_vg/chapter_25.md?plain=1#L170)
 
+#### Typographical correction
+
+- Previous: `հանդերձյալում ՝մշտնջենական`
+- Revised: [`հանդերձյալում՝ մշտնջենական`](../translation_vg/chapter_25.md?plain=1#L330)
+
 ## Chapter 27
 
 #### Corrected reading

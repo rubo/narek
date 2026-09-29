@@ -27,8 +27,7 @@
       { "original": [12, 17], "translation": [16, 21], "mode": "line" },
       { "original": [18, 19], "translation": [22, 24], "mode": "block" },
       { "original": [20, 26], "translation": [25, 31], "mode": "line" },
-      { "original": [27, 28], "translation": [32, 33], "mode": "block" },
-      { "original": [29, 30], "translation": [34, 35], "mode": "block" }
+      { "original": [27, 30], "translation": [32, 35], "mode": "block" }
     ]
   ]
 }
