@@ -94,6 +94,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`քավություն`](../translation_mk/chapter_27.md?plain=1#L214)
 - Evidence: [`քաւութիւն`](../original/chapter_27.md?plain=1#L252)
 
+## Chapter 28
+
+#### Typographical correction
+
+- Previous: `հա՛նիր`
+- Revised: [`հանի՛ր`](../translation_mk/chapter_28.md?plain=1#L258)
+
 ## Chapter 30
 
 #### Corrected reading
