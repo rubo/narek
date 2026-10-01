@@ -76,6 +76,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անպատում`](../translation_vg/chapter_27.md?plain=1#L288)
 - Evidence: [`Անճառ`](../original/chapter_27.md?plain=1#L250)
 
+## Chapter 30
+
+#### Typographical correction
+
+- Previous: `հանճարդ`
+- Revised: [`Հանճարդ`](../translation_vg/chapter_30.md?plain=1#L270)
+
 ## Chapter 38
 
 #### Typographical correction
