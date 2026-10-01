@@ -103,11 +103,21 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 ## Chapter 30
 
+#### Typographical correction
+
+- Previous: `մյուսը ճենճերով`
+- Revised: [`մյուսը՝ ճենճերով`](../translation_mk/chapter_30.md?plain=1#L74)
+
 #### Corrected reading
 
 - Previous: `խստության`
 - Revised: [`խակության`](../translation_mk/chapter_30.md?plain=1#L172)
 - Evidence: [`խակութիւն`](../original/chapter_30.md?plain=1#L230)
+
+#### Typographical correction
+
+- Previous: `հավիտյանս,`
+- Revised: [`հավիտյանս.`](../translation_mk/chapter_30.md?plain=1#L230)
 
 ## Chapter 33
 
