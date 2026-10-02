@@ -83,6 +83,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `հանճարդ`
 - Revised: [`Հանճարդ`](../translation_vg/chapter_30.md?plain=1#L270)
 
+## Chapter 32
+
+#### Corrected reading
+
+- Previous: `ահեղ`
+- Revised: [`անեղ`](../translation_vg/chapter_32.md?plain=1#L100)
+
 ## Chapter 38
 
 #### Typographical correction
