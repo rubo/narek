@@ -138,6 +138,11 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `մաքրագործե`
 - Revised: [`մաքրագործեց`](../translation_mk/chapter_34.md?plain=1#L344)
 
+#### Typographical correction
+
+- Previous: `շոշափեցվիր`
+- Revised: [`շոշափվեցիր`](../translation_mk/chapter_34.md?plain=1#L580)
+
 ## Chapter 35
 
 #### Corrected reading
