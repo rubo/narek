@@ -90,6 +90,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `ահեղ`
 - Revised: [`անեղ`](../translation_vg/chapter_32.md?plain=1#L100)
 
+## Chapter 36
+
+#### Typographical correction
+
+- Previous: `էի համբավում`
+- Revised: [`էին համբավում`](../translation_vg/chapter_36.md?plain=1#L110)
+
 ## Chapter 38
 
 #### Typographical correction
