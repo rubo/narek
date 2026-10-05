@@ -3,8 +3,8 @@
   "heading": [{ "original": [0, 1], "translation": [0, 0], "mode": "block" }],
   "sections": [
     [
-      { "original": [0, 2], "translation": [0, 3], "mode": "block" },
-      { "original": [3, 12], "translation": [4, 13], "mode": "line" },
+      { "original": [0, 4], "translation": [0, 5], "mode": "block" },
+      { "original": [5, 12], "translation": [6, 13], "mode": "line" },
       { "original": [13, 14], "translation": [14, 16], "mode": "block" },
       { "original": [15, 15], "translation": [17, 17], "mode": "line" },
       { "original": [16, 16], "translation": [18, 19], "mode": "block" },
