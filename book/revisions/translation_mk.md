@@ -176,6 +176,21 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`բարկությունից`](../translation_mk/chapter_43.md?plain=1#L56)
 - Evidence: [`ի բարկութենէ`](../original/chapter_43.md?plain=1#L86)
 
+## Chapter 44
+
+#### Corrected reading
+
+- Previous: `էությանը`
+- Revised: [`էության`](../translation_mk/chapter_44.md?plain=1#L118)
+- Evidence: [`էութեանն`](../original/chapter_44.md?plain=1#L128)
+
+## Chapter 45
+
+#### Typographical correction
+
+- Previous: `հավիտյանս,`
+- Revised: [`հավիտյանս.`](../translation_mk/chapter_45.md?plain=1#L220)
+
 ## Chapter 46
 
 #### Corrected reading
