@@ -115,6 +115,12 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Corrected reading
 
+- Previous: `անարգ`
+- Revised: [`անկարգ`](../translation_vg/chapter_46.md?plain=1#L142)
+- Evidence: [`յանկարգ`](../original/chapter_46.md?plain=1#L122)
+
+#### Corrected reading
+
 - Previous: `վիճակն երկնավոր`
 - Revised: [`վիճակն երկրավոր`](../translation_vg/chapter_46.md?plain=1#L172)
 - Evidence: [`զվիճակն երկրաւոր`](../original/chapter_46.md?plain=1#L142)
