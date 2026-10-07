@@ -199,6 +199,24 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անկարգ`](../translation_mk/chapter_46.md?plain=1#L112)
 - Evidence: [`յանկարգ`](../original/chapter_46.md?plain=1#L122)
 
+## Chapter 48
+
+#### Corrected reading
+
+- Previous: `ահեղ`
+- Revised: [`անեղ`](../translation_mk/chapter_48.md?plain=1#L8)
+- Evidence: [`անեղ`](../original/chapter_48.md?plain=1#L10)
+
+#### Typographical correction
+
+- Previous: `Մի՛ դարձնի`
+- Revised: [`Մի՛ դարձնիր`](../translation_mk/chapter_48.md?plain=1#L40)
+
+#### Typographical correction
+
+- Previous: `մի՛ թողնի`
+- Revised: [`մի՛ թողնիր`](../translation_mk/chapter_48.md?plain=1#L338)
+
 ## Chapter 51
 
 #### Corrected reading
