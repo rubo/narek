@@ -4,42 +4,6 @@
 
 Section boundaries in the translation were adjusted to correspond with the original text (Grabar). The resulting alignment is documented by the mapping files.
 
-## Chapter 3
-
-#### Corrected reading
-
-- Previous: `ռազմիկ`
-- Revised: [`ռամիկ`](../translation_vg/chapter_3.md?plain=1#L164)
-- Evidence: [`ռամկաց`](../original/chapter_3.md?plain=1#L148)
-
-## Chapter 7
-
-#### Typographical correction
-
-- Previous: `Ծառած`
-- Revised: [`Ծառաս`](../translation_vg/chapter_7.md?plain=1#L100)
-
-## Chapter 8
-
-#### Typographical correction
-
-- Previous: `Գուբը, մահախեղդ`
-- Revised: [`Գուբը՝ մահախեղդ`](../translation_vg/chapter_8.md?plain=1#L32)
-
-## Chapter 10
-
-#### Typographical correction
-
-- Previous: `անխափան`
-- Revised: [`անխափան՝`](../translation_vg/chapter_10.md?plain=1#L144)
-
-## Chapter 11
-
-#### Typographical correction
-
-- Previous: `խոսքից մտքից`
-- Revised: [`խոսքից, մտքից`](../translation_vg/chapter_11.md?plain=1#L56)
-
 ## Chapter 17
 
 #### Corrected reading
@@ -62,11 +26,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `արդոք`
 - Revised: [`արդյոք`](../translation_vg/chapter_25.md?plain=1#L170)
-
-#### Typographical correction
-
-- Previous: `հանդերձյալում ՝մշտնջենական`
-- Revised: [`հանդերձյալում՝ մշտնջենական`](../translation_vg/chapter_25.md?plain=1#L330)
 
 ## Chapter 27
 
@@ -125,12 +84,12 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`վիճակն երկրավոր`](../translation_vg/chapter_46.md?plain=1#L172)
 - Evidence: [`զվիճակն երկրաւոր`](../original/chapter_46.md?plain=1#L142)
 
-## Chapter 48
+## Chapter 50
 
 #### Typographical correction
 
-- Previous: `ինչպե՜ս`
-- Revised: [`ինչպե՞ս`](../translation_vg/chapter_48.md?plain=1#L204)
+- Previous: `անգամ`
+- Revised: [`անգամ»`](../translation_vg/chapter_50.md?plain=1#L122)
 
 ## Chapter 51
 
@@ -138,18 +97,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `Կանոններ.`
 - Revised: [`Կանոններ,`](../translation_vg/chapter_51.md?plain=1#L136)
-
-#### Typographical correction
-
-- Previous: `հավիտյանս,`
-- Revised: [`հավիտյանս.`](../translation_vg/chapter_51.md?plain=1#L340)
-
-## Chapter 52
-
-#### Typographical correction
-
-- Previous: `հավիտյանս,`
-- Revised: [`հավիտյանս.`](../translation_vg/chapter_52.md?plain=1#L188)
 
 ## Chapter 84
 
