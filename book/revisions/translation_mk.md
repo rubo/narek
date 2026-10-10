@@ -231,6 +231,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անբուժելի մեղքերից`](../translation_mk/chapter_51.md?plain=1#L136)
 - Evidence: [`մեղանաց անբժշկականաց`](../original/chapter_51.md?plain=1#L152)
 
+## Chapter 54
+
+#### Typographical correction
+
+- Previous: `հավիտյանս,`
+- Revised: [`հավիտյանս.`](../translation_mk/chapter_54.md?plain=1#L160)
+
 ## Chapter 61
 
 #### Typographical correction

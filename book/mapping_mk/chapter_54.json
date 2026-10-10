@@ -31,8 +31,8 @@
     [
       { "original": [0, 2], "translation": [0, 1], "mode": "block" },
       { "original": [3, 6], "translation": [2, 5], "mode": "line" },
-      { "original": [7, 8], "translation": [6, 6], "mode": "block" },
-      { "original": [9, 17], "translation": [7, 15], "mode": "line" },
+      { "original": [7, 9], "translation": [6, 7], "mode": "block" },
+      { "original": [10, 17], "translation": [8, 15], "mode": "line" },
       { "original": [18, 19], "translation": [16, 16], "mode": "block" },
       { "original": [20, 21], "translation": [17, 18], "mode": "block" },
       { "original": [22, 22], "translation": [19, 19], "mode": "line" }
