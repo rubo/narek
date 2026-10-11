@@ -98,6 +98,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `Կանոններ.`
 - Revised: [`Կանոններ,`](../translation_vg/chapter_51.md?plain=1#L136)
 
+## Chapter 56
+
+#### Typographical correction
+
+- Previous: `նպաշտպան`
+- Revised: [`Անպաշտպան`](../translation_vg/chapter_56.md?plain=1#L66)
+
 ## Chapter 84
 
 #### Typographical correction
