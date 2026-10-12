@@ -238,6 +238,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `հավիտյանս,`
 - Revised: [`հավիտյանս.`](../translation_mk/chapter_54.md?plain=1#L160)
 
+## Chapter 59
+
+#### Typographical correction
+
+- Previous: `Թե՝ Երեմիային՝`
+- Revised: [`Թե Երեմիային՝`](../translation_mk/chapter_59.md?plain=1#L78)
+
 ## Chapter 61
 
 #### Typographical correction
