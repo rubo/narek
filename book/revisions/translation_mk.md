@@ -46,18 +46,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անքող և անծածկույթ`](../translation_mk/chapter_11.md?plain=1#L202)
 - Evidence: [`Անքաւղ եւ անվերարկու`](../original/chapter_11.md?plain=1#L198)
 
-## Chapter 17
-
-#### Typographical correction
-
-- Previous: `ամաչեցնի`
-- Revised: [`ամաչեցնիր`](../translation_mk/chapter_17.md?plain=1#L18)
-
-#### Typographical correction
-
-- Previous: `կուրացնի`
-- Revised: [`կուրացնիր`](../translation_mk/chapter_17.md?plain=1#L28)
-
 ## Chapter 18
 
 #### Typographical correction
@@ -207,16 +195,6 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անեղ`](../translation_mk/chapter_48.md?plain=1#L8)
 - Evidence: [`անեղ`](../original/chapter_48.md?plain=1#L10)
 
-#### Typographical correction
-
-- Previous: `Մի՛ դարձնի`
-- Revised: [`Մի՛ դարձնիր`](../translation_mk/chapter_48.md?plain=1#L40)
-
-#### Typographical correction
-
-- Previous: `մի՛ թողնի`
-- Revised: [`մի՛ թողնիր`](../translation_mk/chapter_48.md?plain=1#L338)
-
 ## Chapter 51
 
 #### Corrected reading
@@ -313,17 +291,7 @@ Section boundaries in the translation were adjusted to correspond with the origi
 #### Typographical correction
 
 - Previous: `մի իջեցնի`
-- Revised: [`մի՛ իջեցնիր`](../translation_mk/chapter_87.md?plain=1#L98)
-
-#### Typographical correction
-
-- Previous: `Մի՛ ցած բերի`
-- Revised: [`Մի՛ ցած բեր`](../translation_mk/chapter_87.md?plain=1#L100)
-
-#### Typographical correction
-
-- Previous: `Մի՛ բաց թողնի`
-- Revised: [`Մի՛ բաց թողնիր`](../translation_mk/chapter_87.md?plain=1#L102)
+- Revised: [`մի՛ իջեցնի`](../translation_mk/chapter_87.md?plain=1#L98)
 
 ## Chapter 90
 
