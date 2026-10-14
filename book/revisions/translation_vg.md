@@ -112,6 +112,20 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `չլսեց.`
 - Revised: [`չլսեց,`](../translation_vg/chapter_58.md?plain=1#L64)
 
+## Chapter 60
+
+#### Typographical correction
+
+- Previous: `Ո՜չ`
+- Revised: [`Ո՛չ`](../translation_vg/chapter_60.md?plain=1#L330)
+
+## Chapter 61
+
+#### Typographical correction
+
+- Previous: `համարձակությամբ`
+- Revised: [`համարձակությամբ՝`](../translation_vg/chapter_61.md?plain=1#L256)
+
 ## Chapter 84
 
 #### Typographical correction
