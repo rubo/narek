@@ -227,6 +227,11 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
+- Previous: `չարագործների»`
+- Revised: [`չարագործների»։`](../translation_mk/chapter_61.md?plain=1#L106)
+
+#### Typographical correction
+
 - Previous: `Ի՞նչպես`
 - Revised: [`Ինչպե՞ս`](../translation_mk/chapter_61.md?plain=1#L114)
 
