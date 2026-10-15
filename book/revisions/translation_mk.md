@@ -237,6 +237,17 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 ## Chapter 64
 
+#### Typographical correction
+
+- Previous: `Մի բարձրացնիր`
+- Revised: [`Մի՛ բարձրացնիր`](../translation_mk/chapter_64.md?plain=1#L40)
+
+#### Typographical correction
+
+- Previous: `Կանգնեցիր`
+- Revised: [`Կանգնեցրիր`](../translation_mk/chapter_64.md?plain=1#L82)
+- Evidence: [`կանգնեցեր`](../original/chapter_64.md?plain=1#L86)
+
 #### Corrected reading
 
 - Previous: `բոլորովին հավասարապես`

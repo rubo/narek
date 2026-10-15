@@ -29,7 +29,7 @@
       { "original": [0, 3], "translation": [0, 3], "mode": "line" },
       { "original": [4, 5], "translation": [4, 5], "mode": "block" },
       { "original": [6, 10], "translation": [6, 10], "mode": "line" },
-      { "original": [11, 12], "translation": [11, 11], "mode": "block" }
+      { "original": [11, 12], "translation": [11, 12], "mode": "block" }
     ]
   ]
 }
