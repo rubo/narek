@@ -126,6 +126,14 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `համարձակությամբ`
 - Revised: [`համարձակությամբ՝`](../translation_vg/chapter_61.md?plain=1#L256)
 
+## Chapter 64
+
+#### Corrected reading
+
+- Previous: `մեծատուն`
+- Revised: [`մեծատան`](../translation_vg/chapter_64.md?plain=1#L146)
+- Evidence: [`մեծատան`](../original/chapter_64.md?plain=1#L116)
+
 ## Chapter 84
 
 #### Typographical correction
