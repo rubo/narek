@@ -32,6 +32,14 @@
 - Revised: [`զամենայն պարգեւս ի մեզ ծաղկեալ եւ աճեցեալ, որ ձեռնադրես առաքեալս, լցուցանես մարգարէս, ուսուցանես վարդապետս, բարբառեցուցանես համերս եւ բանաս զփակեալ ականջս խլից`](../original/chapter_34.md?plain=1#L30)
 - Evidence: [Գրիգոր Նարեկացի, Նարեկ. Մատեան ողբերգութեան, Տպ. Ստ. Տէօքմէճեան, Buenos Aires, 1948](https://arar.sci.am/publication/410977), printed p. 86; PDF p. 235
 
+## Chapter 71
+
+#### Typographical correction
+
+- Previous: `անդնոց`
+- Revised: [`անդնդոց`](../original/chapter_71.md?plain=1#L366)
+- Evidence: [Գրիգոր Նարեկացի, Նարեկ. Մատեան ողբերգութեան, Տպ. Ստ. Տէօքմէճեան, Buenos Aires, 1948](https://arar.sci.am/publication/410977), printed p. 183; PDF p. 429
+
 ## Colophon
 
 #### Typographical correction
