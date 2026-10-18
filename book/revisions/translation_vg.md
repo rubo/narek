@@ -134,6 +134,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`մեծատան`](../translation_vg/chapter_64.md?plain=1#L146)
 - Evidence: [`մեծատան`](../original/chapter_64.md?plain=1#L116)
 
+## Chapter 70
+
+#### Typographical correction
+
+- Previous: `իրենց.`
+- Revised: [`իրենց».`](../translation_vg/chapter_70.md?plain=1#L78)
+
 ## Chapter 84
 
 #### Typographical correction
