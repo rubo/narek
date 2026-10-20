@@ -270,6 +270,11 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 #### Typographical correction
 
+- Previous: `առաջ`
+- Revised: [`առաջ,`](../translation_mk/chapter_77.md?plain=1#L28)
+
+#### Typographical correction
+
 - Previous: `Եւ`
 - Revised: [`Եվ`](../translation_mk/chapter_77.md?plain=1#L40)
 
