@@ -6,14 +6,16 @@
       { "original": [0, 3], "translation": [0, 3], "mode": "line" },
       { "original": [4, 4], "translation": [4, 5], "mode": "block" },
       { "original": [5, 7], "translation": [6, 7], "mode": "block" },
-      { "original": [8, 13], "translation": [8, 13], "mode": "line" },
+      { "original": [8, 9], "translation": [8, 9], "mode": "block" },
+      { "original": [10, 13], "translation": [10, 13], "mode": "line" },
       { "original": [14, 14], "translation": [14, 15], "mode": "block" },
       { "original": [15, 15], "translation": [16, 17], "mode": "block" },
       { "original": [16, 16], "translation": [18, 19], "mode": "block" },
       { "original": [17, 19], "translation": [20, 22], "mode": "line" }
     ],
     [
-      { "original": [0, 17], "translation": [0, 17], "mode": "block" },
+      { "original": [0, 1], "translation": [0, 1], "mode": "block" },
+      { "original": [2, 17], "translation": [2, 17], "mode": "block" },
       { "original": [18, 19], "translation": [18, 19], "mode": "line" }
     ],
     [
@@ -40,8 +42,8 @@
       { "original": [22, 36], "translation": [19, 33], "mode": "line" },
       { "original": [37, 38], "translation": [34, 34], "mode": "block" },
       { "original": [39, 40], "translation": [35, 36], "mode": "line" },
-      { "original": [41, 42], "translation": [37, 38], "mode": "block" },
-      { "original": [43, 44], "translation": [39, 40], "mode": "line" }
+      { "original": [41, 43], "translation": [37, 39], "mode": "block" },
+      { "original": [44, 44], "translation": [40, 40], "mode": "line" }
     ],
     [{ "original": [0, 15], "translation": [0, 15], "mode": "line" }],
     [
