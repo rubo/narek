@@ -307,6 +307,13 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Revised: [`անհասության`](../translation_mk/chapter_82.md?plain=1#L302)
 - Evidence: [`անհասութեան`](../original/chapter_82.md?plain=1#L314)
 
+## Chapter 83
+
+#### Typographical correction
+
+- Previous: `կեդանության`
+- Revised: [`կենդանության`](../translation_mk/chapter_83.md?plain=1#L18)
+
 ## Chapter 87
 
 #### Typographical correction
