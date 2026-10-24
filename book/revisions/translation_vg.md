@@ -148,6 +148,14 @@ Section boundaries in the translation were adjusted to correspond with the origi
 - Previous: `միա՜ն`
 - Revised: [`միա՜յն`](../translation_vg/chapter_84.md?plain=1#L88)
 
+## Chapter 88
+
+#### Corrected reading
+
+- Previous: `կենդանանար`
+- Revised: [`կենդանարար`](../translation_vg/chapter_88.md?plain=1#L142)
+- Evidence: [`կենդանականս`](../original/chapter_88.md?plain=1#L124)
+
 ## Chapter 90
 
 #### Typographical correction
