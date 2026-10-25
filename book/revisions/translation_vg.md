@@ -167,3 +167,10 @@ Section boundaries in the translation were adjusted to correspond with the origi
 
 - Previous: `և՜`
 - Revised: [`և՛`](../translation_vg/chapter_90.md?plain=1#L304)
+
+## Chapter 94
+
+#### Typographical correction
+
+- Previous: `հավիտյանս,`
+- Revised: [`հավիտյանս.`](../translation_vg/chapter_94.md?plain=1#L102)
