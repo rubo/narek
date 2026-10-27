@@ -780,7 +780,7 @@ export function checkPunctuation(outputs) {
 
 // The routes App.jsx serves. Only the original is routed: a translation is a
 // display mode, not a URL.
-function renderSitemap(outputs) {
+function listRoutes(outputs) {
   const routes = ['/'];
 
   for (const { chapter } of outputs.get('original/chapters.json')) {
@@ -795,6 +795,10 @@ function renderSitemap(outputs) {
     }
   }
 
+  return routes;
+}
+
+function renderSitemap(routes) {
   const urls = routes.map((route) => `  <url><loc>${siteUrl}${route}</loc></url>`).join('\n');
 
   return `<?xml version="1.0" encoding="utf-8"?>
@@ -815,20 +819,21 @@ Sitemap: ${siteUrl}/sitemap.xml
 
 // Build-only: the plugin emits these into the bundle, so they never reach
 // public/ and are never committed.
-function renderSiteAssets(outputs) {
+function renderSiteAssets(routes) {
   if (!siteUrl) {
     return new Map();
   }
 
   return new Map([
-    ['sitemap.xml', renderSitemap(outputs)],
+    ['sitemap.xml', renderSitemap(routes)],
     ['robots.txt', renderRobots()],
   ]);
 }
 
 /**
  * Generates every output and reports what happened, leaving the caller to act
- * on it. `assets` are build-only files for the caller to emit.
+ * on it. `assets` are build-only files for the caller to emit; `routes` are
+ * the paths the app serves.
  *
  * @param {{ check?: boolean, log?: (message: string) => void }} [options]
  * @returns {Promise<{
@@ -836,6 +841,7 @@ function renderSiteAssets(outputs) {
  *   stale: string[],
  *   problems: string[],
  *   assets: Map<string, string>,
+ *   routes: string[],
  * }>}
  */
 export async function build({ check = false, log } = {}) {
@@ -850,7 +856,7 @@ export async function build({ check = false, log } = {}) {
   const corrupt = checkPunctuation(outputs);
 
   if (corrupt.length > 0) {
-    return { written: [], stale: [], problems: corrupt, assets: new Map() };
+    return { written: [], stale: [], problems: corrupt, assets: new Map(), routes: [] };
   }
 
   // Mapping problems must not block regenerating changed text.
@@ -884,7 +890,9 @@ export async function build({ check = false, log } = {}) {
     log?.(`wrote ${name}`);
   }
 
-  return { written, stale, problems, assets: renderSiteAssets(outputs) };
+  const routes = listRoutes(outputs);
+
+  return { written, stale, problems, assets: renderSiteAssets(routes), routes };
 }
 
 // CLI entry only: importing this module builds nothing.

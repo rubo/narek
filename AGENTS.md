@@ -99,6 +99,10 @@ Standalone pages use a matching mapping file such as `book/mapping_<edition>/sup
 - `heading` maps the chapter's `heading` lines the same way a section does, but as one list of pairs — the front-matter headings, indexed from 0. The two sides need not be the same length (the original title is often two lines, the translation one), so a heading is usually a single `block` pair.
 - Editing a text shifts indices, so a corpus change usually means a mapping change. The build names the heading or section that broke.
 
+## Hosting
+
+GitHub Pages, deployed by `.github/workflows/deploy.yml` on every push to `main`. It has no SPA fallback, so the books plugin writes a copy of `index.html` for every route as `<route>.html` (not `<route>/index.html`, which it would redirect to the slashed URL), and `404.html` for the rest. A new route must also be added to `listRoutes` in `scripts/build-books.js`.
+
 ## Commands
 
 All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
