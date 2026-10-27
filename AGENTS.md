@@ -133,4 +133,3 @@ All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 ## Known open items
 
 - `sitemap.xml` / `robots.txt` and canonical URLs are emitted only when `SITE_URL` is set. No host, no files — never a placeholder.
-- `NotFound.jsx` is still a placeholder.
