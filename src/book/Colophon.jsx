@@ -1,44 +1,42 @@
 // SPDX-License-Identifier: MIT
 
-import { useOutletContext } from 'react-router';
-import original from '../assets/generated/original/colophon.json';
+import { summarize } from '../shared/utils';
 import CombinedHeading from './CombinedHeading';
+import { loadPage } from './corpus.server';
 import FitHeading from './FitHeading';
-import MissingTranslation from './MissingTranslation';
+import PageMeta from './PageMeta';
 import SectionCombined from './SectionCombined';
 
-export default function Colophon() {
-  /** @type {{ displayMode: string, translation: object | null }} */
-  const { displayMode, translation } = useOutletContext();
-  const translated = translation?.colophon;
+export function loader(args) {
+  return loadPage(args, 'colophon');
+}
 
-  if (translation && !translated) {
-    return (
-      <article>
-        <FitHeading className="heading">{original.heading}</FitHeading>
-        <MissingTranslation />
-      </article>
-    );
-  }
-
-  const colophon = displayMode === 'original' ? original : translated.text;
+export default function Colophon({ loaderData }) {
+  const { mode, edition, original, translated, mapping } = loaderData;
+  const colophon = mode === 'original' ? original : translated;
 
   return (
     <article>
-      {displayMode === 'combined' ? (
+      <PageMeta
+        mode={mode}
+        edition={edition}
+        name={colophon.heading}
+        description={summarize(colophon.content)}
+      />
+      {mode === 'combined' ? (
         <>
           <FitHeading className="heading">
             <CombinedHeading
               originalLines={[original.heading]}
-              translationLines={[translated.text.heading]}
-              mapping={translated.mapping.heading}
+              translationLines={[translated.heading]}
+              mapping={mapping.heading}
             />
           </FitHeading>
           <SectionCombined
             hideNumber
             originalLines={original.content}
-            translationLines={translated.text.content}
-            mapping={translated.mapping.content}
+            translationLines={translated.content}
+            mapping={mapping.content}
           />
         </>
       ) : (

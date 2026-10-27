@@ -41,11 +41,14 @@ Square brackets are plain text (`բան [բառ] բան`).
 book/<edition>/*.md              source of truth, hand-authored
 book/mapping_<edition>/*.json    hand-authored mapping, per chapter and page
 src/assets/generated/            GENERATED — never edit
+src/routes.js                    React Router routes, one set per view
+src/book/corpus.server.js        the corpus, read only by build-time loaders
+src/shared/views.js              view URLs, shared by the app, loaders and generator
 scripts/build-books.js           the generator + CLI
 scripts/vite-plugin-books.js     Vite plugin wrapping it
 ```
 
-Output mirrors the source tree: `book/original/` → `src/assets/generated/original/`, with chapters merged into `chapters.json` and each standalone page keeping its own name. The per-chapter mappings likewise merge into a single `src/assets/generated/mapping_<edition>.json`, ordered to match the original chapters. Adding an edition is one string in `sources`.
+Output mirrors the source tree: `book/original/` → `src/assets/generated/original/`, with chapters merged into `chapters.json` and each standalone page keeping its own name. The per-chapter mappings likewise merge into a single `src/assets/generated/mapping_<edition>.json`, ordered to match the original chapters. `pages.json` lists the pages each edition has, which the prerender and the drawer share. Adding an edition is one entry in `editions` (`src/shared/views.js`), plus `partialEditions` in the generator if it is partial.
 
 ## The corpus format
 
@@ -99,9 +102,18 @@ Standalone pages use a matching mapping file such as `book/mapping_<edition>/sup
 - `heading` maps the chapter's `heading` lines the same way a section does, but as one list of pairs — the front-matter headings, indexed from 0. The two sides need not be the same length (the original title is often two lines, the translation one), so a heading is usually a single `block` pair.
 - Editing a text shifts indices, so a corpus change usually means a mapping change. The build names the heading or section that broke.
 
-## Hosting
+## Rendering
 
-GitHub Pages, deployed by `.github/workflows/deploy.yml` on every push to `main`. It has no SPA fallback, so the books plugin writes a copy of `index.html` for every route as `<route>.html` (not `<route>/index.html`, which it would redirect to the slashed URL), and `404.html` for the rest. A new route must also be added to `listRoutes` in `scripts/build-books.js`.
+React Router framework mode with `ssr: false`: `npm run build` prerenders every page to `dist/client`, which GitHub Pages serves as static files, deployed by `.github/workflows/deploy.yml` on every push to `main`.
+
+- Every view is a URL: the original at `/chapter/<n>`, a translation at `/<edition>/chapter/<n>`, both side by side at `/combined/<edition>/chapter/<n>`. Build URLs with `viewPath`, never by hand.
+- Combined views are `noindex` and left out of the sitemap; the original and translations are indexed.
+- Route loaders run at build time and return only what the page shows, so the corpus never reaches the client bundle. Import the generated JSON only from `corpus.server.js`.
+- Only `Layout` has a `clientLoader`: on `404.html` it requests the missing data, so a path that was not prerendered shows `NotFound`. Pages must not have one, so their data stays prefetchable.
+- Prerendered HTML must hydrate unchanged. Browser-only state (theme, font scale) is applied by the pre-paint script in `root.jsx` and read with a server snapshot, never during render.
+- Pages set their own title, description and canonical URL through `PageMeta`; React hoists them into `<head>`.
+- `Layout` prefetches the `.data` files of the previous and next chapters and the hovered drawer entry, so moving to them needs no request. Not `PrefetchPageLinks`: without SSR its URLs differ from the ones navigation fetches.
+- The build writes each page as `<path>.html`, not `<path>/index.html`, because GitHub Pages serves `/chapter/3` from `chapter/3.html` as is but redirects a folder to its slashed form. URLs never end in a slash; a slashed one is a 404.
 
 ## Commands
 
@@ -111,6 +123,7 @@ All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 
 - **The React Compiler is enabled** (`vite.config.js`). Do **not** add `useCallback`/`useMemo` — they are noise and can defeat its analysis.
 - **No `useEffect` for derived values.** Compute during render, as `Layout.jsx` does from `location.pathname`.
+- The fonts are not committed, so `root.jsx` preloads the font through `import.meta.glob`, which builds without it.
 - Chapter and section numbers render as Armenian numerals via `toArmenian()`.
 - Comments explain _why_. Keep them focused and concise. Do not add ones that restate the code.
 - Do not use single-line `if` or `for` statements — put curly braces instead.
@@ -119,6 +132,5 @@ All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 
 ## Known open items
 
-- The whole corpus is imported statically, so bundle size may need code splitting or prerendering.
-- Static prerendering is the planned solution for metadata, social previews, and crawlability.
-- `sitemap.xml` / `robots.txt` are emitted into the bundle only when `SITE_URL` is set. No host, no files — never a placeholder.
+- `sitemap.xml` / `robots.txt` and canonical URLs are emitted only when `SITE_URL` is set. No host, no files — never a placeholder.
+- `NotFound.jsx` is still a placeholder.

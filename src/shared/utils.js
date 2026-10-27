@@ -32,6 +32,26 @@ export function toArmenian(n) {
 }
 
 /**
+ * The lines run together and cut at a word, for a page description. Search
+ * engines cut descriptions at about 160 characters.
+ *
+ * @param {string[]} lines
+ * @param {number} [length]
+ * @returns {string}
+ */
+export function summarize(lines, length = 160) {
+  const text = lines.join(' ');
+
+  if (text.length <= length) {
+    return text;
+  }
+
+  const cut = text.lastIndexOf(' ', length - 1);
+
+  return `${text.slice(0, cut > 0 ? cut : length - 1)}…`;
+}
+
+/**
  * The integers from `start` to `end`, inclusive.
  *
  * @param {number} start

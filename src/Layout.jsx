@@ -14,82 +14,64 @@ import {
   Separator,
 } from '@heroui/react';
 import { useOverlayState } from '@heroui/react';
-import { useLayoutEffect, useState, ViewTransition } from 'react';
-import {
-  matchPath,
-  Outlet,
-  useLocation,
-  useNavigate,
-  useNavigationType,
-  useSearchParams,
-} from 'react-router';
-import mkMapping from './assets/generated/mapping_mk.json';
-import mkColophonMapping from './assets/generated/mapping_mk/colophon.json';
-import mkSuperscriptionMapping from './assets/generated/mapping_mk/superscription.json';
-import vgMapping from './assets/generated/mapping_vg.json';
-import chapters from './assets/generated/original/chapters.json';
-import originalColophon from './assets/generated/original/colophon.json';
-import originalSuperscription from './assets/generated/original/superscription.json';
-import mkChapters from './assets/generated/translation_mk/chapters.json';
-import mkColophon from './assets/generated/translation_mk/colophon.json';
-import mkSuperscription from './assets/generated/translation_mk/superscription.json';
-import vgChapters from './assets/generated/translation_vg/chapters.json';
+import { useLayoutEffect, useRef, useState, useSyncExternalStore, ViewTransition } from 'react';
+import { Outlet, useLocation, useNavigate, useNavigationType } from 'react-router';
+import { loadNavigation } from './book/corpus.server';
 import { toArmenian } from './shared/utils';
+import { editions, parseView, viewPath } from './shared/views';
 
-// Keyed by the id in the URL. `mapping` follows the original's chapters, with
-// null where the edition lacks one; a partial edition omits the pages it lacks.
-const translations = {
-  mk: {
-    name: 'Մ. Խերանյան',
-    chapters: mkChapters,
-    mapping: mkMapping,
-    superscription: { text: mkSuperscription, mapping: mkSuperscriptionMapping },
-    colophon: { text: mkColophon, mapping: mkColophonMapping },
-  },
-  vg: {
-    name: 'Վ. Գևորգյան',
-    chapters: vgChapters,
-    mapping: vgMapping,
-  },
-};
-
-// The translated part a route shows, or undefined where the edition lacks it.
-function translatedPart(translation, pathname) {
-  if (matchPath('/', pathname)) {
-    return translation.superscription;
-  }
-
-  if (matchPath('/colophon', pathname)) {
-    return translation.colophon;
-  }
-
-  const number = Number(matchPath('/chapter/:number', pathname)?.params.number);
-
-  return translation.chapters.find(({ chapter }) => chapter === number);
+export function loader() {
+  return loadNavigation();
 }
 
-// From the URL, so untrusted. A translation always names its translator.
-const views = [
-  'original',
-  ...['translated', 'combined'].flatMap((mode) =>
-    Object.keys(translations).map((id) => `${mode}-${id}`),
-  ),
-];
+// On 404.html, which has no data, this requests it and so fails as a 404.
+export function clientLoader({ serverLoader }) {
+  return serverLoader();
+}
+
+// The same on every page, so client navigation never refetches it.
+export function shouldRevalidate() {
+  return false;
+}
+
+// Dropdown keys: `<mode>-<edition>`, or `original`.
 const defaultView = 'original';
 
 const fontScales = ['sm', 'base', 'lg'];
 const defaultFontScale = 'base';
 
-// Literal class names so Tailwind's scanner keeps these utilities; an
-// interpolated `text-scale-${fontScale}` would be purged.
-const scaleClasses = {
-  sm: 'text-scale-sm',
-  base: 'text-scale-base',
-  lg: 'text-scale-lg',
-};
+// The pre-paint script in root.jsx restores data-font-scale, so the attribute
+// is the store and hydration sees the default.
+const fontScaleListeners = new Set();
 
-// Every path the drawer lists; anything else selects nothing.
-const paths = ['/', ...chapters.map(({ chapter }) => `/chapter/${chapter}`), '/colophon'];
+function subscribeFontScale(listener) {
+  fontScaleListeners.add(listener);
+  return () => fontScaleListeners.delete(listener);
+}
+
+function getFontScale() {
+  const scale = document.documentElement.dataset.fontScale;
+  return fontScales.includes(scale) ? scale : defaultFontScale;
+}
+
+function getServerFontScale() {
+  return defaultFontScale;
+}
+
+function setFontScale(value) {
+  document.documentElement.dataset.fontScale = value;
+  localStorage.setItem('fontScale', value);
+
+  for (const listener of fontScaleListeners) {
+    listener();
+  }
+}
+
+// The file React Router fetches when navigating to a page. PrefetchPageLinks
+// would add a ?_routes= that navigation without SSR never sends.
+function dataPath(page) {
+  return page.endsWith('/') ? `${page}_.data` : `${page}.data`;
+}
 
 // HeroUI's ItemIndicator checkmark, reused so the font-scale buttons show the
 // same mark as the drawer's list selection (an icon-font glyph would not match).
@@ -110,43 +92,40 @@ function CheckIcon(props) {
   );
 }
 
-export default function Layout() {
+export default function Layout({ loaderData }) {
+  const { chapters, pages, labels } = loaderData;
   const location = useLocation();
   const navigate = useNavigate();
   const navigationType = useNavigationType();
-  const [searchParams, setSearchParams] = useSearchParams();
   const drawerState = useOverlayState({
     defaultOpen: false,
   });
+  const [hovered, setHovered] = useState(null);
+  const hoverTimer = useRef(null);
 
-  const [fontScale, setFontScale] = useState(() => {
-    const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('fontScale') : null;
-    return fontScales.includes(stored) ? stored : defaultFontScale;
-  });
+  const fontScale = useSyncExternalStore(subscribeFontScale, getFontScale, getServerFontScale);
 
   const handleFontScaleChange = (value) => {
     setFontScale(value);
-    localStorage.setItem('fontScale', value);
     drawerState.close();
   };
 
-  const mode = searchParams.get('mode');
-  const selectedView = views.includes(mode) ? mode : defaultView;
-  const [displayMode, translationId] = selectedView.split('-');
-  // Passed even where it lacks this page, so the page can say so.
-  const translation = translations[translationId] ?? null;
-  const drawerTranslation = displayMode === 'translated' ? translation : null;
-  const superscription = drawerTranslation?.superscription?.text ?? originalSuperscription;
-  const colophon = drawerTranslation?.colophon?.text ?? originalColophon;
+  // `page` is the path in the original, so the drawer works the same in
+  // every view.
+  const { mode, edition, page } = parseView(location.pathname);
+  const selectedView = mode === 'original' ? defaultView : `${mode}-${edition}`;
+  const drawerLabels = mode === 'translated' ? labels[edition] : labels.original;
+  const superscriptionLabel = drawerLabels.superscription ?? labels.original.superscription;
+  const colophonLabel = drawerLabels.colophon ?? labels.original.colophon;
+  // Every path the drawer lists; anything else selects nothing.
+  const paths = ['/', ...chapters.map((chapter) => `/chapter/${chapter}`), '/colophon'];
   // Rows for a translation that lacks this page.
-  const disabledViews = Object.keys(translations)
-    .filter((id) => !translatedPart(translations[id], location.pathname))
+  const disabledViews = Object.keys(editions)
+    .filter((id) => !pages[id].includes(page))
     .flatMap((id) => [`translated-${id}`, `combined-${id}`]);
   // Pages the chosen translation lacks.
-  const disabledPaths = translation
-    ? paths.filter((path) => !translatedPart(translation, path))
-    : [];
-  const selectedKeys = paths.includes(location.pathname) ? [location.pathname] : [];
+  const disabledPaths = edition ? paths.filter((path) => !pages[edition].includes(path)) : [];
+  const selectedKeys = paths.includes(page) ? [page] : [];
 
   useLayoutEffect(() => {
     // Leave initial loads and history navigation to browser scroll restoration.
@@ -156,30 +135,45 @@ export default function Layout() {
 
     // Reset between the old and new snapshots, before the transition is painted.
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [location.pathname, selectedView, navigationType]);
+  }, [location.pathname, navigationType]);
 
-  // Keep the display mode when moving between pages.
-  const goTo = (pathname) => {
-    navigate({ pathname, search: location.search });
+  // Keep the view when moving between pages.
+  const goTo = (target) => {
+    navigate(viewPath(mode, edition, target));
   };
 
-  const pageable = chapters.filter(({ chapter }) => !disabledPaths.includes(`/chapter/${chapter}`));
+  const pageable = chapters.filter((chapter) => !disabledPaths.includes(`/chapter/${chapter}`));
 
   // Keyed by path, so the route drives the selection.
-  const current = chapters.find(({ chapter }) => `/chapter/${chapter}` === location.pathname);
+  const current = chapters.find((chapter) => `/chapter/${chapter}` === page);
 
   // By number, so a chapter the translation lacks still has neighbours.
-  let previous = current ? pageable.findLast(({ chapter }) => chapter < current.chapter) : null;
-  let next = current ? pageable.find(({ chapter }) => chapter > current.chapter) : null;
+  let previous = current ? pageable.findLast((chapter) => chapter < current) : null;
+  let next = current ? pageable.find((chapter) => chapter > current) : null;
 
   // The superscription and colophon lead into the chapters, not back out.
-  if (location.pathname === '/') {
+  if (page === '/') {
     next = pageable[0];
   }
 
-  if (location.pathname === '/colophon') {
+  if (page === '/colophon') {
     previous = pageable.at(-1);
   }
+
+  // Loaded in the background, so moving to them is instant.
+  const prefetched = new Set(
+    [previous && `/chapter/${previous}`, next && `/chapter/${next}`, hovered].filter(
+      (target) => target && target !== page,
+    ),
+  );
+
+  // Delayed, so sweeping the pointer down the drawer prefetches nothing.
+  const prefetchOnHover = (target) => ({
+    onHoverStart: () => {
+      hoverTimer.current = setTimeout(() => setHovered(target), 100);
+    },
+    onHoverEnd: () => clearTimeout(hoverTimer.current),
+  });
 
   const handleChapterChange = (keys) => {
     const value = keys.values().next().value;
@@ -197,22 +191,10 @@ export default function Layout() {
       return;
     }
 
-    setSearchParams(
-      (params) => {
-        const updated = new URLSearchParams(params);
+    const [nextMode, nextEdition = null] = String(value).split('-');
 
-        // Keep original URLs canonical.
-        if (value === defaultView) {
-          updated.delete('mode');
-        } else {
-          updated.set('mode', String(value));
-        }
-
-        return updated;
-      },
-      // Switching the view is not a navigation step.
-      { replace: true },
-    );
+    // Switching the view is not a navigation step.
+    navigate(viewPath(nextMode, nextEdition, page), { replace: true });
   };
 
   return (
@@ -241,22 +223,27 @@ export default function Layout() {
                   onSelectionChange={handleChapterChange}
                   aria-label="Բովանդակություն"
                 >
-                  <ListBox.Item id="/" textValue={superscription.content[0]}>
-                    <Label>{superscription.content[0]}</Label>
+                  <ListBox.Item id="/" textValue={superscriptionLabel} {...prefetchOnHover('/')}>
+                    <Label>{superscriptionLabel}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
-                  {chapters.map(({ chapter }) => (
+                  {chapters.map((chapter) => (
                     <ListBox.Item
                       key={chapter}
                       id={`/chapter/${chapter}`}
                       textValue={`Բան ${toArmenian(chapter)}`}
+                      {...prefetchOnHover(`/chapter/${chapter}`)}
                     >
                       <Label>Բան {toArmenian(chapter)}</Label>
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                   ))}
-                  <ListBox.Item id="/colophon" textValue={colophon.heading}>
-                    <Label>{colophon.heading}</Label>
+                  <ListBox.Item
+                    id="/colophon"
+                    textValue={colophonLabel}
+                    {...prefetchOnHover('/colophon')}
+                  >
+                    <Label>{colophonLabel}</Label>
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
                 </ListBox>
@@ -325,7 +312,7 @@ export default function Layout() {
               </div>
             </Dropdown.Item>
             {/* Repeated labels need the name for typeahead. */}
-            {Object.entries(translations).map(([id, { name }]) => (
+            {Object.entries(editions).map(([id, name]) => (
               <Dropdown.Item key={id} id={`translated-${id}`} textValue={`Թարգմանություն, ${name}`}>
                 <Dropdown.ItemIndicator />
                 <div className="flex flex-col">
@@ -335,7 +322,7 @@ export default function Layout() {
               </Dropdown.Item>
             ))}
             <Separator />
-            {Object.entries(translations).map(([id, { name }]) => (
+            {Object.entries(editions).map(([id, name]) => (
               <Dropdown.Item key={id} id={`combined-${id}`} textValue={`Համատեղ, ${name}`}>
                 <Dropdown.ItemIndicator />
                 <div className="flex flex-col">
@@ -348,28 +335,36 @@ export default function Layout() {
         </Dropdown.Popover>
       </Dropdown>
       {/* Separate snapshots avoid animating the scroll reset as a position change. */}
-      <ViewTransition key={`${location.pathname}:${selectedView}`} default="reading-view">
-        <main className={`text-book-base max-w-xl font-serif ${scaleClasses[fontScale]} w-full`}>
-          <Outlet context={{ displayMode, translation }} />
+      <ViewTransition key={location.pathname} default="reading-view">
+        <main className="text-book-base w-full max-w-xl font-serif">
+          <Outlet />
         </main>
       </ViewTransition>
       {(previous || next) && (
         <ButtonGroup variant="tertiary" className="mt-12">
           {previous && (
-            <Button onClick={() => goTo(`/chapter/${previous.chapter}`)}>
+            <Button onClick={() => goTo(`/chapter/${previous}`)}>
               <IconChevronLeft />
-              Բան {toArmenian(previous.chapter)}
+              Բան {toArmenian(previous)}
             </Button>
           )}
           {next && (
-            <Button onClick={() => goTo(`/chapter/${next.chapter}`)}>
+            <Button onClick={() => goTo(`/chapter/${next}`)}>
               {previous && <ButtonGroup.Separator />}
-              Բան {toArmenian(next.chapter)}
+              Բան {toArmenian(next)}
               <IconChevronRight />
             </Button>
           )}
         </ButtonGroup>
       )}
+      {[...prefetched].map((target) => (
+        <link
+          key={target}
+          rel="prefetch"
+          as="fetch"
+          href={dataPath(viewPath(mode, edition, target))}
+        />
+      ))}
     </>
   );
 }

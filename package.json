@@ -7,11 +7,11 @@
   "scripts": {
     "books": "node scripts/build-books.js",
     "books:check": "node scripts/build-books.js --check",
-    "dev": "vite --host",
-    "build": "vite build",
+    "dev": "react-router dev --host",
+    "build": "react-router build",
     "lint": "oxlint",
     "test": "node --test",
-    "preview": "vite preview",
+    "preview": "node scripts/preview.js",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@babel/core": "^8.0.9",
+    "@react-router/dev": "^8.5.0",
     "@rolldown/plugin-babel": "^0.2.4",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",

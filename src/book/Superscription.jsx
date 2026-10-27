@@ -1,33 +1,36 @@
 // SPDX-License-Identifier: MIT
 
-import { useOutletContext } from 'react-router';
-import original from '../assets/generated/original/superscription.json';
-import MissingTranslation from './MissingTranslation';
+import { summarize } from '../shared/utils';
+import { loadPage } from './corpus.server';
+import PageMeta from './PageMeta';
 import SectionCombined from './SectionCombined';
 
-export default function Superscription() {
-  /** @type {{ displayMode: string, translation: object | null }} */
-  const { displayMode, translation } = useOutletContext();
-  const translated = translation?.superscription;
+export function loader(args) {
+  return loadPage(args, 'superscription');
+}
 
-  if (translation && !translated) {
-    return (
-      <article className="mt-12">
-        <MissingTranslation />
-      </article>
-    );
-  }
-
-  const superscription = displayMode === 'original' ? original : translated.text;
+export default function Superscription({ loaderData }) {
+  const { mode, edition, original, translated, mapping } = loaderData;
+  const superscription = mode === 'original' ? original : translated;
 
   return (
     <article className="mt-12 text-center">
-      {displayMode === 'combined' ? (
+      <PageMeta
+        mode={mode}
+        edition={edition}
+        // The home page names the author, as the original title page does.
+        description={
+          mode === 'original'
+            ? 'Գրիգորի Նարեկայ վանից վանականի մատեան ողբերգութեան'
+            : summarize(superscription.content)
+        }
+      />
+      {mode === 'combined' ? (
         <SectionCombined
           hideNumber
           originalLines={original.content}
-          translationLines={translated.text.content}
-          mapping={translated.mapping.content}
+          translationLines={translated.content}
+          mapping={mapping.content}
         />
       ) : (
         <>

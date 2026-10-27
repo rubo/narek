@@ -22,12 +22,13 @@ Chapters are `chapter_<n>.md` with numbered `:::section` blocks; blank lines sep
 ```sh
 npm install
 npm run dev      # regenerates from book/ and watches it
-npm run build
+npm run build    # prerenders every page into dist/client
+npm run preview  # serves the build the way GitHub Pages does
 ```
 
 `npm run books` regenerates by hand; `npm run books:check` validates each mapping against its texts and verifies the generated output is current. A broken mapping fails the build.
 
-Set `SITE_URL` when building for deployment to emit `sitemap.xml` and `robots.txt`.
+Set `SITE_URL` when building for deployment to emit `sitemap.xml`, `robots.txt`, and canonical URLs.
 
 ## Contributing
 

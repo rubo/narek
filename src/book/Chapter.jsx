@@ -1,57 +1,43 @@
 // SPDX-License-Identifier: MIT
 
-import { useOutletContext, useParams } from 'react-router';
-import originalChapters from '../assets/generated/original/chapters.json';
-import NotFound from '../NotFound';
-import { toArmenian } from '../shared/utils';
+import { summarize, toArmenian } from '../shared/utils';
 import ChapterHeading from './ChapterHeading';
+import { loadChapter } from './corpus.server';
 import FitHeading from './FitHeading';
-import MissingTranslation from './MissingTranslation';
+import PageMeta from './PageMeta';
 import Section from './Section';
 import SectionCombined from './SectionCombined';
 
-export default function Chapter() {
-  const { number } = useParams();
-  /** @type {{ displayMode: string, translation: object | null }} */
-  const { displayMode, translation } = useOutletContext();
+export function loader(args) {
+  return loadChapter(args);
+}
 
-  const chapterIndex = originalChapters.findIndex((entry) => entry.chapter === Number(number));
-
-  if (chapterIndex === -1) {
-    return <NotFound />;
-  }
-
-  const original = originalChapters[chapterIndex];
-  const translated = translation?.chapters.find((entry) => entry.chapter === original.chapter);
-  const mapping = translation?.mapping[chapterIndex];
-
-  // Only a typed URL gets here; the drawer and paging skip it.
-  if (translation && !translated) {
-    return (
-      <article>
-        <header className="flex flex-col items-center">
-          <FitHeading className="heading">Բան {toArmenian(original.chapter)}</FitHeading>
-        </header>
-        <MissingTranslation />
-      </article>
-    );
-  }
-
-  const chapter = displayMode === 'original' ? original : translated;
+export default function Chapter({ loaderData }) {
+  const { mode, edition, original, translated, mapping } = loaderData;
+  const chapter = mode === 'original' ? original : translated;
   const hideNumber = chapter.sections?.length === 1;
+  // The text the page leads with; an untranslated section is null.
+  const shown = mode === 'translated' ? translated : original;
+  const opening = shown.sections.find(Boolean) ?? [];
 
   return (
     <article>
+      <PageMeta
+        mode={mode}
+        edition={edition}
+        name={`Բան ${toArmenian(chapter.chapter)}`}
+        description={summarize([...shown.heading, ...opening])}
+      />
       <header className="flex flex-col items-center">
         <FitHeading className="heading">Բան {toArmenian(chapter.chapter)}</FitHeading>
         <ChapterHeading
-          displayMode={displayMode}
-          originalLines={original.heading}
+          displayMode={mode}
+          originalLines={original?.heading}
           translationLines={translated?.heading}
           mapping={mapping?.heading}
         />
       </header>
-      {displayMode === 'combined'
+      {mode === 'combined'
         ? chapter.sections?.map((section, sectionIndex) => (
             <SectionCombined
               key={sectionIndex}

@@ -30,15 +30,12 @@
   --text-book-2xl--line-height: var(--text-2xl--line-height);
 }
 
-@utility text-scale-sm {
+/* Set on <html> before the first paint, so prerendered text never jumps. */
+:root[data-font-scale='sm'] {
   --font-scale: 0.9;
 }
 
-@utility text-scale-base {
-  --font-scale: 1;
-}
-
-@utility text-scale-lg {
+:root[data-font-scale='lg'] {
   --font-scale: 1.15;
 }
 

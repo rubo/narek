@@ -12,16 +12,17 @@ import remarkFrontmatter from 'remark-frontmatter';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { parse as parseYaml } from 'yaml';
+import { editions, sitePages } from '../src/shared/views.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const sourceRoot = join(root, 'book');
 const outputRoot = join(root, 'src', 'assets', 'generated');
-// Sitemap URLs are absolute, so without a host there is nothing to emit.
-const siteUrl = (process.env.SITE_URL ?? '').replace(/\/+$/u, '');
+// Sitemap and canonical URLs are absolute, so without a host there is nothing
+// to emit. vite.config.js passes the same value to the app.
+export const siteUrl = (process.env.SITE_URL ?? '').replace(/\/+$/u, '');
 
-// One entry per edition. Output mirrors book/<source>/, with the chapters
-// collected into chapters.json.
-const sources = ['original', 'translation_mk', 'translation_vg'];
+// Output mirrors book/<source>/, with the chapters collected into chapters.json.
+const sources = ['original', ...Object.keys(editions).map((id) => `translation_${id}`)];
 
 const partialEditions = new Set(['vg']);
 
@@ -778,28 +779,41 @@ export function checkPunctuation(outputs) {
   return problems;
 }
 
-// The routes App.jsx serves. Only the original is routed: a translation is a
-// display mode, not a URL.
-function listRoutes(outputs) {
-  const routes = ['/'];
+// A source's pages by their path in the original, in reading order. The
+// superscription is the home page.
+function pagesOf(outputs, source) {
+  const pages = outputs.has(`${source}/superscription.json`) ? ['/'] : [];
 
-  for (const { chapter } of outputs.get('original/chapters.json')) {
-    routes.push(`/chapter/${chapter}`);
+  for (const { chapter } of outputs.get(`${source}/chapters.json`) ?? []) {
+    pages.push(`/chapter/${chapter}`);
   }
 
   for (const name of outputs.keys()) {
-    const page = /^original\/(.+)\.json$/u.exec(name)?.[1];
+    const page = name.startsWith(`${source}/`) && name.slice(source.length + 1, -'.json'.length);
 
     if (page && page !== 'chapters' && page !== 'superscription') {
-      routes.push(`/${page}`);
+      pages.push(`/${page}`);
     }
   }
 
-  return routes;
+  return pages;
 }
 
-function renderSitemap(routes) {
-  const urls = routes.map((route) => `  <url><loc>${siteUrl}${route}</loc></url>`).join('\n');
+// Each edition's pages, for the prerender list, the sitemap and the drawer.
+function listPages(outputs) {
+  return {
+    original: pagesOf(outputs, 'original'),
+    ...Object.fromEntries(
+      Object.keys(editions).map((id) => [id, pagesOf(outputs, `translation_${id}`)]),
+    ),
+  };
+}
+
+function renderSitemap(pages) {
+  const urls = pages
+    .filter(({ indexed }) => indexed)
+    .map(({ path }) => `  <url><loc>${siteUrl}${path}</loc></url>`)
+    .join('\n');
 
   return `<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -819,21 +833,21 @@ Sitemap: ${siteUrl}/sitemap.xml
 
 // Build-only: the plugin emits these into the bundle, so they never reach
 // public/ and are never committed.
-function renderSiteAssets(routes) {
+function renderSiteAssets(pages) {
   if (!siteUrl) {
     return new Map();
   }
 
   return new Map([
-    ['sitemap.xml', renderSitemap(routes)],
+    ['sitemap.xml', renderSitemap(pages)],
     ['robots.txt', renderRobots()],
   ]);
 }
 
 /**
  * Generates every output and reports what happened, leaving the caller to act
- * on it. `assets` are build-only files for the caller to emit; `routes` are
- * the paths the app serves.
+ * on it. `assets` are build-only files for the caller to emit; `pages` are
+ * the paths to prerender.
  *
  * @param {{ check?: boolean, log?: (message: string) => void }} [options]
  * @returns {Promise<{
@@ -841,7 +855,7 @@ function renderSiteAssets(routes) {
  *   stale: string[],
  *   problems: string[],
  *   assets: Map<string, string>,
- *   routes: string[],
+ *   pages: { path: string, indexed: boolean }[],
  * }>}
  */
 export async function build({ check = false, log } = {}) {
@@ -856,11 +870,14 @@ export async function build({ check = false, log } = {}) {
   const corrupt = checkPunctuation(outputs);
 
   if (corrupt.length > 0) {
-    return { written: [], stale: [], problems: corrupt, assets: new Map(), routes: [] };
+    return { written: [], stale: [], problems: corrupt, assets: new Map(), pages: [] };
   }
 
   // Mapping problems must not block regenerating changed text.
   const problems = await emitMappings(outputs);
+  const { original, ...editionPages } = listPages(outputs);
+
+  outputs.set('pages.json', { original, ...editionPages });
 
   const files = new Map();
 
@@ -890,9 +907,9 @@ export async function build({ check = false, log } = {}) {
     log?.(`wrote ${name}`);
   }
 
-  const routes = listRoutes(outputs);
+  const pages = sitePages(original, editionPages);
 
-  return { written, stale, problems, assets: renderSiteAssets(routes), routes };
+  return { written, stale, problems, assets: renderSiteAssets(pages), pages };
 }
 
 // CLI entry only: importing this module builds nothing.
