@@ -66,6 +66,23 @@
   }
 }
 
+/*
+ * React Aria 1.22 clears the drawer's data-entering state before HeroUI's
+ * slide-in transition can start, so the drawer appeared without sliding. A
+ * keyframe animation runs when the panel is inserted, whatever React Aria does.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .drawer__content--left .drawer__dialog {
+    animation: drawer-enter-left var(--drawer-enter-duration) var(--drawer-enter-ease);
+  }
+}
+
+@keyframes drawer-enter-left {
+  from {
+    translate: -100% 0;
+  }
+}
+
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,
