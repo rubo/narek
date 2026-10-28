@@ -3,6 +3,9 @@
 // Shared by the app, the loaders and scripts/build-books.js, so the URLs the
 // app navigates to are the ones that get prerendered.
 
+// Canonical URLs, the sitemap and robots.txt are absolute.
+export const siteUrl = 'https://narek.page';
+
 // Keyed by the id in the URL. A translation always names its translator.
 export const editions = {
   mk: 'Մ. Խերանյան',

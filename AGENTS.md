@@ -112,6 +112,7 @@ React Router framework mode with `ssr: false`: `npm run build` prerenders every 
 - Only `Layout` has a `clientLoader`: on `404.html` it requests the missing data, so a path that was not prerendered shows `NotFound`. Pages must not have one, so their data stays prefetchable.
 - Prerendered HTML must hydrate unchanged. Browser-only state (theme, font scale) is applied by the pre-paint script in `root.jsx` and read with a server snapshot, never during render.
 - Pages set their own title, description and canonical URL through `PageMeta`; React hoists them into `<head>`.
+- Canonical URLs, `sitemap.xml` and `robots.txt` are absolute, built from `siteUrl` (`src/shared/views.js`). Every build emits them, local ones included.
 - `Layout` prefetches the `.data` files of the previous and next chapters and the hovered drawer entry, so moving to them needs no request. Not `PrefetchPageLinks`: without SSR its URLs differ from the ones navigation fetches.
 - The build writes each page as `<path>.html`, not `<path>/index.html`, because GitHub Pages serves `/chapter/3` from `chapter/3.html` as is but redirects a folder to its slashed form. URLs never end in a slash: an edge redirect rule sends a slashed URL to the bare one with a 308, which static hosting cannot do. Do not handle it in the app — without the rule, a slashed URL is a 404.
 
@@ -129,7 +130,3 @@ All of `books:check`, `lint`, `fmt:check`, `test`, `build` must pass.
 - Do not use single-line `if` or `for` statements — put curly braces instead.
 - Do use conventional commits.
 - Do not hard-wrap Markdown text to a fixed line width unless explicitly asked.
-
-## Known open items
-
-- `sitemap.xml` / `robots.txt` and canonical URLs are emitted only when `SITE_URL` is set. No host, no files — never a placeholder.

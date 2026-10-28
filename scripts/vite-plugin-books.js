@@ -12,7 +12,7 @@ const SOURCE = /(^|[\\/])book[\\/].+\.(?:md|json)$/u;
  * @returns {import('vite').Plugin}
  */
 export default function books() {
-  // Held from buildStart to generateBundle; empty unless SITE_URL is set.
+  // Held from buildStart to generateBundle.
   let assets = new Map();
 
   return {

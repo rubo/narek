@@ -28,8 +28,6 @@ npm run preview  # serves the build the way GitHub Pages does
 
 `npm run books` regenerates by hand; `npm run books:check` validates each mapping against its texts and verifies the generated output is current. A broken mapping fails the build.
 
-Set `SITE_URL` when building for deployment to emit `sitemap.xml`, `robots.txt`, and canonical URLs.
-
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution and provenance requirements. See [AGENTS.md](./AGENTS.md) for Armenian punctuation rules, the corpus format, and mapping invariants.

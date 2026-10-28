@@ -12,14 +12,11 @@ import remarkFrontmatter from 'remark-frontmatter';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { parse as parseYaml } from 'yaml';
-import { editions, sitePages } from '../src/shared/views.js';
+import { editions, sitePages, siteUrl } from '../src/shared/views.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const sourceRoot = join(root, 'book');
 const outputRoot = join(root, 'src', 'assets', 'generated');
-// Sitemap and canonical URLs are absolute, so without a host there is nothing
-// to emit. vite.config.js passes the same value to the app.
-export const siteUrl = (process.env.SITE_URL ?? '').replace(/\/+$/u, '');
 
 // Output mirrors book/<source>/, with the chapters collected into chapters.json.
 const sources = ['original', ...Object.keys(editions).map((id) => `translation_${id}`)];
@@ -834,10 +831,6 @@ Sitemap: ${siteUrl}/sitemap.xml
 // Build-only: the plugin emits these into the bundle, so they never reach
 // public/ and are never committed.
 function renderSiteAssets(pages) {
-  if (!siteUrl) {
-    return new Map();
-  }
-
   return new Map([
     ['sitemap.xml', renderSitemap(pages)],
     ['robots.txt', renderRobots()],

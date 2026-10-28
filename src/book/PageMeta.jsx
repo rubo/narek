@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 import { useLocation } from 'react-router';
-import { editions, parseView, viewPath } from '../shared/views';
-
-const siteUrl = import.meta.env.SITE_URL;
+import { editions, parseView, siteUrl, viewPath } from '../shared/views';
 
 // The original's spelling, and the reformed one the translations use.
 const titles = {
@@ -25,7 +23,7 @@ export default function PageMeta({ mode, edition, name, description }) {
       : ` (${mode === 'combined' ? `Բնագիր + ${editions[edition]}` : editions[edition]})`;
   const title = name ? `${name}${qualifier} — ${book}` : `${book}${qualifier}`;
   // Rebuilt, because the prerenderer's pathname ends in a slash.
-  const canonical = siteUrl && siteUrl + viewPath(mode, edition, parseView(pathname).page);
+  const canonical = siteUrl + viewPath(mode, edition, parseView(pathname).page);
 
   return (
     <>
@@ -33,7 +31,7 @@ export default function PageMeta({ mode, edition, name, description }) {
       <meta name="description" content={description} />
       {/* Combined views repeat text that is indexed on its own pages. */}
       {mode === 'combined' && <meta name="robots" content="noindex, follow" />}
-      {canonical && <link rel="canonical" href={canonical} />}
+      <link rel="canonical" href={canonical} />
     </>
   );
 }
