@@ -113,7 +113,7 @@ React Router framework mode with `ssr: false`: `npm run build` prerenders every 
 - Prerendered HTML must hydrate unchanged. Browser-only state (theme, font scale) is applied by the pre-paint script in `root.jsx` and read with a server snapshot, never during render.
 - Pages set their own title, description and canonical URL through `PageMeta`; React hoists them into `<head>`.
 - `Layout` prefetches the `.data` files of the previous and next chapters and the hovered drawer entry, so moving to them needs no request. Not `PrefetchPageLinks`: without SSR its URLs differ from the ones navigation fetches.
-- The build writes each page as `<path>.html`, not `<path>/index.html`, because GitHub Pages serves `/chapter/3` from `chapter/3.html` as is but redirects a folder to its slashed form. URLs never end in a slash; a slashed one is a 404.
+- The build writes each page as `<path>.html`, not `<path>/index.html`, because GitHub Pages serves `/chapter/3` from `chapter/3.html` as is but redirects a folder to its slashed form. URLs never end in a slash: an edge redirect rule sends a slashed URL to the bare one with a 308, which static hosting cannot do. Do not handle it in the app — without the rule, a slashed URL is a 404.
 
 ## Commands
 
