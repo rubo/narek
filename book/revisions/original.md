@@ -24,6 +24,13 @@
 - Previous: `անխնամական են անկանգնական`
 - Revised: [`անխնամական եւ անկանգնական`](../original/chapter_22.md?plain=1#L44)
 
+## Chapter 30
+
+#### Typographical correction
+
+- Previous: `լսիցէ`
+- Revised: [`լսիցէ,`](../original/chapter_30.md?plain=1#L188)
+
 ## Chapter 34
 
 #### Typographical correction
@@ -31,6 +38,13 @@
 - Previous: `զամենայն պարգեւս ի մեզ ծաղուսուցանես վարդապետս, բարբառեցուցանես համերս եւ բանաս զկեալ եւ աճեցեալ, որ ձեռնադրես առաքեալս, լցուցանես մարգարէս, փակեալ ականջս խլից`
 - Revised: [`զամենայն պարգեւս ի մեզ ծաղկեալ եւ աճեցեալ, որ ձեռնադրես առաքեալս, լցուցանես մարգարէս, ուսուցանես վարդապետս, բարբառեցուցանես համերս եւ բանաս զփակեալ ականջս խլից`](../original/chapter_34.md?plain=1#L30)
 - Evidence: [Գրիգոր Նարեկացի, Նարեկ. Մատեան ողբերգութեան, Տպ. Ստ. Տէօքմէճեան, Buenos Aires, 1948](https://arar.sci.am/publication/410977), printed p. 86; PDF p. 235
+
+## Chapter 44
+
+#### Typographical correction
+
+- Previous: `Եվ`
+- Revised: [`Եւ`](../original/chapter_44.md?plain=1#L76)
 
 ## Chapter 71
 
