@@ -50,7 +50,8 @@ function notFound() {
 // What the drawer lists, the same on every page.
 export function loadNavigation() {
   const labelsOf = (superscription, colophon) => ({
-    superscription: superscription?.content[0],
+    // Only the opening line of one long sentence, so mark it as an incipit.
+    superscription: superscription && `${superscription.content[0]}…`,
     colophon: colophon?.heading,
   });
 
