@@ -296,8 +296,7 @@ export default function Layout({ loaderData }) {
         >
           <span className="material-symbols-outlined">translate</span>
         </Button>
-        {/* HeroUI sets no min width below md and caps it at 48svw, too narrow for the labels. */}
-        <Dropdown.Popover placement="bottom end" className="max-w-[calc(100svw-2rem)] min-w-55">
+        <Dropdown.Popover placement="bottom end">
           <Dropdown.Menu
             disallowEmptySelection
             disabledKeys={disabledViews}
