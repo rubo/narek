@@ -3,8 +3,15 @@
 // Shared by the app, the loaders and scripts/build-books.js, so the URLs the
 // app navigates to are the ones that get prerendered.
 
-// Canonical URLs, the sitemap and robots.txt are absolute.
-export const siteUrl = 'https://narek.page';
+// Canonical URLs, the sitemap and robots.txt are absolute. SITE_URL builds the
+// site for another host. Vite inlines it into the bundles (envPrefix in
+// vite.config.js); plain Node, as in scripts/build-books.js, reads it from
+// the environment.
+export const siteUrl = (
+  import.meta.env?.SITE_URL ||
+  globalThis.process?.env.SITE_URL ||
+  'https://narek.page'
+).replace(/\/+$/u, '');
 
 // Keyed by the id in the URL. A translation always names its translator.
 export const editions = {
