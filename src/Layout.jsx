@@ -6,12 +6,12 @@ import {
   Description,
   Drawer,
   Dropdown,
+  Header,
   IconChevronLeft,
   IconChevronRight,
   Label,
   Link,
   ListBox,
-  Separator,
 } from '@heroui/react';
 import { useOverlayState } from '@heroui/react';
 import { useLayoutEffect, useRef, useState, useSyncExternalStore, ViewTransition } from 'react';
@@ -296,7 +296,8 @@ export default function Layout({ loaderData }) {
         >
           <span className="material-symbols-outlined">translate</span>
         </Button>
-        <Dropdown.Popover placement="bottom end">
+        {/* HeroUI sets no min width below md and caps it at 48svw, too narrow for the labels. */}
+        <Dropdown.Popover placement="bottom end" className="max-w-[calc(100svw-2rem)] min-w-55">
           <Dropdown.Menu
             disallowEmptySelection
             disabledKeys={disabledViews}
@@ -304,6 +305,7 @@ export default function Layout({ loaderData }) {
             selectionMode="single"
             onSelectionChange={handleDisplayChange}
           >
+            {/* The original has no editions to choose from, so it needs no section. textValue keeps the description out of typeahead. */}
             <Dropdown.Item id="original" textValue="Բնագիր">
               <Dropdown.ItemIndicator />
               <div className="flex flex-col">
@@ -311,26 +313,25 @@ export default function Layout({ loaderData }) {
                 <Description>Գրաբար</Description>
               </div>
             </Dropdown.Item>
-            {/* Repeated labels need the name for typeahead. */}
-            {Object.entries(editions).map(([id, name]) => (
-              <Dropdown.Item key={id} id={`translated-${id}`} textValue={`Թարգմանություն, ${name}`}>
-                <Dropdown.ItemIndicator />
-                <div className="flex flex-col">
-                  <Label>Թարգմանություն</Label>
-                  <Description>{name}</Description>
-                </div>
-              </Dropdown.Item>
-            ))}
-            <Separator />
-            {Object.entries(editions).map(([id, name]) => (
-              <Dropdown.Item key={id} id={`combined-${id}`} textValue={`Համատեղ, ${name}`}>
-                <Dropdown.ItemIndicator />
-                <div className="flex flex-col">
-                  <Label>Համատեղ</Label>
-                  <Description>Բնագիր + {name}</Description>
-                </div>
-              </Dropdown.Item>
-            ))}
+            {/* Items with element contents get no typeahead text unless given one; it mirrors the visible label. */}
+            <Dropdown.Section>
+              <Header>Թարգմանություն</Header>
+              {Object.entries(editions).map(([id, name]) => (
+                <Dropdown.Item key={id} id={`translated-${id}`} textValue={name}>
+                  <Dropdown.ItemIndicator />
+                  <Label>{name}</Label>
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Section>
+            <Dropdown.Section>
+              <Header>Համատեղ</Header>
+              {Object.entries(editions).map(([id, name]) => (
+                <Dropdown.Item key={id} id={`combined-${id}`} textValue={`Բնագիր + ${name}`}>
+                  <Dropdown.ItemIndicator />
+                  <Label>Բնագիր + {name}</Label>
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Section>
           </Dropdown.Menu>
         </Dropdown.Popover>
       </Dropdown>
