@@ -1,0 +1,7 @@
+# Hashed names change with their content, so a cached copy is never stale.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Prefetched data must outlive the prefetch, so navigating to it needs no request.
+/*.data
+  Cache-Control: public, max-age=600

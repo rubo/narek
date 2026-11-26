@@ -1,0 +1,15 @@
+{
+  "name": "narek",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist/client",
+    // Serves /chapter/3 from chapter/3/index.html without a redirect.
+    "html_handling": "drop-trailing-slash",
+    // Serves 404.html with a 404 status, so Layout's clientLoader can show
+    // NotFound. Without it a missing path gets an empty 404.
+    "not_found_handling": "404-page",
+  },
+  // Served only from the custom domain.
+  "workers_dev": false,
+  "preview_urls": false,
+}

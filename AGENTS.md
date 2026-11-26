@@ -104,7 +104,7 @@ Standalone pages use a matching mapping file such as `book/mapping_<edition>/sup
 
 ## Rendering
 
-React Router framework mode with `ssr: false`: `npm run build` prerenders every page to `dist/client`, which GitHub Pages serves as static files, deployed by `.github/workflows/deploy.yml` on every push to `main`.
+React Router framework mode with `ssr: false`: `npm run build` prerenders every page to `dist/client`, which Cloudflare Workers serves as static assets (`wrangler.jsonc`), deployed by `.github/workflows/deploy.yml` on every push to `main`.
 
 - Every view is a URL: the original at `/chapter/<n>`, a translation at `/<edition>/chapter/<n>`, both side by side at `/combined/<edition>/chapter/<n>`. Build URLs with `viewPath`, never by hand.
 - Combined views are `noindex` and left out of the sitemap; the original and translations are indexed.
@@ -114,7 +114,8 @@ React Router framework mode with `ssr: false`: `npm run build` prerenders every 
 - Pages set their own title, description, canonical URL and Open Graph tags through `PageMeta`; React hoists them into `<head>`.
 - Canonical URLs, `sitemap.xml` and `robots.txt` are absolute, built from `siteUrl` (`src/shared/views.js`): `SITE_URL` when set, otherwise `https://narek.page`. Every build emits them, local ones included.
 - `Layout` prefetches the `.data` files of the previous and next chapters and the hovered drawer entry, so moving to them needs no request. Not `PrefetchPageLinks`: without SSR its URLs differ from the ones navigation fetches.
-- The build writes each page as `<path>.html`, not `<path>/index.html`, because GitHub Pages serves `/chapter/3` from `chapter/3.html` as is but redirects a folder to its slashed form. URLs never end in a slash: an edge redirect rule sends a slashed URL to the bare one with a 308, which static hosting cannot do. Do not handle it in the app — without the rule, a slashed URL is a 404.
+- URLs never end in a slash. `html_handling` serves `/chapter/3` from `chapter/3/index.html`, and an edge redirect rule sends a slashed URL to the bare one with a 308, ahead of the 307 Workers would send. Do not handle it in the app.
+- `public/_headers` sets caching: hashed `/assets/*` are immutable, and `.data` files live 10 minutes so prefetched data is still fresh on navigation. HTML revalidates on every load, so a text change shows on the next visit.
 
 ## Commands
 
